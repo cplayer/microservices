@@ -20,9 +20,11 @@ public class AuthorizationController {
     public String loginCheck(Model model, HttpServletRequest req, HttpServletResponse resp,
                              @RequestParam(required = true) String username,
                              @RequestParam(required = true) String password){
+        System.out.println("sessionid = " + req.getSession().getId());
         req.getSession().removeAttribute("username");
         if("user".equals(username) && "123".equals(password)) {
             req.getSession().setAttribute("username","user");
+            //req.getSession().setAttribute("role","user");
             return "index";
         } else {
             model.addAttribute("msg", "Invalid username or password!");
