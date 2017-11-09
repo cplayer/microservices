@@ -1,48 +1,58 @@
 package com.zhuri.microservices.servicecustomerplan;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class EventService {
-    public boolean createEventType() {
-        return false;
+    @Autowired
+    EventTypeMapper eventTypeMapper;
+
+    public int addEventType() {
+        EventType et = new EventType();
+        et.setName("TestD");
+        et.setCreateMan(1);
+        et.setCreateTime(new Date());
+        return eventTypeMapper.addEventType(et);
     }
 
-    public boolean removeEventType() {
-        return false;
+    public int enableEventType() {
+        return eventTypeMapper.enableEventType(4, false);
     }
 
-    public boolean modifyEventType() {
-        return false;
+    public int updateEventType() {
+        return 0;
     }
 
-    public EventType queryEventType() {
+    public EventType getEventType() {
         return null;
     }
 
-    public List<EventType> queryAllEventType() {
+    public List<EventType> getAllEventType() {
+        return eventTypeMapper.getAllEventType();
+    }
+
+    public int addEvent() {
+        return 0;
+    }
+
+    public int enableEvent() {
+        return 0;
+    }
+
+    public int updateEvent() {
+        return 0;
+    }
+
+    public EventType getEvent() {
         return null;
     }
 
-    public boolean createEvent() {
-        return false;
-    }
-
-    public boolean removeEvent() {
-        return false;
-    }
-
-    public boolean modifyEvent() {
-        return false;
-    }
-
-    public EventType queryEvent() {
-        return null;
-    }
-
-    public List<EventType> queryAllEvent() {
+    public List<EventType> getAllEvent() {
         return null;
     }
 }
