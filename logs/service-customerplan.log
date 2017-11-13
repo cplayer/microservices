@@ -1,0 +1,877 @@
+2017-11-13 20:10:45.459  INFO 9908 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:10:45.468  INFO 9908 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:10:45 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:10:46.055  INFO 9908 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:10:46.071  INFO 9908 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:10:46.102  INFO 9908 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:10:46.117  INFO 9908 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:10:47.047  INFO 9908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:10:47.062  INFO 9908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:10:47.062  INFO 9908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:10:47.140  INFO 9908 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:10:47.140  INFO 9908 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1672 ms
+2017-11-13 20:10:47.219  INFO 9908 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:10:47.219  INFO 9908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:10:47.219  INFO 9908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:10:47.219  INFO 9908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:10:47.219  INFO 9908 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:10:47.493  WARN 9908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:10:47.493  INFO 9908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:10:47.495  WARN 9908 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:10:47.496  INFO 9908 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:10:47.616  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:10:45 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:10:47.645  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:10:47.661  INFO 9908 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:10:47.676  INFO 9908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:10:47.676  INFO 9908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:10:47.711  INFO 9908 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:10:48.118  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:10:48.134  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:10:48.134  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:10:48.134  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:10:48.134  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:10:48.149  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:10:48.149  INFO 9908 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:10:48.313  INFO 9908 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:10:48.328  INFO 9908 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 3.647 seconds (JVM running for 5.493)
+2017-11-13 20:11:05.779  INFO 9908 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:11:05.780  INFO 9908 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:11:05.791  INFO 9908 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2017-11-13 20:11:24.282 ERROR 9908 --- [http-nio-8768-exec-3] o.thymeleaf.templateparser.ErrorHandler  : [THYMELEAF][http-nio-8768-exec-3] Fatal error during parsing
+
+org.xml.sax.SAXParseException: 与元素类型 "input" 相关联的属性 "value" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) [na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) [na:1.8.0_144]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) [thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) [thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+
+2017-11-13 20:11:24.286 ERROR 9908 --- [http-nio-8768-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8768-exec-3] Exception processing template "addCustomerPlanEvent": Exception parsing document: template="addCustomerPlanEvent", line 10 - column 58
+2017-11-13 20:11:24.287 ERROR 9908 --- [http-nio-8768-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Exception parsing document: template="addCustomerPlanEvent", line 10 - column 58] with root cause
+
+org.xml.sax.SAXParseException: 与元素类型 "input" 相关联的属性 "value" 应有左引号。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.scanAttributeValue(XMLScanner.java:852) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanAttribute(XMLDocumentFragmentScannerImpl.java:1548) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanStartElement(XMLDocumentFragmentScannerImpl.java:1315) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2784) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:841) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:770) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643) ~[na:1.8.0_144]
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327) ~[na:1.8.0_144]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.doParse(AbstractNonValidatingSAXTemplateParser.java:209) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplateUsingPool(AbstractNonValidatingSAXTemplateParser.java:134) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.templateparser.xmlsax.AbstractNonValidatingSAXTemplateParser.parseTemplate(AbstractNonValidatingSAXTemplateParser.java:116) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateRepository.getTemplate(TemplateRepository.java:278) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1104) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1060) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1011) ~[thymeleaf-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.renderFragment(ThymeleafView.java:335) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.thymeleaf.spring4.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring4-2.1.5.RELEASE.jar:2.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1286) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1041) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:984) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+
+2017-11-13 20:15:28.936  INFO 10800 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:15:28.951  INFO 10800 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:15:28 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:15:29.358  INFO 10800 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:15:29.368  INFO 10800 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:15:29.401  INFO 10800 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:15:29.401  INFO 10800 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:15:29.593  INFO 10800 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:15:29.610  INFO 10800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:15:29.610  INFO 10800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:15:29.671  INFO 10800 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:15:29.671  INFO 10800 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 720 ms
+2017-11-13 20:15:29.749  INFO 10800 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:15:29.749  INFO 10800 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:15:29.749  INFO 10800 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:15:29.749  INFO 10800 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:15:29.749  INFO 10800 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:15:29.969  WARN 10800 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:15:29.969  INFO 10800 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:15:29.985  WARN 10800 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:15:29.985  INFO 10800 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:15:30.079  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:15:28 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:15:30.110  INFO 10800 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:15:30.126  INFO 10800 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:15:30.126  INFO 10800 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:15:30.157  INFO 10800 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:15:30.562  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:15:30.562  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:15:30.562  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:15:30.562  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:15:30.562  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:15:30.577  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:15:30.577  INFO 10800 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:15:30.734  INFO 10800 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:15:30.734  INFO 10800 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.624 seconds (JVM running for 3.072)
+2017-11-13 20:15:40.522  INFO 10800 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:15:40.523  INFO 10800 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:15:40.534  INFO 10800 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2017-11-13 20:24:01.303  INFO 2256 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:24:01.309  INFO 2256 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:24:01 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:24:01.717  INFO 2256 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:24:01.725  INFO 2256 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:24:01.756  INFO 2256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:24:01.756  INFO 2256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:24:01.933  INFO 2256 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:24:01.933  INFO 2256 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:24:01.933  INFO 2256 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:24:02.011  INFO 2256 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:24:02.011  INFO 2256 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 702 ms
+2017-11-13 20:24:02.074  INFO 2256 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:24:02.089  INFO 2256 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:24:02.089  INFO 2256 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:24:02.089  INFO 2256 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:24:02.089  INFO 2256 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:24:02.316  WARN 2256 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:24:02.316  INFO 2256 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:24:02.316  WARN 2256 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:24:02.316  INFO 2256 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:24:02.418  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:24:01 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:24:02.467  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:24:02.469  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:24:02.469  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:24:02.469  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:24:02.469  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:24:02.471  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:24:02.471  INFO 2256 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:24:02.484  INFO 2256 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:24:02.484  INFO 2256 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:24:02.499  INFO 2256 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:24:02.905  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:24:02.910  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:24:02.911  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:24:02.912  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:24:02.913  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:24:02.920  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:24:02.926  INFO 2256 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:24:03.073  INFO 2256 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:24:03.073  INFO 2256 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.533 seconds (JVM running for 2.987)
+2017-11-13 20:24:15.677  INFO 2256 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:24:15.678  INFO 2256 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:24:15.689  INFO 2256 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2017-11-13 20:32:51.186  INFO 9100 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:32:51.186  INFO 9100 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:32:51 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:32:51.577  INFO 9100 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:32:51.593  INFO 9100 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:32:51.632  INFO 9100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:32:51.637  INFO 9100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:32:51.800  INFO 9100 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:32:51.800  INFO 9100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:32:51.800  INFO 9100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:32:51.874  INFO 9100 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:32:51.874  INFO 9100 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 688 ms
+2017-11-13 20:32:51.952  INFO 9100 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:32:51.952  INFO 9100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:32:51.952  INFO 9100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:32:51.952  INFO 9100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:32:51.952  INFO 9100 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:32:52.186  WARN 9100 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:32:52.186  INFO 9100 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:32:52.186  WARN 9100 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:32:52.186  INFO 9100 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:32:52.285  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:32:51 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:32:52.316  INFO 9100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:32:52.347  INFO 9100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:32:52.347  INFO 9100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:32:52.371  INFO 9100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:32:52.765  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:32:52.765  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:32:52.765  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:32:52.765  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:32:52.765  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:32:52.780  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:32:52.780  INFO 9100 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:32:52.952  INFO 9100 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:32:52.952  INFO 9100 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.558 seconds (JVM running for 3.013)
+2017-11-13 20:33:09.601  INFO 9100 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:33:09.602  INFO 9100 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:33:09.612  INFO 9100 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 20:34:55.188  INFO 4392 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:34:55.188  INFO 4392 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:34:55 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:34:55.577  INFO 4392 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:34:55.592  INFO 4392 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:34:55.624  INFO 4392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:34:55.624  INFO 4392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:34:55.796  INFO 4392 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:34:55.796  INFO 4392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:34:55.796  INFO 4392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:34:55.874  INFO 4392 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:34:55.874  INFO 4392 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 686 ms
+2017-11-13 20:34:55.936  INFO 4392 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:34:55.936  INFO 4392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:34:55.936  INFO 4392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:34:55.936  INFO 4392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:34:55.936  INFO 4392 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:34:56.171  WARN 4392 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:34:56.171  INFO 4392 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:34:56.171  WARN 4392 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:34:56.171  INFO 4392 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:34:56.281  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:34:55 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:34:56.300  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:34:56.300  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:34:56.300  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:34:56.300  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:34:56.300  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:34:56.316  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:34:56.316  INFO 4392 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:34:56.332  INFO 4392 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:34:56.332  INFO 4392 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:34:56.347  INFO 4392 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:34:56.751  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:34:56.751  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:34:56.751  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:34:56.751  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:34:56.751  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:34:56.767  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:34:56.767  INFO 4392 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:34:56.938  INFO 4392 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:34:56.938  INFO 4392 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.536 seconds (JVM running for 2.979)
+2017-11-13 20:35:05.114  INFO 4392 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:35:05.115  INFO 4392 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:35:05.126  INFO 4392 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 20:36:05.192  INFO 3768 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:36:05.192  INFO 3768 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:36:05 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:36:05.593  INFO 3768 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:36:05.608  INFO 3768 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:36:05.655  INFO 3768 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:36:05.655  INFO 3768 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:36:05.865  INFO 3768 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:36:05.872  INFO 3768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:36:05.873  INFO 3768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:36:05.937  INFO 3768 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:36:05.937  INFO 3768 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 745 ms
+2017-11-13 20:36:06.015  INFO 3768 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:36:06.015  INFO 3768 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:36:06.015  INFO 3768 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:36:06.015  INFO 3768 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:36:06.015  INFO 3768 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:36:06.234  WARN 3768 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:36:06.234  INFO 3768 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:36:06.234  WARN 3768 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:36:06.234  INFO 3768 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:36:06.348  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:36:05 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:36:06.384  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:36:06.386  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:36:06.386  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:36:06.387  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:36:06.387  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:36:06.388  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:36:06.389  INFO 3768 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:36:06.407  INFO 3768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:36:06.407  INFO 3768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:36:06.415  INFO 3768 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:36:06.798  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:36:06.798  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:36:06.798  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:36:06.798  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:36:06.798  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:36:06.814  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:36:06.814  INFO 3768 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:36:06.983  INFO 3768 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:36:06.983  INFO 3768 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.568 seconds (JVM running for 3.003)
+2017-11-13 20:36:14.116  INFO 3768 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:36:14.117  INFO 3768 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:36:14.128  INFO 3768 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2017-11-13 20:37:26.139  INFO 8248 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:37:26.155  INFO 8248 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:37:26 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:37:26.530  INFO 8248 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:37:26.530  INFO 8248 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:37:26.577  INFO 8248 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:37:26.577  INFO 8248 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:37:26.736  INFO 8248 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:37:26.752  INFO 8248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:37:26.752  INFO 8248 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:37:26.830  INFO 8248 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:37:26.830  INFO 8248 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 675 ms
+2017-11-13 20:37:26.921  INFO 8248 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:37:26.921  INFO 8248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:37:26.921  INFO 8248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:37:26.921  INFO 8248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:37:26.921  INFO 8248 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:37:27.140  WARN 8248 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:37:27.140  INFO 8248 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:37:27.155  WARN 8248 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:37:27.155  INFO 8248 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:37:27.249  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:37:26 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:37:27.285  INFO 8248 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:37:27.301  INFO 8248 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:37:27.301  INFO 8248 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:37:27.316  INFO 8248 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:37:27.734  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:37:27.734  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:37:27.734  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:37:27.734  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:37:27.734  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:37:27.749  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:37:27.749  INFO 8248 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:37:27.905  INFO 8248 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:37:27.905  INFO 8248 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.526 seconds (JVM running for 2.987)
+2017-11-13 20:37:38.834  INFO 8248 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:37:38.835  INFO 8248 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:37:38.845  INFO 8248 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 20:39:24.765  INFO 8812 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:39:24.780  INFO 8812 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:39:24 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:39:25.157  INFO 8812 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:39:25.157  INFO 8812 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:39:25.204  INFO 8812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:39:25.204  INFO 8812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:39:25.376  INFO 8812 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:39:25.383  INFO 8812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:39:25.384  INFO 8812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:39:25.447  INFO 8812 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:39:25.447  INFO 8812 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 667 ms
+2017-11-13 20:39:25.516  INFO 8812 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:39:25.516  INFO 8812 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:39:25.516  INFO 8812 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:39:25.516  INFO 8812 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:39:25.516  INFO 8812 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:39:25.766  WARN 8812 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:39:25.766  INFO 8812 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:39:25.766  WARN 8812 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:39:25.766  INFO 8812 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:39:25.874  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:39:24 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:39:25.905  INFO 8812 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:39:25.937  INFO 8812 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:39:25.937  INFO 8812 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:39:25.968  INFO 8812 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:39:26.371  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:39:26.376  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:39:26.377  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:39:26.377  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:39:26.378  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:39:26.386  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:39:26.386  INFO 8812 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:39:26.551  INFO 8812 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:39:26.551  INFO 8812 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.615 seconds (JVM running for 3.041)
+2017-11-13 20:39:33.092  INFO 8812 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:39:33.093  INFO 8812 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:39:33.102  INFO 8812 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 9 ms
+2017-11-13 20:43:13.014  INFO 4356 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:43:13.030  INFO 4356 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:43:13 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:43:13.432  INFO 4356 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:43:13.447  INFO 4356 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:43:13.484  INFO 4356 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:43:13.484  INFO 4356 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:43:13.687  INFO 4356 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:43:13.702  INFO 4356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:43:13.702  INFO 4356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:43:13.765  INFO 4356 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:43:13.765  INFO 4356 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 735 ms
+2017-11-13 20:43:13.827  INFO 4356 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:43:13.844  INFO 4356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:43:13.845  INFO 4356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:43:13.845  INFO 4356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:43:13.845  INFO 4356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:43:14.062  WARN 4356 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:43:14.062  INFO 4356 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:43:14.077  WARN 4356 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:43:14.077  INFO 4356 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:43:14.190  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:43:13 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:43:14.221  INFO 4356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:43:14.252  INFO 4356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:43:14.252  INFO 4356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:43:14.275  INFO 4356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:43:14.672  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:43:14.672  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:43:14.672  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:43:14.672  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:43:14.672  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:43:14.687  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:43:14.687  INFO 4356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:43:14.859  INFO 4356 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:43:14.861  INFO 4356 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.659 seconds (JVM running for 3.086)
+2017-11-13 20:43:23.861  INFO 4356 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:43:23.861  INFO 4356 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:43:23.871  INFO 4356 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 20:47:33.577  INFO 10396 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 20:47:33.593  INFO 10396 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:47:33 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:47:34.008  INFO 10396 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10d27a37-1d0c-3611-9e79-309437d92ccc
+2017-11-13 20:47:34.028  INFO 10396 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 20:47:34.063  INFO 10396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:47:34.063  INFO 10396 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 20:47:34.222  INFO 10396 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 20:47:34.238  INFO 10396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 20:47:34.238  INFO 10396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 20:47:34.300  INFO 10396 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 20:47:34.300  INFO 10396 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 707 ms
+2017-11-13 20:47:34.371  INFO 10396 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 20:47:34.386  INFO 10396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 20:47:34.386  INFO 10396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 20:47:34.386  INFO 10396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 20:47:34.386  INFO 10396 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 20:47:34.641  WARN 10396 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:47:34.641  INFO 10396 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:47:34.641  WARN 10396 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 20:47:34.641  INFO 10396 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 20:47:34.743  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 20:47:33 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 20:47:34.774  INFO 10396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 20:47:34.806  INFO 10396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:47:34.806  INFO 10396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:47:34.821  INFO 10396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 20:47:35.201  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 20:47:35.216  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 20:47:35.216  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 20:47:35.216  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 20:47:35.216  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 20:47:35.216  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 20:47:35.232  INFO 10396 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 20:47:35.409  INFO 10396 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 20:47:35.412  INFO 10396 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.619 seconds (JVM running for 3.054)
+2017-11-13 20:47:44.034  INFO 10396 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 20:47:44.035  INFO 10396 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 20:47:44.045  INFO 10396 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 21:15:51.332  INFO 4716 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 21:15:51.332  INFO 4716 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:15:51 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:15:51.712  INFO 4716 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3535907e-13e3-3872-8f50-fbcf660db042
+2017-11-13 21:15:51.728  INFO 4716 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 21:15:51.767  INFO 4716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:15:51.768  INFO 4716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:15:51.923  INFO 4716 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 21:15:51.923  INFO 4716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 21:15:51.923  INFO 4716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 21:15:52.002  INFO 4716 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 21:15:52.002  INFO 4716 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 670 ms
+2017-11-13 21:15:52.080  INFO 4716 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 21:15:52.080  INFO 4716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 21:15:52.080  INFO 4716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 21:15:52.080  INFO 4716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 21:15:52.080  INFO 4716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 21:15:52.317  WARN 4716 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:15:52.317  INFO 4716 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:15:52.317  WARN 4716 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:15:52.317  INFO 4716 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:15:52.417  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:15:51 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:15:52.447  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 21:15:52.448  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 21:15:52.448  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlanEvent],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanEventController.addCustomerPlanEvent(java.util.List<com.zhuri.microservices.servicecustomerplan.CustomerPlanEvent>)
+2017-11-13 21:15:52.449  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 21:15:52.449  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 21:15:52.449  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 21:15:52.450  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 21:15:52.451  INFO 4716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 21:15:52.468  INFO 4716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:15:52.468  INFO 4716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:15:52.484  INFO 4716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:15:52.887  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 21:15:52.891  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 21:15:52.892  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 21:15:52.893  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 21:15:52.894  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 21:15:52.900  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 21:15:52.906  INFO 4716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 21:15:53.066  INFO 4716 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 21:15:53.066  INFO 4716 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.566 seconds (JVM running for 2.999)
+2017-11-13 21:16:11.309  INFO 4716 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 21:16:11.311  INFO 4716 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 21:16:11.321  INFO 4716 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 21:17:57.908  INFO 6600 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 21:17:57.924  INFO 6600 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:17:57 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:17:58.301  INFO 6600 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3535907e-13e3-3872-8f50-fbcf660db042
+2017-11-13 21:17:58.301  INFO 6600 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 21:17:58.348  INFO 6600 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:17:58.355  INFO 6600 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:17:58.516  INFO 6600 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 21:17:58.516  INFO 6600 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 21:17:58.516  INFO 6600 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 21:17:58.598  INFO 6600 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 21:17:58.599  INFO 6600 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 675 ms
+2017-11-13 21:17:58.664  INFO 6600 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 21:17:58.664  INFO 6600 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 21:17:58.664  INFO 6600 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 21:17:58.664  INFO 6600 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 21:17:58.664  INFO 6600 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 21:17:58.896  WARN 6600 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:17:58.896  INFO 6600 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:17:58.898  WARN 6600 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:17:58.898  INFO 6600 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:17:58.986  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:17:57 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlanEvent],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanEventController.addCustomerPlanEvent(java.util.List<com.zhuri.microservices.servicecustomerplan.CustomerPlanEvent>)
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 21:17:59.017  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 21:17:59.033  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 21:17:59.033  INFO 6600 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 21:17:59.048  INFO 6600 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:17:59.048  INFO 6600 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:17:59.064  INFO 6600 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:17:59.470  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 21:17:59.475  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 21:17:59.476  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 21:17:59.477  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 21:17:59.478  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 21:17:59.484  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 21:17:59.484  INFO 6600 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 21:17:59.654  INFO 6600 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 21:17:59.654  INFO 6600 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.59 seconds (JVM running for 3.043)
+2017-11-13 21:18:17.715  INFO 6600 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 21:18:17.715  INFO 6600 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 21:18:17.726  INFO 6600 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 21:18:30.078 ERROR 6600 --- [http-nio-8768-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.List]: Specified class is an interface] with root cause
+
+org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.List]: Specified class is an interface
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:99) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.createAttribute(ModelAttributeMethodProcessor.java:141) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor.createAttribute(ServletModelAttributeMethodProcessor.java:81) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.resolveArgument(ModelAttributeMethodProcessor.java:101) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:158) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:128) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+
+2017-11-13 21:20:10.441  INFO 5488 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 21:20:10.447  INFO 5488 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:20:10 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:20:10.839  INFO 5488 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3535907e-13e3-3872-8f50-fbcf660db042
+2017-11-13 21:20:10.840  INFO 5488 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 21:20:10.871  INFO 5488 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:20:10.889  INFO 5488 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:20:11.050  INFO 5488 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 21:20:11.050  INFO 5488 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 21:20:11.050  INFO 5488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 21:20:11.128  INFO 5488 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 21:20:11.128  INFO 5488 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 681 ms
+2017-11-13 21:20:11.190  INFO 5488 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 21:20:11.206  INFO 5488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 21:20:11.206  INFO 5488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 21:20:11.206  INFO 5488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 21:20:11.206  INFO 5488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 21:20:11.431  WARN 5488 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:20:11.431  INFO 5488 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:20:11.431  WARN 5488 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:20:11.431  INFO 5488 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:20:11.531  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:20:10 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:20:11.575  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 21:20:11.575  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 21:20:11.576  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlanEvent],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanEventController.addCustomerPlanEvent(java.util.List<com.zhuri.microservices.servicecustomerplan.CustomerPlanEvent>,org.springframework.validation.BindingResult)
+2017-11-13 21:20:11.576  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 21:20:11.576  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 21:20:11.576  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 21:20:11.578  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 21:20:11.578  INFO 5488 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 21:20:11.597  INFO 5488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:20:11.597  INFO 5488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:20:11.620  INFO 5488 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:20:12.049  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 21:20:12.064  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 21:20:12.064  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 21:20:12.064  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 21:20:12.064  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 21:20:12.064  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 21:20:12.080  INFO 5488 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 21:20:12.236  INFO 5488 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 21:20:12.236  INFO 5488 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.62 seconds (JVM running for 3.072)
+2017-11-13 21:20:20.498  INFO 5488 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 21:20:20.499  INFO 5488 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 21:20:20.509  INFO 5488 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms
+2017-11-13 21:20:54.939 ERROR 5488 --- [http-nio-8768-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.List]: Specified class is an interface] with root cause
+
+org.springframework.beans.BeanInstantiationException: Failed to instantiate [java.util.List]: Specified class is an interface
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:99) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.createAttribute(ModelAttributeMethodProcessor.java:141) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor.createAttribute(ServletModelAttributeMethodProcessor.java:81) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.resolveArgument(ModelAttributeMethodProcessor.java:101) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:158) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:128) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_144]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_144]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
+
+2017-11-13 21:23:31.724  INFO 3816 --- [main] c.z.m.s.ServiceCustomerplanApplication   : No active profile set, falling back to default profiles: default
+2017-11-13 21:23:31.740  INFO 3816 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:23:31 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:23:32.115  INFO 3816 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=3535907e-13e3-3872-8f50-fbcf660db042
+2017-11-13 21:23:32.115  INFO 3816 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-13 21:23:32.162  INFO 3816 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$32e6c466] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:23:32.162  INFO 3816 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$16ccc169] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-11-13 21:23:32.340  INFO 3816 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8768 (http)
+2017-11-13 21:23:32.348  INFO 3816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-13 21:23:32.348  INFO 3816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-13 21:23:32.437  INFO 3816 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-13 21:23:32.437  INFO 3816 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 697 ms
+2017-11-13 21:23:32.533  INFO 3816 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-13 21:23:32.536  INFO 3816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-13 21:23:32.537  INFO 3816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-13 21:23:32.537  INFO 3816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-13 21:23:32.537  INFO 3816 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-13 21:23:32.771  WARN 3816 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:23:32.771  INFO 3816 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:23:32.771  WARN 3816 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-11-13 21:23:32.771  INFO 3816 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-11-13 21:23:32.880  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@68ad99fe: startup date [Mon Nov 13 21:23:31 CST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@16ec5519
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[GET]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlanPage()
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlan],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanController.addCustomerPlan(com.zhuri.microservices.servicecustomerplan.CustomerPlan,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addCustomerPlanEvent],methods=[POST]}" onto public java.lang.String com.zhuri.microservices.servicecustomerplan.CustomerPlanEventController.addCustomerPlanEvent(java.util.List<com.zhuri.microservices.servicecustomerplan.CustomerPlanEvent>,org.springframework.validation.BindingResult)
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/getAllEventType],methods=[GET]}" onto public java.util.List<com.zhuri.microservices.servicecustomerplan.EventType> com.zhuri.microservices.servicecustomerplan.EventTypeController.getAllEventType()
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/enableEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.enableEventType()
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/addEventType],methods=[GET]}" onto public int com.zhuri.microservices.servicecustomerplan.EventTypeController.addEventType()
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-13 21:23:32.911  INFO 3816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-13 21:23:32.927  INFO 3816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:23:32.927  INFO 3816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:23:32.958  INFO 3816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-13 21:23:33.358  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-13 21:23:33.358  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
+2017-11-13 21:23:33.358  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2017-11-13 21:23:33.374  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
+2017-11-13 21:23:33.374  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2017-11-13 21:23:33.374  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2017-11-13 21:23:33.374  INFO 3816 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=68ad99fe,type=ConfigurationPropertiesRebinder]
+2017-11-13 21:23:33.545  INFO 3816 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8768 (http)
+2017-11-13 21:23:33.545  INFO 3816 --- [main] c.z.m.s.ServiceCustomerplanApplication   : Started ServiceCustomerplanApplication in 2.591 seconds (JVM running for 3.02)
+2017-11-13 21:23:41.923  INFO 3816 --- [http-nio-8768-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-11-13 21:23:41.924  INFO 3816 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2017-11-13 21:23:41.934  INFO 3816 --- [http-nio-8768-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 10 ms

@@ -13,32 +13,6 @@ public class EventController {
     @Autowired
     EventService eventService;
 
-    @RequestMapping(value = "/addEventType", method = RequestMethod.GET)
-    @ResponseBody
-    public int addEventType() {
-        return eventService.addEventType();
-    }
-
-    @RequestMapping(value = "/enableEventType", method = RequestMethod.GET)
-    @ResponseBody
-    public int enableEventType() {
-        return eventService.enableEventType();
-    }
-
-    public int updateEventType() {
-        return 0;
-    }
-
-    public EventType getEventType() {
-        return null;
-    }
-
-    @RequestMapping(value = "/getAllEventType", method = RequestMethod.GET)
-    @ResponseBody
-    public List<EventType> getAllEventType() {
-        return eventService.getAllEventType();
-    }
-
     public int addEvent() {
         return 0;
     }

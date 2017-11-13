@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>CustomerPlan</title>
+</head>
+<body>
+    <form th:action="@{/addCustomerPlan}" method="post">
+        <input type="number" name="status" value="0" hidden="hidden"/>
+        <table>
+            <tr>
+                <td>name</td>
+                <td>
+                    <input type="text" name="name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    customerId
+                </td>
+                <td>
+                    <input type="number" name="customerId"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    brandId
+                </td>
+                <td>
+                    <input type="number" name="brandId"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    saleDate
+                </td>
+                <td>
+                    <input type="date" name="saleDate"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    confirm
+                </td>
+                <td>
+                    <input type="submit"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

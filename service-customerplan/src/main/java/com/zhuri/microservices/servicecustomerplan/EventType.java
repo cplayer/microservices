@@ -3,95 +3,82 @@ package com.zhuri.microservices.servicecustomerplan;
 import java.util.Date;
 
 public class EventType {
-    private int Id;
-    private String Name;
-    private String EventTypeNo;
-    private String Description;
-    private String Status;
-    private boolean Enabled;
-    private int CreateMan;
-    private Date CreateTime;
+    private int id;
+    private String name;
+    private String eventTypeNo;
+    private String description;
+    private String status;
+    private boolean enabled;
+    private int createMan;
+    private Date createTime;
     private int updateMan;
-    private Date UpdateTime;
+    private Date updateTime;
 
     public EventType() {
     }
 
-    public EventType(int id, String name, String eventTypeNo, String description, String status, boolean enabled, int createMan, Date createTime, int updateMan, Date updateTime) {
-        Id = id;
-        Name = name;
-        EventTypeNo = eventTypeNo;
-        Description = description;
-        Status = status;
-        Enabled = enabled;
-        CreateMan = createMan;
-        CreateTime = createTime;
-        this.updateMan = updateMan;
-        UpdateTime = updateTime;
-    }
-
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEventTypeNo() {
-        return EventTypeNo;
+        return eventTypeNo;
     }
 
     public void setEventTypeNo(String eventTypeNo) {
-        EventTypeNo = eventTypeNo;
+        this.eventTypeNo = eventTypeNo;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     public boolean isEnabled() {
-        return Enabled;
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
-        Enabled = enabled;
+        this.enabled = enabled;
     }
 
     public int getCreateMan() {
-        return CreateMan;
+        return createMan;
     }
 
     public void setCreateMan(int createMan) {
-        CreateMan = createMan;
+        this.createMan = createMan;
     }
 
     public Date getCreateTime() {
-        return CreateTime;
+        return createTime;
     }
 
     public void setCreateTime(Date createTime) {
-        CreateTime = createTime;
+        this.createTime = createTime;
     }
 
     public int getUpdateMan() {
@@ -103,10 +90,10 @@ public class EventType {
     }
 
     public Date getUpdateTime() {
-        return UpdateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(Date updateTime) {
-        UpdateTime = updateTime;
+        this.updateTime = updateTime;
     }
 }

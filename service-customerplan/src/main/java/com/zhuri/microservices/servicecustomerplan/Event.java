@@ -3,180 +3,160 @@ package com.zhuri.microservices.servicecustomerplan;
 import java.util.Date;
 
 public class Event {
-    private int Id;
-    private int EventTypeId;
-    private String EventNo;
-    private String Name;
-    private String EnglishName;
-    private String Description;
-    private String Mark;
-    private int Effect;
-    private int AllowTime;
-    private int RemindTime;
-    private int DeparmentId;
-    private boolean Enabled;
-    private int CreatMan;
-    private Date CreatTime;
-    private int UpdateMan;
-    private Date UpdateTime;
-    private int Sort;
+    private int d;
+    private int eventTypeId;
+    private String eventNo;
+    private String name;
+    private String englishName;
+    private String description;
+    private String mark;
+    private int effect;
+    private int allowTime;
+    private int remindTime;
+    private int deparmentId;
+    private boolean enabled;
+    private int creatMan;
+    private Date creatTime;
+    private int updateMan;
+    private Date updateTime;
+    private int sort;
 
     public Event() {
     }
 
-    public Event(int id, int eventTypeId, String eventNo, String name, String englishName, String description, String mark, int effect, int allowTime, int remindTime, int deparmentId, boolean enabled, int creatMan, Date creatTime, int updateMan, Date updateTime, int sort) {
-        Id = id;
-        EventTypeId = eventTypeId;
-        EventNo = eventNo;
-        Name = name;
-        EnglishName = englishName;
-        Description = description;
-        Mark = mark;
-        Effect = effect;
-        AllowTime = allowTime;
-        RemindTime = remindTime;
-        DeparmentId = deparmentId;
-        Enabled = enabled;
-        CreatMan = creatMan;
-        CreatTime = creatTime;
-        UpdateMan = updateMan;
-        UpdateTime = updateTime;
-        Sort = sort;
+    public int getD() {
+        return d;
     }
 
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
+    public void setD(int d) {
+        this.d = d;
     }
 
     public int getEventTypeId() {
-        return EventTypeId;
+        return eventTypeId;
     }
 
     public void setEventTypeId(int eventTypeId) {
-        EventTypeId = eventTypeId;
+        this.eventTypeId = eventTypeId;
     }
 
     public String getEventNo() {
-        return EventNo;
+        return eventNo;
     }
 
     public void setEventNo(String eventNo) {
-        EventNo = eventNo;
+        this.eventNo = eventNo;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getEnglishName() {
-        return EnglishName;
+        return englishName;
     }
 
     public void setEnglishName(String englishName) {
-        EnglishName = englishName;
+        this.englishName = englishName;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public String getMark() {
-        return Mark;
+        return mark;
     }
 
     public void setMark(String mark) {
-        Mark = mark;
+        this.mark = mark;
     }
 
     public int getEffect() {
-        return Effect;
+        return effect;
     }
 
     public void setEffect(int effect) {
-        Effect = effect;
+        this.effect = effect;
     }
 
     public int getAllowTime() {
-        return AllowTime;
+        return allowTime;
     }
 
     public void setAllowTime(int allowTime) {
-        AllowTime = allowTime;
+        this.allowTime = allowTime;
     }
 
     public int getRemindTime() {
-        return RemindTime;
+        return remindTime;
     }
 
     public void setRemindTime(int remindTime) {
-        RemindTime = remindTime;
+        this.remindTime = remindTime;
     }
 
     public int getDeparmentId() {
-        return DeparmentId;
+        return deparmentId;
     }
 
     public void setDeparmentId(int deparmentId) {
-        DeparmentId = deparmentId;
+        this.deparmentId = deparmentId;
     }
 
     public boolean isEnabled() {
-        return Enabled;
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
-        Enabled = enabled;
+        this.enabled = enabled;
     }
 
     public int getCreatMan() {
-        return CreatMan;
+        return creatMan;
     }
 
     public void setCreatMan(int creatMan) {
-        CreatMan = creatMan;
+        this.creatMan = creatMan;
     }
 
     public Date getCreatTime() {
-        return CreatTime;
+        return creatTime;
     }
 
     public void setCreatTime(Date creatTime) {
-        CreatTime = creatTime;
+        this.creatTime = creatTime;
     }
 
     public int getUpdateMan() {
-        return UpdateMan;
+        return updateMan;
     }
 
     public void setUpdateMan(int updateMan) {
-        UpdateMan = updateMan;
+        this.updateMan = updateMan;
     }
 
     public Date getUpdateTime() {
-        return UpdateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(Date updateTime) {
-        UpdateTime = updateTime;
+        this.updateTime = updateTime;
     }
 
     public int getSort() {
-        return Sort;
+        return sort;
     }
 
     public void setSort(int sort) {
-        Sort = sort;
+        this.sort = sort;
     }
 }
