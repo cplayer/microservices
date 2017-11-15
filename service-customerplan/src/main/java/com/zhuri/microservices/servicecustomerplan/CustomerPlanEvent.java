@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class CustomerPlanEvent {
     private int id;
-    private int customerplanId;
+    private int customerPlanId;
     private int eventId;
     private Date startTime;
     private Date endTime;
@@ -21,12 +21,12 @@ public class CustomerPlanEvent {
         this.id = id;
     }
 
-    public int getCustomerplanId() {
-        return customerplanId;
+    public int getCustomerPlanId() {
+        return customerPlanId;
     }
 
-    public void setCustomerplanId(int customerplanId) {
-        this.customerplanId = customerplanId;
+    public void setCustomerPlanId(int customerPlanId) {
+        this.customerPlanId = customerPlanId;
     }
 
     public int getEventId() {

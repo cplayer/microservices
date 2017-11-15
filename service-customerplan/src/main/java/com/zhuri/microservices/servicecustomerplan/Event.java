@@ -3,7 +3,7 @@ package com.zhuri.microservices.servicecustomerplan;
 import java.util.Date;
 
 public class Event {
-    private int d;
+    private int id;
     private int eventTypeId;
     private String eventNo;
     private String name;
@@ -24,12 +24,12 @@ public class Event {
     public Event() {
     }
 
-    public int getD() {
-        return d;
+    public int getId() {
+        return id;
     }
 
-    public void setD(int d) {
-        this.d = d;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getEventTypeId() {
