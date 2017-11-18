@@ -3,51 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <title>CustomerPlan</title>
+    <script src="../static/js/jquery.js" type="text/javascript"></script>
+    <script src="../static/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="../static/js/jquery.layout-latest.js" type="text/javascript"></script>
+    <script src="../static/js/addCustomerPlan.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="../static/css/layout-default-latest.css">
 </head>
 <body>
-    <form th:action="@{/addCustomerPlan}" method="post">
-        <input type="number" name="status" value="0" hidden="hidden"/>
-        <table>
-            <tr>
-                <td>name</td>
-                <td>
-                    <input type="text" name="name"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    customerId
-                </td>
-                <td>
-                    <input type="number" name="customerId"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    brandId
-                </td>
-                <td>
-                    <input type="number" name="brandId"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    saleDate
-                </td>
-                <td>
-                    <input type="date" name="saleDate"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    confirm
-                </td>
-                <td>
-                    <input type="submit"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-
+    <!--<form th:action="@{/addCustomerPlan}" method="post">-->
+        <!--<input type="number" name="status" value="0" hidden="hidden"/>-->
+        <!--<table>-->
+            <!--<tr>-->
+                <!--<td>name</td>-->
+                <!--<td>-->
+                    <!--<input type="text" name="name"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--customerId-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<input type="number" name="customerId"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--brandId-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<input type="number" name="brandId"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--saleDate-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<input type="date" name="saleDate"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--confirm-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<input type="submit"/>-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</form>-->
+    <div class="ui-layout-center">Center</div>
+    <div class="ui-layout-north">North</div>
 </body>
 </html>
