@@ -1,0 +1,14 @@
+.north-bar-avatar
+{
+    float: right;
+    vertical-align: middle;
+}
+
+.pic-avatar
+{
+    width: 35px;
+    height: 35px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+}

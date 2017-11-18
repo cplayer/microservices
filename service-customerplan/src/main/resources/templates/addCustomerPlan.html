@@ -8,7 +8,9 @@
     <script src="../static/js/jquery.layout-latest.js" type="text/javascript"></script>
     <script src="../static/js/addCustomerPlan.js" type="text/javascript"></script>
 
+
     <link rel="stylesheet" href="../static/css/layout-default-latest.css">
+    <link rel="stylesheet" href="../static/css/addCustomerPlan.css">
 </head>
 <body>
     <!--<form th:action="@{/addCustomerPlan}" method="post">-->
@@ -55,6 +57,14 @@
         <!--</table>-->
     <!--</form>-->
     <div class="ui-layout-center">Center</div>
-    <div class="ui-layout-north">North</div>
+    <div class="ui-layout-north">
+        <div class="north-bar-avatar">
+            <img src="../static/graph/avatar.png" class="pic-avatar" />
+            <select name="cplayer" id="user-options">
+                <option>Profiles</option>
+                <option>Log Out</option>
+            </select>
+        </div>
+    </div>
 </body>
 </html>
