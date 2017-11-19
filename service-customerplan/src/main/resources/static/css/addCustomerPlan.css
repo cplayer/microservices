@@ -1,14 +1,19 @@
-.north-bar-avatar
+.nav-custom-menu
 {
     float: right;
-    vertical-align: middle;
 }
 
-.pic-avatar
+.user-image
 {
-    width: 35px;
-    height: 35px;
-    border-style: solid;
-    border-radius: 15px;
-    border-width: 2px;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: black;
+}
+
+.input-box
+{
+    margin-bottom: 15px;
 }
