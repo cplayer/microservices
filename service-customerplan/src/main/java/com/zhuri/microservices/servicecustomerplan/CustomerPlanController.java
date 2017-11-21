@@ -13,7 +13,7 @@ public class CustomerPlanController {
     CustomerPlanService customerPlanService;
 
     @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.POST)
-    public int addCustomerPlan(CustomerPlan customerPlan, BindingResult bindingResult) {
+    public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return 0;
         } else {
