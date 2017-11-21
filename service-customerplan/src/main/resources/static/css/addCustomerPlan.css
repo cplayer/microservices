@@ -1,0 +1,19 @@
+.nav-custom-menu
+{
+    float: right;
+}
+
+.user-image
+{
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: black;
+}
+
+.input-box
+{
+    margin-bottom: 15px;
+}
