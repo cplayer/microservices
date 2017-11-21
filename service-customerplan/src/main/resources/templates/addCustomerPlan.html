@@ -3,51 +3,84 @@
 <head>
     <meta charset="UTF-8" />
     <title>CustomerPlan</title>
+    <script src="../static/js/jquery-1.12.4.js" type="text/javascript"></script>
+    <script src="../static/js/bootstrap.js" type="text/javascript"></script>
+    <script src="../static/js/addCustomerPlan.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/addCustomerPlan.css">
 </head>
 <body>
-    <form th:action="@{/addCustomerPlan}" method="post">
-        <input type="number" name="status" value="0" hidden="hidden"/>
-        <table>
-            <tr>
-                <td>name</td>
-                <td>
-                    <input type="text" name="name"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    customerId
-                </td>
-                <td>
-                    <input type="number" name="customerId"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    brandId
-                </td>
-                <td>
-                    <input type="number" name="brandId"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    saleDate
-                </td>
-                <td>
-                    <input type="date" name="saleDate"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    confirm
-                </td>
-                <td>
-                    <input type="submit"/>
-                </td>
-            </tr>
-        </table>
-    </form>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="nav-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../static/graph/avatar.png" class="user-image" alt="User Image">
+                            <span id="user-name">cplayer</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 计划表单 -->
+    <div class="container-fluid">
+        <form>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <legend class="">计划创建</legend>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 input-box">
+                <div class="col-sm-4 col-md-4 col-lg-4"></div>
+                <div class="col-sm-8 col-md-8 col-lg-8">
+                    <label class="control-label" for="Name">表单名称</label>
+                    <div class="controls">
+                        <input type="text" placeholder="请输入表单名称" class="input-xlarge" id="Name">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 input-box">
+                <div>
+                    <label class="control-label" for="Customer">客户编号</label>
+                    <div class="controls">
+                        <input type="text" placeholder="请输入客户编号" class="input-xlarge" id="Customer">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 input-box">
+                <div class="col-sm-4 col-md-4 col-lg-4"></div>
+                <div class="col-sm-8 col-md-8 col-lg-8">
+                    <label class="control-label" for="Band">品牌编号</label>
+                    <div class="controls">
+                        <input type="text" placeholder="请输入品牌编号" class="input-xlarge" id="Brand">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 input-box">
+                <div>
+                    <label class="control-label" for="Time">上柜时间</label>
+                    <div class="controls">
+                        <input type="text" placeholder="请输入上柜时间" class="input-xlarge" id="Time">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-8 col-md-8 col-lg-8"></div>
+                <div class="col-sm-1 col-md-1 col-lg-1">
+                    <button class="btn btn-primary" type="button">重置</button>
+                </div>
+                <div class="col-sm-1 col-md-1 col-lg-1">
+                    <button class="btn btn-primary" type="button">提交</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
 
 </body>
 </html>
