@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>CustomerPlan</title>
-    <script src="../static/js/jquery-1.12.4.js" type="text/javascript"></script>
-    <script src="../static/js/bootstrap.js" type="text/javascript"></script>
-    <script src="../static/js/addCustomerPlan.js" type="text/javascript"></script>
-
-    <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" href="../static/css/addCustomerPlan.css">
+    <script th:src="@{/js/jquery-1.12.4.js}" type="text/javascript"></script>
+    <script th:src="@{/js/moment-with-locales.js}" type="text/javascript"></script>
+    <script th:src="@{/js/bootstrap.js}" type="text/javascript"></script>
+    <script th:src="@{/js/bootstrap-datetimepicker.min.js}" type="text/javascript"></script>
+    
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{/css/addCustomerPlan.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-datetimepicker.min.css}" />
+    
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -17,7 +20,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../static/graph/avatar.png" class="user-image" alt="User Image">
+                            <img th:src="@{/graph/avatar.png}" class="user-image" alt="User Image"></img>
                             <span id="user-name">cplayer</span>
                         </a>
                     </li>
@@ -37,7 +40,7 @@
                 <div class="col-sm-8 col-md-8 col-lg-8">
                     <label class="control-label" for="Name">表单名称</label>
                     <div class="controls">
-                        <input type="text" placeholder="请输入表单名称" class="input-xlarge" id="Name">
+                        <input type="text" placeholder="请输入表单名称" class="input-xlarge" id="Name"></input>
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -46,7 +49,7 @@
                 <div>
                     <label class="control-label" for="Customer">客户编号</label>
                     <div class="controls">
-                        <input type="text" placeholder="请输入客户编号" class="input-xlarge" id="Customer">
+                        <input type="text" placeholder="请输入客户编号" class="input-xlarge" id="Customer"></input>
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -56,7 +59,7 @@
                 <div class="col-sm-8 col-md-8 col-lg-8">
                     <label class="control-label" for="Band">品牌编号</label>
                     <div class="controls">
-                        <input type="text" placeholder="请输入品牌编号" class="input-xlarge" id="Brand">
+                        <input type="text" placeholder="请输入品牌编号" class="input-xlarge" id="Brand"></input>
                         <p class="help-block"></p>
                     </div>
                 </div>
@@ -64,23 +67,28 @@
             <div class="col-sm-6 col-md-6 col-lg-6 input-box">
                 <div>
                     <label class="control-label" for="Time">上柜时间</label>
-                    <div class="controls">
-                        <input type="text" placeholder="请输入上柜时间" class="input-xlarge" id="Time">
+                    <div class="form-group">
+                        <div class="input-group date" id="dtp-time">
+                            <input type="text" class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="col-sm-8 col-md-8 col-lg-8"></div>
                 <div class="col-sm-1 col-md-1 col-lg-1">
-                    <button class="btn btn-primary" type="button">重置</button>
+                    <button class="btn btn-primary" type="button" id="btn-reset">重置</button>
                 </div>
                 <div class="col-sm-1 col-md-1 col-lg-1">
-                    <button class="btn btn-primary" type="button">提交</button>
+                    <button class="btn btn-primary" type="button" id="btn-submit">提交</button>
                 </div>
             </div>
         </form>
-        
     </div>
 
+    <script th:src="@{/js/addCustomerPlan.js}" type="text/javascript"></script>
 </body>
 </html>
