@@ -10,4 +10,9 @@ public class UIController {
     public String addCustomerPlan() {
         return "addCustomerPlan";
     }
+
+    @RequestMapping(value = "/addCustomerPlanEvent", method = RequestMethod.GET)
+    public String addCustomerPlanEvent() {
+        return "addCustomerPlanEvent";
+    }
 }
