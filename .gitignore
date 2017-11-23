@@ -28,6 +28,7 @@ nbdist/
 # IntelliJ project files
 .idea
 *.iml
+logs/*.log
 out
 gen
 /service-customerplan/src/main/resources/application.properties
