@@ -10,14 +10,11 @@ import java.util.List;
 @Service
 public class EventService {
     @Autowired
-    EventTypeMapper eventTypeMapper;
-
-    @Autowired
     EventMapper eventMapper;
 
     public List<EventTypeTree> getUITreeAndUINode() {
         //If cache is needed?
-        List<EventTypeTree> eventTypeTrees = eventTypeMapper.getAllUITrees();
+        List<EventTypeTree> eventTypeTrees = eventMapper.getAllUITrees();
         for (EventTypeTree eventTypeTree : eventTypeTrees
              ) {
             eventTypeTree.setNodes(eventMapper.getEventsByEventType(eventTypeTree.getId()));

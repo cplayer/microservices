@@ -9,6 +9,14 @@ import java.util.List;
 
 @Mapper
 public interface EventMapper {
+    //Chose valid eventType
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "text", column = "name")
+    })
+    @Select("SELECT * FROM event_type WHERE enabled=1;")
+    List<EventTypeTree> getAllUITrees();
+
     //Chose valid event
     @Results({
         @Result(property = "id", column = "id"),
