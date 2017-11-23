@@ -35,6 +35,17 @@ var tree = [
 $(document).ready(function ()
 {
     $("#tree-list").treeview({data: tree});
+    $.ajax(
+        {
+            type: "GET",
+            dataType: "json",
+            url: "/getUITreeAndUINode",
+            success: function (data)
+            {
+                console.log(data);
+            }
+        }
+    );
     $(".model-select2").select2({
         placeholder: "选择一个模板",
         width: "100%",
