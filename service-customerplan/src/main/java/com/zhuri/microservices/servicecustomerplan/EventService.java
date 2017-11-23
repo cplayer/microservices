@@ -9,24 +9,16 @@ import java.util.List;
 
 @Service
 public class EventService {
+    @Autowired
+    EventMapper eventMapper;
 
-    public int addEvent() {
-        return 0;
-    }
-
-    public int enableEvent() {
-        return 0;
-    }
-
-    public int updateEvent() {
-        return 0;
-    }
-
-    public EventType getEvent() {
-        return null;
-    }
-
-    public List<Event > getAllEvent() {
-        return null;
+    public List<EventTypeTree> getUITreeAndUINode() {
+        //If cache is needed?
+        List<EventTypeTree> eventTypeTrees = eventMapper.getAllUITrees();
+        for (EventTypeTree eventTypeTree : eventTypeTrees
+             ) {
+            eventTypeTree.setNodes(eventMapper.getEventsByEventType(eventTypeTree.getId()));
+        }
+        return eventTypeTrees;
     }
 }

@@ -12,23 +12,8 @@ public class EventController {
     @Autowired
     EventService eventService;
 
-    public int addEvent() {
-        return 0;
-    }
-
-    public int enableEvent() {
-        return 0;
-    }
-
-    public int updateEvent() {
-        return 0;
-    }
-
-    public EventType getEvent() {
-        return null;
-    }
-
-    public List<EventType> getAllEvent() {
-        return null;
+    @RequestMapping(value = "getUITreeAndUINode", method = RequestMethod.GET)
+    public List<EventTypeTree> getUITreeAndUINode() {
+        return eventService.getUITreeAndUINode();
     }
 }
