@@ -15,4 +15,14 @@ public class UIController {
     public String addCustomerPlanEvent() {
         return "addCustomerPlanEvent";
     }
+
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    public String dashboard () {
+        return "dashboard";
+    }
+
+    @RequestMapping(value = "/eventReview", method = RequestMethod.GET)
+    public String eventReview () {
+        return "eventReview";
+    }
 }

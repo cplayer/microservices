@@ -7,11 +7,12 @@
     <script th:src="@{/js/moment-with-locales.js}" type="text/javascript"></script>
     <script th:src="@{/js/bootstrap.js}" type="text/javascript"></script>
     <script th:src="@{/js/bootstrap-datetimepicker.min.js}" type="text/javascript"></script>
-    
+    <script th:src="@{/js/raphael.js}" type="text/javascript"></script>
+    <script th:src="@{/js/progressStep.min.js}" type="text/javascript"></script>
+
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
     <link rel="stylesheet" th:href="@{/css/addCustomerPlan.css}" />
     <link rel="stylesheet" th:href="@{/css/bootstrap-datetimepicker.min.css}" />
-    
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,6 +29,8 @@
             </div>
         </div>
     </nav>
+
+    <div id="stepProgress" class="center-block hidden-sm"></div>
 
     <!-- 计划表单 -->
     <div class="container-fluid">
