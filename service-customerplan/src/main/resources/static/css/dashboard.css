@@ -11,11 +11,15 @@
     border-color: black;
 }
 
-#stepProgress
+.affix
 {
-    margin-top: 0px;
-    padding: 0px;
-    width: 70%;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 25%;
+    border-bottom-width: 0px;
+    padding-right: 22.5px;
+}
+
+.affix-top
+{
+    width: 100%;
+    border-bottom-width: 0px;
 }

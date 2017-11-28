@@ -13,6 +13,15 @@
     border-color: black;
 }
 
+#stepProgress
+{
+    margin-top: 0px;
+    padding: 0px;
+    width: 70%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
 .input-box
 {
     margin-bottom: 15px;

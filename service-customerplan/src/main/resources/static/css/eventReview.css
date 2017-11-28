@@ -1,8 +1,10 @@
-.nav-custom-menu {
+.nav-custom-menu
+{
     float: right;
 }
 
-.user-image {
+.user-image
+{
     width: 25px;
     height: 25px;
     margin-top: -8px;
@@ -11,11 +13,13 @@
     border-color: black;
 }
 
+.ystep-container
+{
+    margin: 0 auto;
+}
+
 #stepProgress
 {
-    margin-top: 0px;
-    padding: 0px;
-    width: 70%;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 80%;
+    height: 120px;
 }
