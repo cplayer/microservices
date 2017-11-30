@@ -35,16 +35,37 @@ var tree = [
 var stepProgressDiv;
 var stepProgressBar;
 var customerPlanId;
+var zTree_list;
+var id_table;
 
 $(document).ready(function ()
 {
     // for tree-list
     function tree_list_Init ()
     {
-        $("#tree-list").treeview({
-            data: tree,
-            "state.selected": true
-        });
+        function proc (data)
+        {
+            for (var i in data)
+            {
+                id_table[data[i]["text"]] = data[i]["id"];
+                delete(data[i]["id"]);
+                if (data[i].hasOwnProperty("nodes") == true)
+                {
+                    proc(data[i]["nodes"]);
+                    data[i]["children"] = data[i]["nodes"];
+                    delete (data[i]["nodes"]);
+                    // data[i]["children"] = [];
+                }
+                data[i]["name"] = data[i]["text"];
+                delete(data[i]["text"]);
+                // else
+                // {
+                    
+                // }
+            }
+        }
+        id_table = {};
+        // $("#tree-list").jstree();
         $.ajax(
             {
                 type: "GET",
@@ -53,14 +74,18 @@ $(document).ready(function ()
                 success: function (data)
                 {
                     console.log(data);
-                    $("#tree-list").treeview({
-                        data: data,
-                        onNodeSelected: function (event, data)
-                        {
-                            console.log(event);
-                            console.log(data);
+                    proc(data);
+                    console.log(data);
+                    var setting = {
+                        view: {
+                            showIcon: false,
+                        },
+                        check: {
+                            enable: true,
+                            chkboxType: { "Y": "ps", "N": "ps" }
                         }
-                    });
+                    };
+                    zTree_list = $.fn.zTree.init($("#tree-list"), setting, data);
                 }
             }
         );
@@ -84,7 +109,7 @@ $(document).ready(function ()
                 field: 'eventId',
                 title: '事件'
             }, {
-                field: 'startDate',
+                field: 'startTime',
                 title: '起始时间',
                 editable: 
                 {
@@ -94,14 +119,16 @@ $(document).ready(function ()
                     viewformat: 'YYYY-MM-DD',
                     template: 'YYYY-MM-DD',
                     combodate: {
-                        minYear: 1950,
-                        maxYear: 2100,
-                        minuteStep: 1
+                        minYear: 2000,
+                        maxYear: 2050,
+                        minuteStep: 1,
+                        yearDescending: false
                     },
-                    placement: 'bottom'
+                    // placement: 'bottom'
+                    mode: 'inline'
                 }
             }, {
-                field: 'endDate',
+                field: 'endTime',
                 title: '结束时间',
                 editable: 
                 {
@@ -111,33 +138,31 @@ $(document).ready(function ()
                     viewformat: 'YYYY-MM-DD',
                     template: 'YYYY-MM-DD',
                     combodate: {
-                        minYear: 1950,
-                        maxYear: 2100,
-                        minuteStep: 1
+                        minYear: 2000,
+                        maxYear: 2050,
+                        minuteStep: 1,
+                        yearDescending: false
                     },
-                    placement: 'bottom'
+                    // placement: 'bottom'
+                    mode: 'inline'
                 }
             }],
-            data: [{
-                eventId: 1,
-                startDate: "2017-11-08",
-                endDate: "2018-01-02"
-            }, {
-                eventId: 2,
-                startDate: "2011-09-10",
-                endDate: "2018-11-03"
-            }, {
-                eventId: 3,
-                startDate: "2010-09-11",
-                endDate: "2011-01-01"
-            }, {
-                eventId: 4,
-                startDate: "2018-09-10",
-                endDate: "2022-02-12"
-            }],
+            data: [],
             onReorderRow: function (newData)
             {
                 $("#table").bootstrapTable("load", newData);
+            },
+            contextMenu: "#context-menu-table",
+            onContextMenuItem: function (row, $el)
+            {
+                if ($el.data("item") == "delete")
+                {
+                    console.log(row);
+                    console.log(row.eventId);
+                    var _remove = [];
+                    _remove = _remove.concat(row.eventId);
+                    $("#table").bootstrapTable("remove", {"field": "eventId", "values": _remove});
+                }
             }
         });
     }
@@ -164,18 +189,6 @@ $(document).ready(function ()
     select_Init();
     table_Init();
     progressBar_Init();
-    // $.ajax(
-    //     {
-    //         type: "GET",
-    //         dataType: "json",
-    //         url: "/getCustomerPlansByStatus",
-    //         data: {"status": 0},
-    //         success: function (data)
-    //         {
-    //             console.log(data);
-    //         }
-    //     }
-    // )
 });
 
 $(window).resize(function ()
@@ -193,9 +206,46 @@ $("#btnSave").on("click", function ()
     var sort = 1;
     for (var i in data)
     {
+        data[i]["eventId"] = id_table[data[i]["eventId"]];
         data[i]["customerPlanId"] = customerPlanId;
         data[i]["sort"] = sort;
+        if (data[i]["startTime"] != "")
+        {
+            data[i]["startTime"] = moment(data[i]["startTime"]).format("x");
+        }
+        if (data[i]["endTime"] != "")
+        {
+            data[i]["endTime"] = moment(data[i]["endTime"]).format("x");
+        }
         sort++;
     }
+    $.ajax({
+        url: "/addCustomerPlanEvent",
+        data: JSON.stringify(data),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        success: function (data)
+        {
+            alert("保存成功！");
+            console.log("success!");
+            console.log(data);
+        }
+    });
     console.log(JSON.stringify(data));
+});
+
+$("#btnAdd").on("click", function ()
+{
+    var ret = zTree_list.getCheckedNodes(true);
+    var new_data = [];
+    for (var i in ret)
+    {
+        if (ret[i].isParent == false)
+        {
+            new_data = new_data.concat({"eventId": ret[i].name, "startTime": "", "endTime": ""});
+        }
+    }
+    $("#table").bootstrapTable("append", new_data);
+    console.log(new_data);
+    console.log(ret);
 });

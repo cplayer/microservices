@@ -22,7 +22,7 @@ public class CustomerPlanEventController {
         }
     }
 
-    @RequestMapping(value="getCustomerPlanEventByCustomerPlanId", method=RequestMethod.GET )
+    @RequestMapping(value="/getCustomerPlanEventByCustomerPlanId", method=RequestMethod.GET )
     public List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId(@RequestParam int customerPlanId) {
         return customerPlanEventService.getCustomerPlanEventByCustomerPlanId(customerPlanId);
     }

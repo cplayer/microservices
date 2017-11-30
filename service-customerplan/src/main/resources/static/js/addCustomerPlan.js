@@ -34,7 +34,7 @@ $("#btn-submit").click(function ()
     var intCustomer = $("#Customer").val();
     var intBrand = $("#Brand").val();
     var _dateUptime = $("#dtp-time").data('DateTimePicker').date();
-    var dateUptime = _dateUptime.format("GGGG-MM-DD");
+    var dateUptime = moment(_dateUptime.format("GGGG-MM-DD")).format("x");
     var sendData = 
     {
         "name": strName,
