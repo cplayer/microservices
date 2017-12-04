@@ -7,6 +7,7 @@ import java.util.Collection;
 
 public class CustomUserDetails implements UserDetails{
     Collection<? extends GrantedAuthority> authorities;
+    int id;
     String username;
     String password;
     boolean enabled;
@@ -60,5 +61,13 @@ public class CustomUserDetails implements UserDetails{
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

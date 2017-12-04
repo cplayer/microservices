@@ -1,5 +1,7 @@
 package com.zhuri.microservices.servicecustomerplan;
 
+
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -10,9 +12,9 @@ public class CustomerPlan {
     private String name;
     private int customerId;
     private int brandId;
-    private Date saleDate;
+    private Timestamp saleDate;
     private int status;
-    private Date createDate;
+    private Timestamp createDate;
 
     public CustomerPlan() {
     }
@@ -61,7 +63,7 @@ public class CustomerPlan {
         return saleDate;
     }
 
-    public void setSaleDate(Date saleDate) {
+    public void setSaleDate(Timestamp saleDate) {
         this.saleDate = saleDate;
     }
 
@@ -77,7 +79,7 @@ public class CustomerPlan {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
     }
 }

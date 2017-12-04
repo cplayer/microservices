@@ -1,13 +1,14 @@
 package com.zhuri.microservices.servicecustomerplan;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class CustomerPlanEvent {
     private int id;
     private int customerPlanId;
     private int eventId;
-    private Date startTime;
-    private Date endTime;
+    private Timestamp startTime;
+    private Timestamp endTime;
     private int sort;
 
     public CustomerPlanEvent() {
@@ -41,7 +42,7 @@ public class CustomerPlanEvent {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(Timestamp startTime) {
         this.startTime = startTime;
     }
 
@@ -49,7 +50,7 @@ public class CustomerPlanEvent {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
 

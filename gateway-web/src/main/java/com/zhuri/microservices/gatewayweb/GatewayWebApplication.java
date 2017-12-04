@@ -1,5 +1,6 @@
-package com.zhuri.microservices.gateway;
+package com.zhuri.microservices.gatewayweb;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
@@ -10,15 +11,18 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @SpringBootApplication
 @EnableOAuth2Sso
 @EnableZuulProxy
-public class GatewayApplication extends WebSecurityConfigurerAdapter{
+public class GatewayWebApplication extends WebSecurityConfigurerAdapter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
+		SpringApplication.run(GatewayWebApplication.class, args);
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-				.antMatchers("/service-hello/**/*").hasRole("USER");
+		http
+				.authorizeRequests()
+					.antMatchers("/service-hello/**/*").hasRole("USER")
+				.and()
+				.logout().logoutSuccessUrl("/byebye");
 	}
 }

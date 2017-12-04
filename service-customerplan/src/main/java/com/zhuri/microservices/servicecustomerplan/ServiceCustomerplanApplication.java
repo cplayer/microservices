@@ -17,6 +17,7 @@ public class ServiceCustomerplanApplication {
 		SpringApplication.run(ServiceCustomerplanApplication.class, args);
 	}
 
+	/*
 	@Bean
 	public Converter<String, Date> addSrtingToDateConvert() {
 		return new Converter<String, Date>() {
@@ -33,5 +34,5 @@ public class ServiceCustomerplanApplication {
 				return date;
 			}
 		};
-	}
+	}*/
 }
