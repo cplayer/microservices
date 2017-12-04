@@ -1,4 +1,4 @@
-.nav-custom-menu {
+/* .nav-custom-menu {
     float: right;
 }
 
@@ -13,13 +13,20 @@
 
 .affix
 {
-    width: 25%;
+    width: 130px;
     border-bottom-width: 0px;
-    padding-right: 22.5px;
+    padding-right: 0px;
 }
 
 .affix-top
 {
-    width: 100%;
+    width: 130px;
     border-bottom-width: 0px;
 }
+
+.table-div
+{
+    margin-bottom: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+} */
