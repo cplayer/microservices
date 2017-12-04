@@ -167,36 +167,36 @@ $(document).ready(function ()
         });
     }
     // for progressBar
-    function progressBar_Init ()
-    {
-        stepProgressDiv = $("#stepProgress");
-        stepProgressBar = stepProgressDiv.progressStep({
-            fillColor: "#516784",
-            radius: 15,
-            strokeColor: "#000000",
-            "font-size": 18,
-            "labelOffset": 30,
-            margin: 30
-        });
-        stepProgressBar.addStep("填写计划");
-        stepProgressBar.addStep("完善计划");
-        stepProgressBar.addStep("待审核");
-        stepProgressBar.addStep("已审核");
-        stepProgressBar.refreshLayout();
-        stepProgressBar.setCurrentStep(1);
-    }
+    // function progressBar_Init ()
+    // {
+    //     stepProgressDiv = $("#stepProgress");
+    //     stepProgressBar = stepProgressDiv.progressStep({
+    //         fillColor: "#516784",
+    //         radius: 15,
+    //         strokeColor: "#000000",
+    //         "font-size": 18,
+    //         "labelOffset": 30,
+    //         margin: 30
+    //     });
+    //     stepProgressBar.addStep("填写计划");
+    //     stepProgressBar.addStep("完善计划");
+    //     stepProgressBar.addStep("待审核");
+    //     stepProgressBar.addStep("已审核");
+    //     stepProgressBar.refreshLayout();
+    //     stepProgressBar.setCurrentStep(1);
+    // }
     tree_list_Init();
     select_Init();
     table_Init();
-    progressBar_Init();
+    // progressBar_Init();
 });
 
-$(window).resize(function ()
-{  
-    // progressBar resize
-    stepProgressDiv.css("width", $(document.body).width() * 0.7);
-    stepProgressBar.refreshLayout();
-});
+// $(window).resize(function ()
+// {  
+//     // progressBar resize
+//     stepProgressDiv.css("width", $(document.body).width() * 0.7);
+//     stepProgressBar.refreshLayout();
+// });
 
 $("#btnSave").on("click", function ()
 {

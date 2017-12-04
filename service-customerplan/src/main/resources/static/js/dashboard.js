@@ -156,6 +156,7 @@ $(document).ready(function ()
                 formatDate("saleDate", data_0);
                 formatDate("createDate", data_0);
                 $("#table1").bootstrapTable("load", data_0);
+                $("#number1").html(data_0.length);
             }
         }
     );
@@ -172,6 +173,7 @@ $(document).ready(function ()
                 formatDate("saleDate", data_1);
                 formatDate("createDate", data_1);
                 $("#table2").bootstrapTable("load", data_1);
+                $("#number2").html(data_1.length);
             }
         }
     );
@@ -188,6 +190,7 @@ $(document).ready(function ()
                 formatDate("saleDate", data_2);
                 formatDate("createDate", data_2);
                 $("#table3").bootstrapTable("load", data_2);
+                $("#number3").html(data_2.length);
             }
         }
     );
@@ -204,6 +207,7 @@ $(document).ready(function ()
                 formatDate("saleDate", data_3);
                 formatDate("createDate", data_3);
                 $("#table4").bootstrapTable("load", data_3);
+                $("#number4").html(data_3.length);
             }
         }
     );
@@ -220,6 +224,7 @@ $(document).ready(function ()
                 formatDate("saleDate", data_4);
                 formatDate("createDate", data_4);
                 $("#table5").bootstrapTable("load", data_4);
+                $("#number5").html(data_4.length);
             }
         }
     );
@@ -247,7 +252,9 @@ function detailFormatter (index, row, element)
                     str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
                     str += "<br></br>";
                 }
+                // console.log(str.length);
                 // console.log(str);
+                if (str.length == 0) str = "None";
                 element[0].innerHTML = str;   
             }
         }

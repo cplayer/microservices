@@ -1,4 +1,4 @@
-.nav-custom-menu
+/* .nav-custom-menu
 {
     float: right;
 }
@@ -18,8 +18,11 @@
     margin: 0 auto;
 }
 
-#stepProgress
+#stepProgress 
 {
-    width: 80%;
-    height: 120px;
-}
+    margin-top: 0px;
+    padding: 0px;
+    width: 70%;
+    height: 80px;
+    margin-bottom: 20px;
+} */
