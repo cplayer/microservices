@@ -23,6 +23,6 @@ public class GatewayWebApplication extends WebSecurityConfigurerAdapter {
 				.authorizeRequests()
 					.antMatchers("/service-hello/**/*").hasRole("USER")
 				.and()
-				.logout().logoutSuccessUrl("/byebye");
+				.logout().logoutSuccessUrl("/byebye").permitAll();
 	}
 }
