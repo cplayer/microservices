@@ -9,6 +9,34 @@ function formatDate (index, data)
     }
 }
 
+function set_sidebar_menu ()
+{
+    var data = document.cookie;
+    var pic_dict = {
+        "/dashboard": "fa fa-dashboard",
+        "/addCustomerPlan": "fa fa-pencil-square",
+        "/eventReview": "fa fa-check-square-o"
+    };
+    if (data.length > 0) 
+    {
+        data = JSON.parse(data);
+        console.log(data);
+        $(".user-panel > .info > p").html(data["username"]);
+        $(".user-menu > a > span").html(data["username"]);
+        $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
+        var str = "";
+        str += '<li class="header">主导航</li>';
+        for (var element in data["authoritiesURL"])
+        {
+            var url = data["authoritiesURL"][element]["url"];
+            var text = data["authoritiesURL"][element]["text"];
+            str += '<li><a href="' + url + '"><i class="' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+        }
+        console.log(str);
+        $(".sidebar-menu").html(str);
+    }
+}
+
 $(document).ready(function ()
 {
     // function progressInit ()
@@ -79,6 +107,7 @@ $(document).ready(function ()
     }
     // progressInit();
     tableInit();
+    set_sidebar_menu();
 });
 
 // $(window).resize(function ()
