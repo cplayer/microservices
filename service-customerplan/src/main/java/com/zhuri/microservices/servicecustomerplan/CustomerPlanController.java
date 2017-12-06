@@ -12,13 +12,14 @@ public class CustomerPlanController {
     @Autowired
     CustomerPlanService customerPlanService;
 
+    //customerPlan
+
     @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.POST)
     public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return 0;
         } else {
-            customerPlanService.addCustomerPlan(customerPlan);
-            return customerPlan.getId();
+            return customerPlanService.addCustomerPlan(customerPlan);
         }
     }
 
@@ -41,6 +42,12 @@ public class CustomerPlanController {
     @RequestMapping(value="/getCustomerPlansByStatus", method=RequestMethod.GET)
     public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status) {
         return customerPlanService.getCustomerPlansByStatus(status);
+    }
+
+    //customerPlan event
+    @RequestMapping(value="/getCustomerPlanEventByCustomerPlanId", method=RequestMethod.GET )
+    public List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId(@RequestParam int customerPlanId) {
+        return customerPlanService.getCustomerPlanEventByCustomerPlanId(customerPlanId);
     }
 
 }

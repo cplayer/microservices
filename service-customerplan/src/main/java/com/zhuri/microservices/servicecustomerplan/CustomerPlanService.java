@@ -9,10 +9,16 @@ import java.util.List;
 public class CustomerPlanService {
     @Autowired
     CustomerPlanMapper customerPlanMapper;
-    public void addCustomerPlan(CustomerPlan customerPlan) {
-        customerPlan.setId(0);
-        customerPlan.setStatus(1);
+    //customerplan
+    public int addCustomerPlan(CustomerPlan customerPlan) {
+        int result = 0;
         customerPlanMapper.addCustomerPlan(customerPlan);
+        for (CustomerPlanEvent customerPlanEvent : customerPlan.getEventList()) {
+            customerPlanEvent.setCustomerPlanId(customerPlan.getId());
+            result += customerPlanMapper.addCustomerPlanEvent(customerPlanEvent);
+        }
+        return result;
+
     }
 
     public List<CustomerPlan> getCustomerPlansByCustomerId(int customerId) {
@@ -30,5 +36,10 @@ public class CustomerPlanService {
 
     public List<CustomerPlan> getCustomerPlansByStatus(int status) {
         return customerPlanMapper.getCustomerPlansByStatus(status);
+    }
+
+    //customrPlan event
+    public List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId( int customerPlanId) {
+        return customerPlanMapper.getCustomerPlanEventByCustomerPlanId(customerPlanId);
     }
 }

@@ -7,6 +7,7 @@ import java.util.List;
 @Mapper
 public interface CustomerPlanMapper {
 
+    //customerPlan
     @Insert("INSERT INTO customerplan(name, customerId, brandId, saleDate, status, createDate) " +
             " VALUES(#{name}, #{customerId}, #{brandId}, #{saleDate}, #{status}, #{createDate})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
@@ -24,5 +25,13 @@ public interface CustomerPlanMapper {
 
     @Select("SELECT * from customerplan WHERE status = #{status}")
     List<CustomerPlan> getCustomerPlansByStatus(int status);
+
+    //customerPlan event
+    @Insert("INSERT INTO customerplan_event(customerPlanId, eventId, startTime, endTime, sort) " +
+            " VALUES(#{customerPlanId}, #{eventId}, #{startTime}, #{endTime}, #{sort})")
+    int addCustomerPlanEvent(CustomerPlanEvent customerPlanEvent);
+
+    @Select("SELECT * FROM customerplan_event WHERE customerPlanId = #{customerPlanId}")
+    List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId( int customerPlanId);
 
 }
