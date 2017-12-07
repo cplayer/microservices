@@ -9,12 +9,22 @@ import java.util.List;
 public class UserService {
     List<User> users;
 
-    public UserService() {
+    public User loginCheck(String username, String password) {
+        List<User> users = getTestData();
+        for(User u: users) {
+            if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
+                return u;
+            }
+        }
+        return null;
+    }
+
+    private List<User> getTestData() {
         AuthoritiesURL authoritiesURL1 = new AuthoritiesURL("/dashboard", "主页");
         AuthoritiesURL authoritiesURL2 = new AuthoritiesURL("/addCustomerPlan", "添加客户计划");
         AuthoritiesURL authoritiesURL3 = new AuthoritiesURL("/eventReview", "审核事件");
 
-        users = new ArrayList<User>();
+        List<User> users = new ArrayList<User>();
 
         User user = new User();
         List<AuthoritiesURL> authoritiesURLS = new ArrayList<>();
@@ -35,14 +45,6 @@ public class UserService {
         authoritiesURLS.add(authoritiesURL2);
         user.setAuthoritiesURL(authoritiesURLS);
         users.add(user);
-    }
-
-    public User loginCheck(String username, String password) {
-        for(User u: users) {
-            if(u.getUsername().equals(username) && u.getPassword().equals(password)) {
-                return u;
-            }
-        }
-        return null;
+        return users;
     }
 }

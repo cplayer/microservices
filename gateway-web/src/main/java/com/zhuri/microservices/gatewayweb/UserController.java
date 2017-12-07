@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -36,4 +38,11 @@ public class UserController {
     public String byebye() {
         return "byebye1";
     }
+
+    /*
+    @RequestMapping("/login")
+    @ResponseBody
+    public Map loginDetails() {
+        return oauth2ClientContext.getAccessToken().getAdditionalInformation();
+    }*/
 }
