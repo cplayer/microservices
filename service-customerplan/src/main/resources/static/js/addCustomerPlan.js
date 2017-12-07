@@ -223,19 +223,19 @@ $("#btn-submit").click(function ()
     sendData["status"] = 1;
     sendData["createDate"] = moment().format("x");
     console.log(sendData);
-    // $.ajax(
-    //     {
-    //         url: "/addCustomerPlan",
-    //         data: JSON.stringify(sendData),
-    //         type: "POST",
-    //         contentType: "application/json;charset=utf-8",
-    //         success: function (data)
-    //         {
-    //             console.log("Success!");
-    //             console.log(data);
-    //         }
-    //     }
-    // );
+    $.ajax(
+        {
+            url: "/addCustomerPlan",
+            data: JSON.stringify(sendData),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            success: function (data)
+            {
+                console.log("Success!");
+                console.log(data);
+            }
+        }
+    );
 });
 
 $("#btnAdd").on("click", function ()
