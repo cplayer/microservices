@@ -25,4 +25,7 @@ public class UIController {
     public String eventReview () {
         return "eventReview";
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login () { return "login"; }
 }
