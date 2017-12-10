@@ -41,7 +41,18 @@ public interface CustomerPlanMapper {
             " WHERE id = #{id}")
     void updateCustomerPlanEvent(CustomerPlanEvent customerPlanEvent);
 
-    @Select("SELECT * FROM customerplan_event WHERE customerPlanId = #{customerPlanId}")
+    @Select("SELECT A.id,A.customerPlanId, A.eventId,B.name,A.startTime,A.endTime,A.sort " +
+            " FROM customerplan.customerplan_event as A INNER JOIN customerplan.event as B ON A.eventId = B.id " +
+            " WHERE customerPlanId = #{customerPlanId}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "customerPlanId", column = "customerPlanId"),
+            @Result(property = "eventId", column = "eventId"),
+            @Result(property = "eventName", column = "name"),
+            @Result(property = "startTime", column = "startTime"),
+            @Result(property = "endTime", column = "endTime"),
+            @Result(property = "sort", column = "sort"),
+    })
     List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId( int customerPlanId);
 
     @Delete("DELETE FROM customerplan_event WHERE id =#{id}")

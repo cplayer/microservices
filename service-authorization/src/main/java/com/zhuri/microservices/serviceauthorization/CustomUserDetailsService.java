@@ -18,15 +18,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        /*CustomUserDetails cud = new CustomUserDetails();
-        cud.setId(12);
-        cud.setUsername("test");
-        cud.setPassword("123456");
-        cud.setEnabled(true);
-        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        //authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        cud.setAuthorities(authorities);*/
         CustomUserDetails customUserDetails = userDetailsMapper.loadUserByUsername(s);
         if(customUserDetails != null) {
             String[] authoritiesStrings = userDetailsMapper.getUserAuthorities(customUserDetails.getId());
@@ -36,6 +27,8 @@ public class CustomUserDetailsService implements UserDetailsService {
                 authorities.add(new SimpleGrantedAuthority("ROLE_"+as));
             }
             customUserDetails.setAuthorities(authorities);
+        } else {
+            throw new UsernameNotFoundException("Invalid username or password!");
         }
         return customUserDetails;
     }

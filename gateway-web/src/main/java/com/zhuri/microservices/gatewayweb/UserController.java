@@ -16,27 +16,21 @@ import java.util.Map;
 public class UserController {
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
-    @RequestMapping("/test")
+    @RequestMapping("/getUserInfo")
     @ResponseBody
-    public OAuth2AccessToken test(Principal principal) {
-        return oauth2ClientContext.getAccessToken();
-    }
-
-    @RequestMapping("/user")
-    @ResponseBody
-    public Principal user(Principal principal) {
-        return principal;
+    public Map getUserInfo(Principal principal) {
+        return oauth2ClientContext.getAccessToken().getAdditionalInformation();
     }
 
     @RequestMapping("/")
     public String welcome() {
-        return "logout";
+        return "dashboard";
     }
 
     @RequestMapping("/byebye")
     @ResponseBody
     public String byebye() {
-        return "byebye1";
+        return "byebye!";
     }
 
     /*

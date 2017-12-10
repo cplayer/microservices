@@ -7,6 +7,7 @@ public class CustomerPlanEvent {
     private int id;
     private int customerPlanId;
     private int eventId;
+    private String eventName;
     private Timestamp startTime;
     private Timestamp endTime;
     private int sort;
@@ -36,6 +37,14 @@ public class CustomerPlanEvent {
 
     public void setEventId(int eventId) {
         this.eventId = eventId;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
     }
 
     public Date getStartTime() {
