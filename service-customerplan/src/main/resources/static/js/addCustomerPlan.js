@@ -29,6 +29,8 @@ function set_sidebar_menu ()
     }
 }
 
+var totalTableNum;
+
 $(document).ready(function ()
 {
     // for tree-list
@@ -97,6 +99,10 @@ $(document).ready(function ()
     {
         $('#table').bootstrapTable({
             columns: [{
+                field: 'tableId',
+                visible: false,
+                title: 'tableId'
+            }, {
                 field: 'eventId',
                 title: '事件'
             }, {
@@ -115,8 +121,14 @@ $(document).ready(function ()
                             minuteStep: 1,
                             yearDescending: false
                         },
+                        placement: 'bottom'
+                        // mode: 'inline'
+                        // type: 'datetime',
+                        // title: '请选择新的起始时间',
+                        // format: 'YYYY-MM-DD',
+                        // viewformat: 'YYYY-MM-DD',
+                        // template: 'YYYY-MM-DD',
                         // placement: 'bottom'
-                        mode: 'inline'
                     }
             }, {
                 field: 'endTime',
@@ -134,8 +146,8 @@ $(document).ready(function ()
                             minuteStep: 1,
                             yearDescending: false
                         },
-                        // placement: 'bottom'
-                        mode: 'inline'
+                        placement: 'bottom'
+                        // mode: 'inline'
                     }
             }],
             data: [],
@@ -149,10 +161,12 @@ $(document).ready(function ()
                 if ($el.data("item") == "delete")
                 {
                     console.log(row);
-                    console.log(row.eventId);
+                    // console.log(row.eventId);
+                    console.log(row.tableId);
                     var _remove = [];
-                    _remove = _remove.concat(row.eventId);
-                    $("#table").bootstrapTable("remove", { "field": "eventId", "values": _remove });
+                    // _remove = _remove.concat(row.eventId);
+                    _remove = _remove.concat(row.tableId);
+                    $("#table").bootstrapTable("remove", { "field": "tableId", "values": _remove });
                 }
             }
         });
@@ -162,6 +176,7 @@ $(document).ready(function ()
     table_Init();
     $("#dtp-time").datetimepicker();
     set_sidebar_menu();
+    totalTableNum = 0;
     // stepProgressDiv = $("#stepProgress");
     // stepProgressBar = stepProgressDiv.progressStep({
     //     fillColor: "#516784",
@@ -233,6 +248,11 @@ $("#btn-submit").click(function ()
             {
                 console.log("Success!");
                 console.log(data);
+                Messenger().post({
+                    message: "添加计划成功！",
+                    showCloseButton: true,
+                    type: "success"
+                })
             }
         }
     );
@@ -246,7 +266,8 @@ $("#btnAdd").on("click", function ()
     {
         if (ret[i].isParent == false)
         {
-            new_data = new_data.concat({ "eventId": ret[i].name, "startTime": "", "endTime": "" });
+            new_data = new_data.concat({ "tableId": totalTableNum, "eventId": ret[i].name, "startTime": "", "endTime": "" });
+            totalTableNum++;
         }
     }
     $("#table").bootstrapTable("append", new_data);
