@@ -21,6 +21,7 @@ public class GatewayWebApplication extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 				.authorizeRequests()
+					.anyRequest().authenticated()
 					.antMatchers("/service-hello/**/*").hasRole("USER")
 				.and()
 				.logout().logoutSuccessUrl("/byebye").permitAll();
