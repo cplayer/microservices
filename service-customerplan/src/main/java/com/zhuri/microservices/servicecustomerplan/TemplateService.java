@@ -16,16 +16,12 @@ public class TemplateService {
     }
 
     public List<EventNode> getTemplateEventsByTemplateId(int id) {
-        List<EventNode> eventNodes = null;
+        List<EventNode> eventNodes = new ArrayList<>();
         int[] eventIds = templateMapper.getTemplateEventIdsByTemplateId(id);
 
-        if(eventIds.length > 0) {
-            eventNodes = new ArrayList<>();
-            for (int eid:eventIds) {
-                eventNodes.add(templateMapper.getEventByEventId(eid));
-            }
+        for (int eid:eventIds) {
+            eventNodes.add(templateMapper.getEventByEventId(eid));
         }
-
         return eventNodes;
     }
 }
