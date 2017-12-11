@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="'error = '+ ${error}"></p>
+    <form action="http://localhost:8040/service-authorization/uaa/login" method="post">
+        username : <input name="username" type="text"/>
+        password : <input name="password" type="text"/>
+        <input type="submit" value="login" />
+    </form>
+</body>
+</html>
