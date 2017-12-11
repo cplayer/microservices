@@ -162,6 +162,12 @@ $("#btn-review").click(function ()
             {
                 console.log(data);
                 console.log("Success in " + id);
+                Messenger().post({
+                    type: 'success',
+                    message: '审核成功！',
+                    hideAfter: 2,
+                    showCloseButton: true
+                })
             }
         });
     }

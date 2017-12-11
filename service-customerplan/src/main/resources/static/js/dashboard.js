@@ -36,6 +36,19 @@ function set_sidebar_menu ()
         }
         console.log(str);
         $(".sidebar-menu").html(str);
+        Messenger().post({
+            type: 'info',
+            message: '欢迎登录，' + data["username"] + '！',
+            hideAfter: 2
+        });
+    }
+    else
+    {
+        Messenger().post({
+            type: 'info',
+            message: '欢迎进入Dashboard！',
+            hideAfter: 2
+        })
     }
 }
 
@@ -62,9 +75,6 @@ $(document).ready(function ()
         }, {
             field: "saleDate",
             title: "销售时间"
-        }, {
-            field: "eventList",
-            title: "事件列表"
         }]
     });
     $("#table2").bootstrapTable(
@@ -88,9 +98,6 @@ $(document).ready(function ()
         }, {
             field: "saleDate",
             title: "销售时间"
-        }, {
-            field: "eventList",
-            title: "事件列表"
         }]
     });
     $("#table3").bootstrapTable(
@@ -114,9 +121,6 @@ $(document).ready(function ()
         }, {
             field: "saleDate",
             title: "销售时间"
-        }, {
-            field: "eventList",
-            title: "事件列表"
         }]
     });
     $("#table4").bootstrapTable(
@@ -140,9 +144,6 @@ $(document).ready(function ()
         }, {
             field: "saleDate",
             title: "销售时间"
-        }, {
-            field: "eventList",
-            title: "事件列表"
         }]
     });
     $("#table5").bootstrapTable(
@@ -166,9 +167,6 @@ $(document).ready(function ()
         }, {
             field: "saleDate",
             title: "销售时间"
-        }, {
-            field: "eventList",
-            title: "事件列表"
         }]
     });
     $.ajax(

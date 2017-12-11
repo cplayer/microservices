@@ -11,11 +11,6 @@ public class UIController {
         return "addCustomerPlan";
     }
 
-    @RequestMapping(value = "/addCustomerPlanEvent", method = RequestMethod.GET)
-    public String addCustomerPlanEvent() {
-        return "addCustomerPlanEvent";
-    }
-
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
     public String dashboard () {
         return "dashboard";
