@@ -135,6 +135,7 @@ function detailFormatter (index, row, element)
                 {
                     str += "计划编号: " + data[x]["customerPlanId"];
                     str += " 事件编号: " + data[x]["eventId"];
+                    str += " 事件名称：" + data[x]["eventName"];
                     str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
                     str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
                     str += "<br></br>";

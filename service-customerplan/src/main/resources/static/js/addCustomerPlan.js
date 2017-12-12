@@ -3,15 +3,15 @@
 
 function set_sidebar_menu ()
 {
-    var data = document.cookie;
+    var data = find_cookie('logininfo');
     var pic_dict = {
         "/dashboard": "fa fa-dashboard",
         "/addCustomerPlan": "fa fa-pencil-square",
         "/eventReview": "fa fa-check-square-o"
     };
-    if (data.length > 0) 
+    if (data != 'empty') 
     {
-        data = JSON.parse(data);
+        data = JSON.parse(data[1]);
         console.log(data);
         $(".user-panel > .info > p").html(data["username"]);
         $(".user-menu > a > span").html(data["username"]);
@@ -30,6 +30,8 @@ function set_sidebar_menu ()
 }
 
 var totalTableNum;
+var editflag;
+var msg;
 
 $(document).ready(function ()
 {
@@ -40,8 +42,6 @@ $(document).ready(function ()
         {
             for (var i in data)
             {
-                id_table[data[i]["text"]] = data[i]["id"];
-                delete (data[i]["id"]);
                 if (data[i].hasOwnProperty("nodes") == true)
                 {
                     proc(data[i]["nodes"]);
@@ -49,6 +49,12 @@ $(document).ready(function ()
                     delete (data[i]["nodes"]);
                     // data[i]["children"] = [];
                 }
+                // else
+                // {
+                //     eventDic[data[i]["text"]] = data[i]["id"];
+                // }
+                id_table[data[i]["text"]] = data[i]["id"];
+                delete (data[i]["id"]);
                 data[i]["name"] = data[i]["text"];
                 delete (data[i]["text"]);
                 // else
@@ -66,9 +72,10 @@ $(document).ready(function ()
                 url: "/getUITreeAndUINode",
                 success: function (data)
                 {
-                    console.log(data);
+                    // console.log(data);
                     proc(data);
-                    console.log(data);
+                    console.log(id_table);
+                    // console.log(data);
                     var setting = {
                         view: {
                             showIcon: false,
@@ -93,66 +100,113 @@ $(document).ready(function ()
             allowClear: true
         });
         $(".model-select2").val(null).trigger("change");
+        $.ajax(
+            {
+                url: '/getAllTemplates',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data)
+                {
+                    var val = "";
+                    for (element in data)
+                    {
+                        val += '<option value=' + data[element]["id"] + '>' + data[element]["description"] + '</option>';
+                    }
+                    $(".model-select2").html(val);
+                    $(".model-select2").val(null).trigger("change");
+                    // console.log(data);
+                }
+            }
+        );
     }
     // for table
     function table_Init ()
     {
         $('#table').bootstrapTable({
+            uniqueid: 'tableId',
             columns: [{
                 field: 'tableId',
                 visible: false,
                 title: 'tableId'
             }, {
-                field: 'eventId',
+                field: 'eventName',
                 title: '事件'
             }, {
                 field: 'startTime',
                 title: '起始时间',
                 editable:
                     {
-                        type: 'combodate',
-                        title: '请选择新的起始时间',
-                        format: 'YYYY-MM-DD',
-                        viewformat: 'YYYY-MM-DD',
-                        template: 'YYYY-MM-DD',
-                        combodate: {
-                            minYear: 2000,
-                            maxYear: 2050,
-                            minuteStep: 1,
-                            yearDescending: false
-                        },
-                        placement: 'bottom'
-                        // mode: 'inline'
-                        // type: 'datetime',
+                        // type: 'combodate',
                         // title: '请选择新的起始时间',
                         // format: 'YYYY-MM-DD',
                         // viewformat: 'YYYY-MM-DD',
                         // template: 'YYYY-MM-DD',
+                        // combodate: {
+                        //     minYear: 2000,
+                        //     maxYear: 2050,
+                        //     minuteStep: 1,
+                        //     yearDescending: false
+                        // },
                         // placement: 'bottom'
-                    }
+                        // mode: 'inline'
+                        type: 'datetime',
+                        title: '请选择新的起始时间',
+                        format: 'yyyy-mm-dd',
+                        viewformat: 'yyyy-mm-dd',
+                        datetimepicker:
+                        {
+                            todayBtn: 'linked',
+                            minView: "month"
+                        }
+                        // placement: 'bottom'
+                    },
+                formatter: function (value)
+                {
+                    console.log(value);
+                    var date = moment(Date.parse(value));
+                    console.log(date.format("YYYY-MM-DD"));
+                    return date.format("YYYY-MM-DD");
+                }
             }, {
                 field: 'endTime',
                 title: '结束时间',
                 editable:
                     {
-                        type: 'combodate',
-                        title: '请选择新的结束时间',
-                        format: 'YYYY-MM-DD',
-                        viewformat: 'YYYY-MM-DD',
-                        template: 'YYYY-MM-DD',
-                        combodate: {
-                            minYear: 2000,
-                            maxYear: 2050,
-                            minuteStep: 1,
-                            yearDescending: false
-                        },
-                        placement: 'bottom'
+                        // type: 'combodate',
+                        // title: '请选择新的结束时间',
+                        // format: 'YYYY-MM-DD',
+                        // viewformat: 'YYYY-MM-DD',
+                        // template: 'YYYY-MM-DD',
+                        // combodate: {
+                        //     minYear: 2000,
+                        //     maxYear: 2050,
+                        //     minuteStep: 1,
+                        //     yearDescending: false
+                        // },
+                        // placement: 'bottom'
+                        type: 'datetime',
+                        title: '请选择新的起始时间',
+                        format: 'yyyy-mm-dd',
+                        viewformat: 'yyyy-mm-dd',
+                        datetimepicker:
+                        {
+                            todayBtn: 'linked',
+                            minView: "month"
+                        }
                         // mode: 'inline'
-                    }
+                    },
+                formatter: function (value)
+                {
+                    console.log(value);
+                    var date = moment(Date.parse(value));
+                    console.log(date.format("YYYY-MM-DD"));
+                    return date.format("YYYY-MM-DD");
+                }
             }],
             data: [],
             onReorderRow: function (newData)
             {
+                console.log(newData);
                 $("#table").bootstrapTable("load", newData);
             },
             contextMenu: "#context-menu-table",
@@ -171,57 +225,100 @@ $(document).ready(function ()
             }
         });
     }
+    function cache_Init ()
+    {
+        editflag = find_cookie('editflag');
+        msg = find_cookie('msg');
+        console.log(editflag);
+        console.log(msg);
+        if (editflag != 'empty' && msg != 'empty')
+        {
+            editflag = editflag[1];
+            msg = msg[1];
+            if (msg != "" && editflag == 1)
+            {
+                $(".content-header").html('<h1>修改事件<small>修改并完善事件</small></h1><ol class="breadcrumb"><li><a href="#"><i class="fa fa-dashboard"></i>主系统</a></li><li class="active">修改事件</li></ol>');
+                msg = JSON.parse(msg);
+                set_cookie('editflag', 0);
+                set_cookie('msg', '');
+                $("#Name").val(msg.name);
+                // $("#Customer").val(msg.customerId);
+                $("#Brand").val(msg.brandId);
+                $("#dtp-time").val(msg.saleDate);
+                $.ajax
+                    (
+                        {
+                            type: 'GET',
+                            dataType: "json",
+                            url: "/getCustomerPlanEventByCustomerPlanId",
+                            data: { "customerPlanId": msg.customerPlanId },
+                            success: function (data)
+                            {
+                                console.log(data);
+                                var newData = [];
+                                for (var element in data)
+                                {
+                                    newData = newData.concat({ "tableId": totalTableNum, "eventName": data[element]["eventName"], "startTime": moment(data[element]["startTime"]).toDate(), "endTime": moment(data[element]["endTime"]).toDate() });
+                                    totalTableNum++;
+                                }
+                                $("#table").bootstrapTable("append", newData);
+                                console.log(newData);
+                            }
+                        }
+                    );
+            }
+            delete_cookie('editflag');
+            delete_cookie('msg');
+        }
+        console.log(editflag);
+        console.log(msg);
+    }
     tree_list_Init();
     select_Init();
     table_Init();
-    $("#dtp-time").datetimepicker();
+    $("#dtp-time").datetimepicker({
+        minView: "month",
+        format: 'yyyy-mm-dd',
+        autoclose: true,
+        todayBtn: true
+    });
     set_sidebar_menu();
     totalTableNum = 0;
-    // stepProgressDiv = $("#stepProgress");
-    // stepProgressBar = stepProgressDiv.progressStep({
-    //     fillColor: "#516784",
-    //     radius: 15,
-    //     strokeColor: "#000000",
-    //     "font-size": 18,
-    //     "labelOffset": 30,
-    //     margin: 30
-    // });
-    // stepProgressBar.addStep("填写计划");
-    // stepProgressBar.addStep("完善计划");
-    // stepProgressBar.addStep("待审核");
-    // stepProgressBar.addStep("已审核");
-    // stepProgressBar.refreshLayout();
-    // stepProgressBar.setCurrentStep(0);
+    editflag = 'empty';
+    msg = 'empty';
+    cache_Init();
 });
-
-// $(window).resize(function ()
-// {
-//     stepProgressDiv.css("width", $(document.body).width() * 0.7);
-//     stepProgressBar.refreshLayout();
-// });
 
 $("#btn-submit").click(function ()
 {
-    // console.log("Submit Clicked");
     var strName = $("#Name").val();
-    var intCustomer = $("#Customer").val();
+    // var intCustomer = $("#Customer").val();
     var intBrand = $("#Brand").val();
-    var _dateUptime = $("#dtp-time").data('DateTimePicker').date();
-    var dateUptime = moment(_dateUptime.format("GGGG-MM-DD")).format("x");
+    var _dateUptime = $("#dtp-time").val();
+    var dateUptime = moment(_dateUptime).format("x");
     var sendData =
         {
             "name": strName,
-            "customerId": intCustomer,
+            // "customerId": intCustomer,
             "brandId": intBrand,
             "saleDate": dateUptime
         };
     var data = $("#table").bootstrapTable('getData', useCurrentPage = true);
-    // console.log(data);
+    console.log($("#table"));
+    console.log("submit data");
+    console.log(data);
     customerPlanId = 1;
+    if (editflag == 1) 
+    {
+        customerPlanId = msg.customerPlanId;
+        sendData["id"] = customerPlanId;
+    }
     var sort = 1;
     for (var i in data)
     {
-        data[i]["eventId"] = id_table[data[i]["eventId"]];
+        delete data[i]["tableId"];
+        delete data[i]["eventId"];
+        data[i]["eventId"] = id_table[data[i]["eventName"]];
         data[i]["customerPlanId"] = customerPlanId;
         data[i]["sort"] = sort;
         if (data[i]["startTime"] != "")
@@ -238,24 +335,52 @@ $("#btn-submit").click(function ()
     sendData["status"] = 1;
     sendData["createDate"] = moment().format("x");
     console.log(sendData);
-    $.ajax(
-        {
-            url: "/addCustomerPlan",
-            data: JSON.stringify(sendData),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            success: function (data)
+    if (editflag == 0)
+    {
+        $.ajax
+        (
             {
-                console.log("Success!");
-                console.log(data);
-                Messenger().post({
-                    message: "添加计划成功！",
-                    showCloseButton: true,
-                    type: "success"
-                })
+                url: "/addCustomerPlan",
+                data: JSON.stringify(sendData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                success: function (data)
+                {
+                    console.log("Success!");
+                    console.log(data);
+                    Messenger().post({
+                        message: "添加计划成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                    window.setTimeout('window.location.href = "/dashboard";', 1500);
+                }
             }
-        }
-    );
+        );
+    }
+    else
+    {
+        $.ajax
+        (
+            {
+                url: "/updateCustomerPlan",
+                data: JSON.stringify(sendData),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                success: function (data)
+                {
+                    console.log("Success!");
+                    console.log(data);
+                    Messenger().post({
+                        message: "修改计划成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                    window.setTimeout('window.location.href = "/dashboard";', 1500);
+                }
+            }
+        );
+    }
 });
 
 $("#btnAdd").on("click", function ()
@@ -266,11 +391,43 @@ $("#btnAdd").on("click", function ()
     {
         if (ret[i].isParent == false)
         {
-            new_data = new_data.concat({ "tableId": totalTableNum, "eventId": ret[i].name, "startTime": "", "endTime": "" });
+            new_data = new_data.concat({ "tableId": totalTableNum, "eventName": ret[i].name, "startTime": "", "endTime": "" });
             totalTableNum++;
         }
     }
     $("#table").bootstrapTable("append", new_data);
     console.log(new_data);
     console.log(ret);
+});
+
+$("#btn-reset").on("click", function ()
+{
+    $("#table").bootstrapTable("removeAll");
+});
+
+$(".model-select2").on("select2:select", function (e)
+{
+    var text = e.params.data.text;
+    var id = e.params.data.id;
+    $.ajax
+    (
+        {
+            url: '/getTemplateEventByTemplateId',
+            type: 'GET',
+            data: { "id": id },
+            success: function (data)
+            {
+                console.log(data);
+                var new_data = [];
+                for (var element in data)
+                {
+                    var name = data[element]["text"];
+                    new_data = new_data.concat({ "tableId": totalTableNum, "eventName": name, "startTime": "", "endTime": ""});
+                    totalTableNum++;
+                }
+                $("#table").bootstrapTable("append", new_data);
+                console.log(new_data);
+            }
+        }
+    )
 });

@@ -103,7 +103,7 @@
 							var str = JSON.stringify(data);
 							// var str = "username=" + data["username"] + "; login=true; URL=" + JSON.stringify(data["authoritiesURL"]);
 							// console.log(str);
-							document.cookie = str;
+							document.cookie = "logininfo=" + str;
 							window.location.href = "/dashboard";
 						}
 					}
