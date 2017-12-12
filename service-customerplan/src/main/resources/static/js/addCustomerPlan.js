@@ -22,7 +22,7 @@ function set_sidebar_menu ()
         {
             var url = data["authoritiesURL"][element]["url"];
             var text = data["authoritiesURL"][element]["text"];
-            str += '<li><a href="' + url + '"><i class="' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+            str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
         }
         console.log(str);
         $(".sidebar-menu").html(str);
@@ -65,11 +65,12 @@ $(document).ready(function ()
         }
         id_table = {};
         // $("#tree-list").jstree();
-        $.ajax(
+        $.ajax
+        (
             {
                 type: "GET",
                 dataType: "json",
-                url: "/getUITreeAndUINode",
+                url: "/service-customerplan/getUITreeAndUINode",
                 success: function (data)
                 {
                     // console.log(data);
@@ -100,9 +101,10 @@ $(document).ready(function ()
             allowClear: true
         });
         $(".model-select2").val(null).trigger("change");
-        $.ajax(
+        $.ajax
+        (
             {
-                url: '/getAllTemplates',
+                url: '/service-customerplan/getAllTemplates',
                 type: 'GET',
                 dataType: 'json',
                 success: function (data)
@@ -250,7 +252,7 @@ $(document).ready(function ()
                         {
                             type: 'GET',
                             dataType: "json",
-                            url: "/getCustomerPlanEventByCustomerPlanId",
+                            url: "/service-customerplan/getCustomerPlanEventByCustomerPlanId",
                             data: { "customerPlanId": msg.customerPlanId },
                             success: function (data)
                             {
@@ -269,6 +271,11 @@ $(document).ready(function ()
             }
             delete_cookie('editflag');
             delete_cookie('msg');
+        }
+        if (editflag == 'empty')
+        {
+            editflag = 0;
+            msg = '';
         }
         console.log(editflag);
         console.log(msg);
@@ -340,7 +347,7 @@ $("#btn-submit").click(function ()
         $.ajax
         (
             {
-                url: "/addCustomerPlan",
+                url: "/service-customerplan/addCustomerPlan",
                 data: JSON.stringify(sendData),
                 type: "POST",
                 contentType: "application/json;charset=utf-8",
@@ -353,7 +360,7 @@ $("#btn-submit").click(function ()
                         showCloseButton: true,
                         type: "success"
                     });
-                    window.setTimeout('window.location.href = "/dashboard";', 1500);
+                    window.setTimeout('window.location.href = "/service-customerplan/dashboard";', 1500);
                 }
             }
         );
@@ -363,7 +370,7 @@ $("#btn-submit").click(function ()
         $.ajax
         (
             {
-                url: "/updateCustomerPlan",
+                url: "/service-customerplan/updateCustomerPlan",
                 data: JSON.stringify(sendData),
                 type: "POST",
                 contentType: "application/json;charset=utf-8",
@@ -376,7 +383,7 @@ $("#btn-submit").click(function ()
                         showCloseButton: true,
                         type: "success"
                     });
-                    window.setTimeout('window.location.href = "/dashboard";', 1500);
+                    window.setTimeout('window.location.href = "/service-customerplan/dashboard";', 1500);
                 }
             }
         );
@@ -412,7 +419,7 @@ $(".model-select2").on("select2:select", function (e)
     $.ajax
     (
         {
-            url: '/getTemplateEventByTemplateId',
+            url: '/service-customerplan/getTemplateEventByTemplateId',
             type: 'GET',
             data: { "id": id },
             success: function (data)
