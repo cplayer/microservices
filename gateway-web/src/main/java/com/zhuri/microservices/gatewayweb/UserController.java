@@ -16,6 +16,7 @@ import java.util.Map;
 public class UserController {
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
+
     @RequestMapping("/getUserInfo")
     @ResponseBody
     public Map getUserInfo(Principal principal) {
