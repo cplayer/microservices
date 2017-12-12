@@ -1,24 +1,34 @@
 package com.zhuri.microservices.servicecustomerplan;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 @RestController
 public class CustomerPlanController {
     @Autowired
     CustomerPlanService customerPlanService;
 
+    @RequestMapping("/test")
+    public void user(@RequestHeader(value="user-id") String id, @RequestHeader(value="user-username") String username) {
+
+        //System.out.println(httpServletRequest.getHeader("user-id"));
+        //System.out.println(httpServletRequest.getHeader("user-username"));
+        System.out.println(id + " " + username);
+    }
     //customerPlan
 
     @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.POST)
-    public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult) {
+    public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult, @RequestHeader(value="userid") String userId) {
         if(bindingResult.hasErrors()) {
             return 0;
         } else {
+            int id = Integer.parseInt(userId);
+            customerPlan.setCustomerId(id);
             return customerPlanService.addCustomerPlan(customerPlan);
         }
     }
@@ -50,7 +60,8 @@ public class CustomerPlanController {
     }
 
     @RequestMapping(value="/getCustomerPlansByStatus", method=RequestMethod.GET)
-    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status) {
+    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, Authentication authentication, @RequestHeader(value="user-id") String id) {
+
         return customerPlanService.getCustomerPlansByStatus(status);
     }
 
