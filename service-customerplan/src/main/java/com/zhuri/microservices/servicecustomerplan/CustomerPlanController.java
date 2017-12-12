@@ -2,6 +2,7 @@ package com.zhuri.microservices.servicecustomerplan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class CustomerPlanController {
     //customerPlan
 
     @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.POST)
-    public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult, @RequestHeader(value="userid") String userId) {
+    public int addCustomerPlan(@RequestBody CustomerPlan customerPlan, BindingResult bindingResult, @RequestHeader(value="user-id") String userId) {
         if(bindingResult.hasErrors()) {
             return 0;
         } else {
@@ -54,15 +55,19 @@ public class CustomerPlanController {
         return customerPlanService.setCustomerPlanStatus(status, id);
     }
 
-    @RequestMapping(value="/getCustomerPlansByCustomerIdAndStatus", method=RequestMethod.GET)
+    /*@RequestMapping(value="/getCustomerPlansByCustomerIdAndStatus", method=RequestMethod.GET)
     public List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(@RequestParam int customerId, @RequestParam int status) {
         return customerPlanService.getCustomerPlansByCustomerIdAndStatus(customerId, status);
-    }
+    }*/
 
     @RequestMapping(value="/getCustomerPlansByStatus", method=RequestMethod.GET)
-    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, Authentication authentication, @RequestHeader(value="user-id") String id) {
-
-        return customerPlanService.getCustomerPlansByStatus(status);
+    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, Authentication authentication, @RequestHeader(value="user-id") String userId) {
+        if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_EXAMINER"))) {
+            return customerPlanService.getCustomerPlansByStatus(status);
+        } else {
+            int id = Integer.parseInt(userId);
+            return customerPlanService.getCustomerPlansByCustomerIdAndStatus(id, status);
+        }
     }
 
     //customerPlan event
