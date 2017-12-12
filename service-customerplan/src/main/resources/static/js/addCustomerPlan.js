@@ -242,7 +242,7 @@ $(document).ready(function ()
                 set_cookie('editflag', 0);
                 set_cookie('msg', '');
                 $("#Name").val(msg.name);
-                $("#Customer").val(msg.customerId);
+                // $("#Customer").val(msg.customerId);
                 $("#Brand").val(msg.brandId);
                 $("#dtp-time").val(msg.saleDate);
                 $.ajax
@@ -292,14 +292,14 @@ $(document).ready(function ()
 $("#btn-submit").click(function ()
 {
     var strName = $("#Name").val();
-    var intCustomer = $("#Customer").val();
+    // var intCustomer = $("#Customer").val();
     var intBrand = $("#Brand").val();
     var _dateUptime = $("#dtp-time").val();
     var dateUptime = moment(_dateUptime).format("x");
     var sendData =
         {
             "name": strName,
-            "customerId": intCustomer,
+            // "customerId": intCustomer,
             "brandId": intBrand,
             "saleDate": dateUptime
         };
@@ -308,7 +308,11 @@ $("#btn-submit").click(function ()
     console.log("submit data");
     console.log(data);
     customerPlanId = 1;
-    if (editflag == 1) customerPlanId = msg.customerPlanId;
+    if (editflag == 1) 
+    {
+        customerPlanId = msg.customerPlanId;
+        sendData["id"] = customerPlanId;
+    }
     var sort = 1;
     for (var i in data)
     {

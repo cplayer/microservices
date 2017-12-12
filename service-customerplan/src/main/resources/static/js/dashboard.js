@@ -193,7 +193,7 @@ window.operateEvents = {
         {
             customerPlanId: row.id,
             name: row.name,
-            customerId: row.customerId,
+            // customerId: row.customerId,
             brandId: row.brandId,
             saleDate: row.saleDate
         };
