@@ -38,21 +38,30 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
             if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_EXAMINER"))) {
                 map = new HashMap();
                 map.put("url","/service-customerplan/dashboard");
+                map.put("picClass", "fa fa-dashboard");
                 map.put("text","主页");
                 URLs.add(map);
                 map = new HashMap();
                 map.put("url","/service-customerplan/eventReview");
                 map.put("text","确认客户计划");
+                map.put("picClass", "fa fa-check-square-o");
+                URLs.add(map);
+                map = new HashMap();
+                map.put("url", "/service-customerplan/customerPlan");
+                map.put("text", "添加客户计划");
+                map.put("picClass", "fa fa-pencil-square");
                 URLs.add(map);
                 return URLs;
             } else {
                 map = new HashMap();
                 map.put("url","/service-customerplan/dashboard");
                 map.put("text","主页");
+                map.put("picClass", "fa fa-dashboard");
                 URLs.add(map);
                 map = new HashMap();
-                map.put("url","/service-customerplan/addCustomerPlan");
+                map.put("url","/service-customerplan/customerPlan");
                 map.put("text","添加客户计划");
+                map.put("picClass", "fa fa-pencil-square");
                 URLs.add(map);
                 return URLs;
             }

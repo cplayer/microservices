@@ -3,30 +3,29 @@
 
 function set_sidebar_menu ()
 {
-    var data = find_cookie('logininfo');
-    var pic_dict = {
-        "/dashboard": "fa fa-dashboard",
-        "/addCustomerPlan": "fa fa-pencil-square",
-        "/eventReview": "fa fa-check-square-o"
-    };
-    if (data != 'empty') 
-    {
-        data = JSON.parse(data[1]);
-        console.log(data);
-        $(".user-panel > .info > p").html(data["username"]);
-        $(".user-menu > a > span").html(data["username"]);
-        $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
-        var str = "";
-        str += '<li class="header">主导航</li>';
-        for (var element in data["authoritiesURL"])
+    $.ajax
+    (
         {
-            var url = data["authoritiesURL"][element]["url"];
-            var text = data["authoritiesURL"][element]["text"];
-            str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+            type: "GET",
+            dataType: "json",
+            url: "/service-customerplan/getURLByRole",
+            success: function (data)
+            {
+                console.log(data);
+                var str = "";
+                str += '<li class="header">主导航</li>';
+                for (var element in data)
+                {
+                    var picClass = data[element]["picClass"];
+                    var url = data[element]["url"];
+                    var text = data[element]["text"];
+                    str += '<li><a href="' + url + '"><i class="' + picClass + '"></i><span>' + text + '</span></a></li>';
+                    console.log(str);
+                    $(".sidebar-menu").html(str);
+                }
+            }
         }
-        console.log(str);
-        $(".sidebar-menu").html(str);
-    }
+    );
 }
 
 var totalTableNum;
@@ -287,7 +286,8 @@ $(document).ready(function ()
         minView: "month",
         format: 'yyyy-mm-dd',
         autoclose: true,
-        todayBtn: true
+        todayBtn: true,
+        startDate: "1990-01-01"
     });
     set_sidebar_menu();
     totalTableNum = 0;

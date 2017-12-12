@@ -45,6 +45,8 @@ public class ServiceAuthorizationApplication extends WebSecurityConfigurerAdapte
 					.loginPage("/login")
 					.failureUrl("/login?error")
 					.usernameParameter("username")
-					.passwordParameter("password");
+					.passwordParameter("password")
+				.and()
+				.csrf().disable();
 	}
 }

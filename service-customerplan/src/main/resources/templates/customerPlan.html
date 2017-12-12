@@ -45,7 +45,7 @@
 	<script th:src="@{/service-customerplan/js/messenger/messenger-theme-future.js}" type="text/javascript"></script>
 	<script th:src="@{/service-customerplan/js/cookie-operator.js}" type="text/javascript"></script>
 
-	<link rel="stylesheet" th:href="@{/service-customerplan/css/addCustomerPlan.css}" />
+	<link rel="stylesheet" th:href="@{/service-customerplan/css/customerPlan.css}" />
 	<link rel="stylesheet" th:href="@{/service-customerplan/css/bootstrap-datetimepicker.min.css}" />
 	<link rel="stylesheet" th:href="@{/service-customerplan/css/zTreeStyle.css}" />
 	<link rel="stylesheet" th:href="@{/service-customerplan/css/select2.min.css}" />
@@ -66,10 +66,12 @@
 			<a href="#" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini">
-					<b>D</b>BD</span>
+					<!-- <b>D</b>BD</span> -->
+					<b>主</b>页</span>
 				<!-- logo for regular state and mobile devices -->
 				<span class="logo-lg">
-					<b>Dash</b>Board</span>
+					<!-- <b>Dash</b>Board</span> -->
+					<b>主</b>页</span>
 			</a>
 
 			<!-- Header Navbar -->
@@ -82,7 +84,7 @@
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
 						<!-- Messages: style can be found in dropdown.less-->
-						<li class="dropdown messages-menu">
+						<li class="dropdown messages-menu" style="display: none">
 							<!-- Menu toggle button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-envelope-o"></i>
@@ -122,7 +124,7 @@
 						<!-- /.messages-menu -->
 
 						<!-- Notifications Menu -->
-						<li class="dropdown notifications-menu">
+						<li class="dropdown notifications-menu" style="display: none">
 							<!-- Menu toggle button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-bell-o"></i>
@@ -148,7 +150,7 @@
 							</ul>
 						</li>
 						<!-- Tasks Menu -->
-						<li class="dropdown tasks-menu">
+						<li class="dropdown tasks-menu" style="display: none">
 							<!-- Menu Toggle Button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-flag-o"></i>
@@ -263,19 +265,19 @@
 					<li>
 						<a href="/service-customerplan/dashboard">
 							<i class="fa fa-dashboard"></i>
-							<span>Dashboard</span>
+							<span>主页</span>
 						</a>
 					</li>
 					<li>
-						<a href="/service-customerplan/addCustomerPlan">
+						<a href="/service-customerplan/customerPlan">
 							<i class="fa fa-pencil-square"></i>
-							<span>添加事件</span>
+							<span>添加客户计划</span>
 						</a>
 					</li>
 					<li>
 						<a href="/service-customerplan/eventReview">
 							<i class="fa fa-check-square-o"></i>
-							<span>审核事件</span>
+							<span>确认客户计划</span>
 						</a>
 					</li>
 				</ul>
@@ -289,15 +291,15 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					添加事件
-					<small>添加并完善事件</small>
+					添加客户计划
+					<small>添加并完善客户计划</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li>
 						<a href="#">
 							<i class="fa fa-dashboard"></i> 主系统</a>
 					</li>
-					<li class="active">添加事件</li>
+					<li class="active">添加客户计划</li>
 				</ol>
 			</section>
 
@@ -473,7 +475,7 @@
 	<!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
 	 user experience. -->
-	<script th:src="@{/service-customerplan/js/addCustomerPlan.js}" type="text/javascript"></script>
+	<script th:src="@{/service-customerplan/js/customerPlan.js}" type="text/javascript"></script>
 </body>
 
 </html>

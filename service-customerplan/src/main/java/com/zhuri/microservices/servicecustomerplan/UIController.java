@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class UIController {
-    @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.GET)
-    public String addCustomerPlan() {
-        return "addCustomerPlan";
+    @RequestMapping(value = "/customerPlan", method = RequestMethod.GET)
+    public String customerPlan() {
+        return "customerPlan";
     }
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)

@@ -56,10 +56,12 @@
 			<a href="#" class="logo">
 				<!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini">
-					<b>D</b>BD</span>
+					<!-- <b>D</b>BD</span> -->
+					<b>主</b>页</span>
 				<!-- logo for regular state and mobile devices -->
 				<span class="logo-lg">
-					<b>Dash</b>Board</span>
+					<!-- <b>Dash</b>Board</span> -->
+					<b>主</b>页</span>
 			</a>
 
 			<!-- Header Navbar -->
@@ -72,7 +74,7 @@
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
 						<!-- Messages: style can be found in dropdown.less-->
-						<li class="dropdown messages-menu">
+						<li class="dropdown messages-menu" style="display: none">
 							<!-- Menu toggle button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-envelope-o"></i>
@@ -112,7 +114,7 @@
 						<!-- /.messages-menu -->
 
 						<!-- Notifications Menu -->
-						<li class="dropdown notifications-menu">
+						<li class="dropdown notifications-menu" style="display: none">
 							<!-- Menu toggle button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-bell-o"></i>
@@ -138,7 +140,7 @@
 							</ul>
 						</li>
 						<!-- Tasks Menu -->
-						<li class="dropdown tasks-menu">
+						<li class="dropdown tasks-menu" style="display: none">
 							<!-- Menu Toggle Button -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i class="fa fa-flag-o"></i>
@@ -253,19 +255,19 @@
 					<li>
 						<a href="/service-customerplan/dashboard">
 							<i class="fa fa-dashboard"></i>
-							<span>Dashboard</span>
+							<span>主页</span>
 						</a>
 					</li>
 					<li>
-						<a href="/service-customerplan/addCustomerPlan">
+						<a href="/service-customerplan/customerPlan">
 							<i class="fa fa-pencil-square"></i>
-							<span>添加事件</span>
+							<span>添加客户计划</span>
 						</a>
 					</li>
 					<li>
 						<a href="/service-customerplan/eventReview">
 							<i class="fa fa-check-square-o"></i>
-							<span>审核事件</span>
+							<span>确认客户计划</span>
 						</a>
 					</li>
 				</ul>
@@ -323,7 +325,7 @@
 								<i class="fa fa-question-circle"></i>
 							</span>
 							<div class="info-box-content">
-								<span class="info-box-text">待审核计划数</span>
+								<span class="info-box-text">待确认计划数</span>
 								<span class="info-box-number" id="number2">0</span>
 							</div>
 						</div>
@@ -334,7 +336,7 @@
 								<i class="fa fa-check-square-o"></i>
 							</span>
 							<div class="info-box-content">
-								<span class="info-box-text">已审核</span>
+								<span class="info-box-text">已确认</span>
 								<span class="info-box-number" id="number3">0</span>
 							</div>
 						</div>
@@ -344,10 +346,10 @@
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
 							<li class="active">
-								<a href="#tab2" data-toggle="tab">待审核</a>
+								<a href="#tab2" data-toggle="tab">待确认</a>
 							</li>
 							<li>
-								<a href="#tab3" data-toggle="tab">已审核</a>
+								<a href="#tab3" data-toggle="tab">已确认</a>
 							</li>
 							
 						</ul>
