@@ -30,7 +30,7 @@ function set_sidebar_menu ()
         {
             var url = data["authoritiesURL"][element]["url"];
             var text = data["authoritiesURL"][element]["text"];
-            str += '<li><a href="' + url + '"><i class="' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+            str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
         }
         console.log(str);
         $(".sidebar-menu").html(str);
@@ -92,7 +92,7 @@ $(document).ready(function ()
             {
                 type: "GET",
                 dataType: "json",
-                url: "/getCustomerPlansByStatus",
+                url: "/service-customerplan/getCustomerPlansByStatus",
                 data: { "status": 1 },
                 success: function (data)
                 {
@@ -125,7 +125,7 @@ function detailFormatter (index, row, element)
         {
             type: "GET",
             dataType: "json",
-            url: "/getCustomerPlanEventByCustomerPlanId",
+            url: "/service-customerplan/getCustomerPlanEventByCustomerPlanId",
             data: { "customerPlanId": id },
             success: function (data)
             {
@@ -157,7 +157,7 @@ $("#btn-review").click(function ()
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: "/setCustomerPlanStatus",
+            url: "/service-customerplan/setCustomerPlanStatus",
             data: { "status": 2, "id": id },
             success: function (data)
             {
