@@ -14,7 +14,7 @@ public interface CustomerPlanMapper {
     int addCustomerPlan(CustomerPlan customerPlan);
 
     @Update("Update customerplan " +
-            " SET name=#{name}, brandId=#{brandId}, saleDate=#{saleDate}, status=#{status}, createDate=#{createDate} " +
+            " SET name=#{name}, brandId=#{brandId}, saleDate=#{saleDate}, status=#{status} " +
             " WHERE id = #{id}")
     void updateCustomerPlan(CustomerPlan customerPlan);
 

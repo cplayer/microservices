@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
@@ -18,22 +23,38 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    //.antMatchers("/**/test").hasRole("EXAMINER")
-                    .anyRequest().authenticated();
+                    .antMatchers("/**/setCustomerPlanStatus").hasRole("EXAMINER")
+                    .anyRequest().authenticated()
+                .and().csrf().disable();
 
     }
 
     @RestController
     public static class AuthorizeURLController {
-        @RequestMapping(value = "/mytest", method = RequestMethod.GET)
-        public void getURLByRole(Authentication authentication) {
-            /*for (GrantedAuthority ga : authentication.getAuthorities()) {
-                System.out.println(ga.getAuthority());
-            }*/
+        @RequestMapping(value = "/getURLByRole", method = RequestMethod.GET)
+        public List getURLByRole(Authentication authentication) {
+            List<Map> URLs = new ArrayList<>();
+            Map map = null;
             if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_EXAMINER"))) {
-                System.out.println("I'm examiner");
+                map = new HashMap();
+                map.put("url","/service-customerplan/dashboard");
+                map.put("text","主页");
+                URLs.add(map);
+                map = new HashMap();
+                map.put("url","/service-customerplan/eventReview");
+                map.put("text","确认客户计划");
+                URLs.add(map);
+                return URLs;
             } else {
-                System.out.println("I'm user");
+                map = new HashMap();
+                map.put("url","/service-customerplan/dashboard");
+                map.put("text","主页");
+                URLs.add(map);
+                map = new HashMap();
+                map.put("url","/service-customerplan/addCustomerPlan");
+                map.put("text","添加客户计划");
+                URLs.add(map);
+                return URLs;
             }
         }
     }
