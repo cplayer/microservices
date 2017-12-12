@@ -13,15 +13,15 @@ function formatDate (index, data)
 
 function set_sidebar_menu ()
 {
-    var data = document.cookie;
+    var data = find_cookie('logininfo');
     var pic_dict = {
         "/dashboard": "fa fa-dashboard",
         "/addCustomerPlan": "fa fa-pencil-square",
         "/eventReview": "fa fa-check-square-o"
     };
-    if (data.length > 0) 
+    if (data != 'empty') 
     {
-        data = JSON.parse(data);
+        data = JSON.parse(data[1]);
         console.log(data);
         $(".user-panel > .info > p").html(data["username"]);
         $(".user-menu > a > span").html(data["username"]);
@@ -188,14 +188,7 @@ function operateFormatter (value, row, index)
 window.operateEvents = {
     'click .edit': function (e, value, row, index)
     {
-        // $table.bootstrapTable('remove', {
-        //     field: 'id',
-        //     values: [row.id]
-        // });
         console.log(row);
-        // console.log(e);
-        // console.log(value);
-        // console.log(index);
         var msg = 
         {
             customerPlanId: row.id,
@@ -207,5 +200,6 @@ window.operateEvents = {
         console.log(msg);
         document.cookie = "editflag=1";
         document.cookie = "msg=" + JSON.stringify(msg);
+        window.location.href = "/addCustomerPlan";
     }
 };
