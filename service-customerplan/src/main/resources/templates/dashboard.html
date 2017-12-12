@@ -262,12 +262,6 @@
 						</a>
 					</li>
 					<li>
-						<a href="/addCustomerPlanEvent">
-							<i class="fa fa-pencil-square-o"></i>
-							<span>完善事件</span>
-						</a>
-					</li>
-					<li>
 						<a href="/eventReview">
 							<i class="fa fa-check-square-o"></i>
 							<span>审核事件</span>
@@ -300,7 +294,7 @@
 			<!-- Here is Main Content -->
 			<section class="content container-fluid">
 				<div class="row">
-					<div class="col-md-3 col-sm-6 col-xs-12">
+					<!-- <div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="info-box">
 							<span class="info-box-icon bg-aqua">
 								<i class="fa fa-sticky-note-o"></i>
@@ -311,6 +305,17 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="info-box">
+							<span class="info-box-icon bg-yellow">
+								<i class="fa fa-thumbs-o-up"></i>
+							</span>
+							<div class="info-box-content">
+								<span class="info-box-text">申请完成</span>
+								<span class="info-box-number" id="number4">0</span>
+							</div>
+						</div>
+					</div> -->
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="info-box">
 							<span class="info-box-icon bg-red">
@@ -333,44 +338,20 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<div class="info-box">
-							<span class="info-box-icon bg-yellow">
-								<i class="fa fa-thumbs-o-up"></i>
-							</span>
-							<div class="info-box-content">
-								<span class="info-box-text">申请完成</span>
-								<span class="info-box-number" id="number4">0</span>
-							</div>
-						</div>
-					</div>
 				</div>
 				<div class="row">
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
 							<li class="active">
-								<a href="#tab1" data-toggle="tab">草稿</a>
-							</li>
-							<li>
 								<a href="#tab2" data-toggle="tab">待审核</a>
 							</li>
 							<li>
 								<a href="#tab3" data-toggle="tab">已审核</a>
 							</li>
-							<li>
-								<a href="#tab4" data-toggle="tab">申请完成</a>
-							</li>
-							<li>
-								<a href="#tab5" data-toggle="tab">确认完成</a>
-							</li>
+							
 						</ul>
 						<div class="tab-content">
-							<div class="tab-pane active" id="tab1">
-								<table class="table table-bordered table-striped" id="table1"
-									data-detail-view="true" data-detail-formatter="detailFormatter">
-								</table>
-							</div>
-							<div class="tab-pane" id="tab2">
+							<div class="tab-pane active" id="tab2">
 								<table class="table table-bordered table-striped" id="table2"
 									data-detail-view="true" data-detail-formatter="detailFormatter">
 								</table>
@@ -380,16 +361,7 @@
 									data-detail-view="true" data-detail-formatter="detailFormatter">
 								</table>
 							</div>
-							<div class="tab-pane" id="tab4">
-								<table class="table table-bordered table-striped" id="table4"
-									data-detail-view="true" data-detail-formatter="detailFormatter">
-								</table>
-							</div>
-							<div class="tab-pane" id="tab5">
-								<table class="table table-bordered table-striped" id="table5"
-									data-detail-view="true" data-detail-formatter="detailFormatter">
-								</table>
-							</div>
+							
 						</div>
 					</div>
 				</div>
