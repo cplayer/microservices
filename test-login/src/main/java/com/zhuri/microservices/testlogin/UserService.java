@@ -21,7 +21,7 @@ public class UserService {
 
     private List<User> getTestData() {
         AuthoritiesURL authoritiesURL1 = new AuthoritiesURL("/dashboard", "主页");
-        AuthoritiesURL authoritiesURL2 = new AuthoritiesURL("/addCustomerPlan", "添加客户计划");
+        AuthoritiesURL authoritiesURL2 = new AuthoritiesURL("/customerPlan", "添加客户计划");
         AuthoritiesURL authoritiesURL3 = new AuthoritiesURL("/eventReview", "审核事件");
 
         List<User> users = new ArrayList<User>();

@@ -13,43 +13,91 @@ function formatDate (index, data)
 
 function set_sidebar_menu ()
 {
-    var data = find_cookie('logininfo');
-    var pic_dict = {
-        "/dashboard": "fa fa-dashboard",
-        "/addCustomerPlan": "fa fa-pencil-square",
-        "/eventReview": "fa fa-check-square-o"
-    };
-    if (data != 'empty') 
-    {
-        data = JSON.parse(data[1]);
-        console.log(data);
-        $(".user-panel > .info > p").html(data["username"]);
-        $(".user-menu > a > span").html(data["username"]);
-        $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
-        var str = "";
-        str += '<li class="header">主导航</li>';
-        for (var element in data["authoritiesURL"])
+    // var data = find_cookie('logininfo');
+    // var pic_dict = {
+    //     "/dashboard": "fa fa-dashboard",
+    //     "/customerPlan": "fa fa-pencil-square",
+    //     "/eventReview": "fa fa-check-square-o"
+    // };
+    // if (data != 'empty') 
+    // {
+    //     data = JSON.parse(data[1]);
+    //     console.log(data);
+    //     $(".user-panel > .info > p").html(data["username"]);
+    //     $(".user-menu > a > span").html(data["username"]);
+    //     $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
+    //     var str = "";
+    //     str += '<li class="header">主导航</li>';
+    //     for (var element in data["authoritiesURL"])
+    //     {
+    //         var url = data["authoritiesURL"][element]["url"];
+    //         var text = data["authoritiesURL"][element]["text"];
+    //         str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+    //     }
+    //     console.log(str);
+    //     $(".sidebar-menu").html(str);
+    //     Messenger().post({
+    //         type: 'info',
+    //         message: '欢迎登录，' + data["username"] + '！',
+    //         hideAfter: 2
+    //     });
+    // }
+    // else
+    // {
+    //     Messenger().post({
+    //         type: 'info',
+    //         message: '欢迎进入Dashboard！',
+    //         hideAfter: 2
+    //     })
+    // }
+    $.ajax
+    (
         {
-            var url = data["authoritiesURL"][element]["url"];
-            var text = data["authoritiesURL"][element]["text"];
-            str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+            type: "GET",
+            dataType: "json",
+            url: "/service-customerplan/getURLByRole",
+            success: function (data)
+            {
+                console.log(data);
+                var str = "";
+                str += '<li class="header">主导航</li>';
+                for (var element in data)
+                {
+                    var picClass = data[element]["picClass"];
+                    var url = data[element]["url"];
+                    var text = data[element]["text"];
+                    str += '<li><a href="' + url + '"><i class="' + picClass + '"></i><span>' + text + '</span></a></li>';
+                }
+                console.log(str);
+                $(".sidebar-menu").html(str);
+            }
         }
-        console.log(str);
-        $(".sidebar-menu").html(str);
-        Messenger().post({
-            type: 'info',
-            message: '欢迎登录，' + data["username"] + '！',
-            hideAfter: 2
-        });
-    }
-    else
-    {
-        Messenger().post({
-            type: 'info',
-            message: '欢迎进入Dashboard！',
-            hideAfter: 2
-        })
-    }
+    );
+    $.ajax
+    (
+        {
+            type: "GET",
+            url: "/getUserInfo",
+            success: function (data)
+            {
+                console.log(data);
+                $(".user-panel > .info > p").html(data["username"]);
+                $(".user-menu > a > span").html(data["username"]);
+                $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
+                var login_flag = find_cookie('login_flag');
+                if (login_flag == 'empty' && login_flag[1] == 0)
+                {
+                    Messenger().post({
+                        type: 'info',
+                        message: '欢迎登录，' + data["username"] + '！',
+                        hideAfter: 2
+                    });
+                    set_cookie('login_flag', 1);    
+                }
+                
+            }
+        }
+    );
 }
 
 $(document).ready(function ()
@@ -106,7 +154,8 @@ $(document).ready(function ()
             title: "销售时间"
         }]
     });
-    $.ajax(
+    $.ajax
+    (
         {
             type: "GET",
             dataType: "json",
@@ -114,7 +163,7 @@ $(document).ready(function ()
             data: { "status": 1 },
             success: function (data)
             {
-                console.log(data);
+                // console.log(data);
                 data_1 = data;
                 formatDate("saleDate", data_1);
                 formatDate("createDate", data_1);
@@ -123,7 +172,8 @@ $(document).ready(function ()
             }
         }
     );
-    $.ajax(
+    $.ajax
+    (
         {
             type: "GET",
             dataType: "json",
@@ -131,7 +181,7 @@ $(document).ready(function ()
             data: { "status": 2 },
             success: function (data)
             {
-                console.log(data);
+                // console.log(data);
                 data_2 = data;
                 formatDate("saleDate", data_2);
                 formatDate("createDate", data_2);
@@ -160,7 +210,7 @@ function detailFormatter (index, row, element)
                 for (var x in data)
                 {
                     str += "计划编号: " + data[x]["customerPlanId"];
-                    str += " 事件编号: " + data[x]["eventId"];
+                    // str += " 事件编号: " + data[x]["eventId"];
                     str += " 事件名称：" + data[x]["eventName"];
                     str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
                     str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
@@ -200,6 +250,6 @@ window.operateEvents = {
         console.log(msg);
         document.cookie = "editflag=1";
         document.cookie = "msg=" + JSON.stringify(msg);
-        window.location.href = "/service-customerplan/addCustomerPlan";
+        window.location.href = "/service-customerplan/customerPlan";
     }
 };

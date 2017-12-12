@@ -11,52 +11,33 @@ function formatDate (index, data)
 
 function set_sidebar_menu ()
 {
-    var data = document.cookie;
-    var pic_dict = {
-        "/dashboard": "fa fa-dashboard",
-        "/addCustomerPlan": "fa fa-pencil-square",
-        "/eventReview": "fa fa-check-square-o"
-    };
-    if (data.length > 0) 
-    {
-        data = JSON.parse(data);
-        console.log(data);
-        $(".user-panel > .info > p").html(data["username"]);
-        $(".user-menu > a > span").html(data["username"]);
-        $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
-        var str = "";
-        str += '<li class="header">主导航</li>';
-        for (var element in data["authoritiesURL"])
+    $.ajax
+    (
         {
-            var url = data["authoritiesURL"][element]["url"];
-            var text = data["authoritiesURL"][element]["text"];
-            str += '<li><a href="' + url + '"><i class="' + '/service-customerplan' + pic_dict[url] + '"></i><span>' + text + '</span></a></li>';
+            type: "GET",
+            dataType: "json",
+            url: "/service-customerplan/getURLByRole",
+            success: function (data)
+            {
+                console.log(data);
+                var str = "";
+                str += '<li class="header">主导航</li>';
+                for (var element in data)
+                {
+                    var picClass = data[element]["picClass"];
+                    var url = data[element]["url"];
+                    var text = data[element]["text"];
+                    str += '<li><a href="' + url + '"><i class="' + picClass + '"></i><span>' + text + '</span></a></li>';
+                    console.log(str);
+                    $(".sidebar-menu").html(str);
+                }
+            }
         }
-        console.log(str);
-        $(".sidebar-menu").html(str);
-    }
+    );
 }
 
 $(document).ready(function ()
 {
-    // function progressInit ()
-    // {
-    //     var stepProgressDiv = $("#stepProgress");
-    //     var stepProgressBar = stepProgressDiv.progressStep({
-    //         fillColor: "#516784",
-    //         radius: 15,
-    //         strokeColor: "#000000",
-    //         "font-size": 18,
-    //         "labelOffset": 30,
-    //         margin: 30
-    //     });
-    //     stepProgressBar.addStep("填写计划");
-    //     stepProgressBar.addStep("完善计划");
-    //     stepProgressBar.addStep("待审核");
-    //     stepProgressBar.addStep("已审核");
-    //     stepProgressBar.refreshLayout();
-    //     stepProgressBar.setCurrentStep(2);    
-    // }
     function tableInit ()
     {
         $("#reviewTable").bootstrapTable({
@@ -134,7 +115,7 @@ function detailFormatter (index, row, element)
                 for (var x in data)
                 {
                     str += "计划编号: " + data[x]["customerPlanId"];
-                    str += " 事件编号: " + data[x]["eventId"];
+                    // str += " 事件编号: " + data[x]["eventId"];
                     str += " 事件名称：" + data[x]["eventName"];
                     str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
                     str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
