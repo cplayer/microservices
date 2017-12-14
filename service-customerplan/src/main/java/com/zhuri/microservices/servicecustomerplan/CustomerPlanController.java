@@ -58,6 +58,16 @@ public class CustomerPlanController {
     public List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(@RequestParam int customerId, @RequestParam int status) {
         return customerPlanService.getCustomerPlansByCustomerIdAndStatus(customerId, status);
     }*/
+    @RequestMapping(value="/countCustomerPlansByStatus", method=RequestMethod.GET)
+    public int getCustomerPlansByStatus(@RequestParam int status,
+                                                       Authentication authentication, @RequestHeader(value="user-id") String userId) {
+        if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_EXAMINER"))) {
+            return customerPlanService.countCustomerPlansByStatus(status);
+        } else {
+            int id = Integer.parseInt(userId);
+            return customerPlanService.countCustomerPlansByCustomerIdAndStatus(id, status);
+        }
+    }
 
     @RequestMapping(value="/getCustomerPlansByStatus", method=RequestMethod.GET)
     public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, @RequestParam int pageNum, @RequestParam int pageSize,
