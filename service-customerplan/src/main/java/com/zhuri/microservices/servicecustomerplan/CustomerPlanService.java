@@ -72,30 +72,30 @@ public class CustomerPlanService {
         return customerPlanMapper.setCustomerPlanStatus(status, id);
     }
 
-    public int countCustomerPlansByStatus(int status) {
+    /*public int countCustomerPlansByStatus(int status) {
         return customerPlanMapper.countCustomerPlansByStatus(status);
     }
 
     public int countCustomerPlansByCustomerIdAndStatus(int customerId, int status) {
         return customerPlanMapper.countCustomerPlansByCustomerIdAndStatus(customerId,status);
+    }*/
+
+    public PageBean<CustomerPlan> getCustomerPlansByStatus(int status, int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<CustomerPlan> allRows = customerPlanMapper.getCustomerPlansByStatus(status);
+        int total = customerPlanMapper.countCustomerPlansByStatus(status);            //总记录数
+        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, total);
+        pageData.setRows(allRows);
+        return pageData;
     }
 
-    public List<CustomerPlan> getCustomerPlansByStatus(int status, int pageNum, int pageSize) {
+    public PageBean<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(int customerId, int status, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<CustomerPlan> allItems = customerPlanMapper.getCustomerPlansByStatus(status);
-        int countNums = customerPlanMapper.countCustomerPlansByStatus(status);            //总记录数
-        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, countNums);
-        pageData.setItems(allItems);
-        return pageData.getItems();
-    }
-
-    public List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(int customerId, int status, int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
-        List<CustomerPlan> allItems = customerPlanMapper.getCustomerPlansByCustomerIdAndStatus(customerId, status);
-        int countNums = customerPlanMapper.countCustomerPlansByCustomerIdAndStatus(customerId,status);
-        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, countNums);
-        pageData.setItems(allItems);
-        return pageData.getItems();
+        List<CustomerPlan> allRows = customerPlanMapper.getCustomerPlansByCustomerIdAndStatus(customerId, status);
+        int total = customerPlanMapper.countCustomerPlansByCustomerIdAndStatus(customerId,status);
+        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, total);
+        pageData.setRows(allRows);
+        return pageData;
     }
 
 

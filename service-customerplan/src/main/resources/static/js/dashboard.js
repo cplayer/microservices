@@ -58,7 +58,7 @@ function set_sidebar_menu ()
             url: "/service-customerplan/getURLByRole",
             success: function (data)
             {
-                console.log(data);
+                // console.log(data);
                 var str = "";
                 str += '<li class="header">主导航</li>';
                 for (var element in data)
@@ -80,7 +80,7 @@ function set_sidebar_menu ()
             url: "/getUserInfo",
             success: function (data)
             {
-                console.log(data);
+                // console.log(data);
                 $(".user-panel > .info > p").html(data["username"]);
                 $(".user-menu > a > span").html(data["username"]);
                 $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
@@ -104,7 +104,34 @@ $(document).ready(function ()
 {
     $("#table2").bootstrapTable(
     {
-        paginationDetailHAlign: "right",
+        pagination: true,
+        sidePagination: "server",
+        method: "get",
+        url: "/service-customerplan/getCustomerPlansByStatus",
+        cache: false,
+        queryParams: function (params)
+        {
+            console.log("params = ");
+            console.log(params);
+            params.sortOrder = undefined;
+            params["status"] = 1;
+            return params;
+        },
+        queryParamsType: "",
+        pageNumber: 1,
+        pageSize: 10,
+        pageList: [10, 20, 25, 50, 'All'],
+        responseHandler: function (response)
+        {
+            for (var element in response)
+            {
+                delete response[element]["eventList"];
+                delete response[element]["status"];
+                response[element]["operate"] = '';
+            }
+            return response;
+        },
+        // paginationDetailHAlign: "right",
         columns: [{
             field: 'id',
             title: '计划编号'
@@ -133,7 +160,32 @@ $(document).ready(function ()
     });
     $("#table3").bootstrapTable(
     {
-        paginationDetailHAlign: "right",
+        pagination: true,
+        sidePagination: "server",
+        method: "get",
+        url: "/service-customerplan/getCustomerPlansByStatus",
+        cache: false,
+        queryParams: function (params)
+        {
+            params.sortOrder = undefined;
+            params["status"] = 2;
+            return params;
+        },
+        queryParamsType: "",
+        pageNumber: 1,
+        pageSize: 10,
+        pageList: [10, 20, 25, 50, 'All'],
+        responseHandler: function (response)
+        {
+            for (var element in response)
+            {
+                delete response[element]["eventList"];
+                delete response[element]["status"];
+                response[element]["operate"] = '';
+            }
+            return response;
+        },
+        // paginationDetailHAlign: "right",
         columns: [{
             field: 'id',
             title: '计划编号'
@@ -154,42 +206,6 @@ $(document).ready(function ()
             title: "销售时间"
         }]
     });
-    $.ajax
-    (
-        {
-            type: "GET",
-            dataType: "json",
-            url: "/service-customerplan/getCustomerPlansByStatus",
-            data: { "status": 1 },
-            success: function (data)
-            {
-                // console.log(data);
-                data_1 = data;
-                formatDate("saleDate", data_1);
-                formatDate("createDate", data_1);
-                $("#table2").bootstrapTable("load", data_1);
-                $("#number2").html(data_1.length);
-            }
-        }
-    );
-    $.ajax
-    (
-        {
-            type: "GET",
-            dataType: "json",
-            url: "/service-customerplan/getCustomerPlansByStatus",
-            data: { "status": 2 },
-            success: function (data)
-            {
-                // console.log(data);
-                data_2 = data;
-                formatDate("saleDate", data_2);
-                formatDate("createDate", data_2);
-                $("#table3").bootstrapTable("load", data_2);
-                $("#number3").html(data_2.length);
-            }
-        }
-    );
     set_sidebar_menu();
 });
 
@@ -234,7 +250,7 @@ function detailFormatter (index, row, element)
                     ].join('');
                 }
                 str += "</table>";
-                console.log(str);
+                // console.log(str);
                 if (data.length == 0) str = "无具体信息！";
                 element[0].innerHTML = str;   
             }
