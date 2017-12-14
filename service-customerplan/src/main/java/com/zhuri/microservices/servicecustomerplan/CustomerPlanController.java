@@ -60,12 +60,13 @@ public class CustomerPlanController {
     }*/
 
     @RequestMapping(value="/getCustomerPlansByStatus", method=RequestMethod.GET)
-    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, Authentication authentication, @RequestHeader(value="user-id") String userId) {
+    public List<CustomerPlan> getCustomerPlansByStatus(@RequestParam int status, @RequestParam int pageNum, @RequestParam int pageSize,
+                                                       Authentication authentication, @RequestHeader(value="user-id") String userId) {
         if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_EXAMINER"))) {
-            return customerPlanService.getCustomerPlansByStatus(status);
+            return customerPlanService.getCustomerPlansByStatus(status, pageNum, pageSize);
         } else {
             int id = Integer.parseInt(userId);
-            return customerPlanService.getCustomerPlansByCustomerIdAndStatus(id, status);
+            return customerPlanService.getCustomerPlansByCustomerIdAndStatus(id, status, pageNum, pageSize);
         }
     }
 

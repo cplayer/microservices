@@ -1,5 +1,6 @@
 package com.zhuri.microservices.servicecustomerplan;
 
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -61,23 +62,34 @@ public class CustomerPlanService {
         result = 1;
         return result;
     }
-
+/*
     public List<CustomerPlan> getCustomerPlansByCustomerId(int customerId) {
         return customerPlanMapper.getCustomerPlansByCustomerId(customerId);
-    }
+    }*/
 
     //status = 1 提交审核 2 已审核
     public int setCustomerPlanStatus(int status, int id) {
         return customerPlanMapper.setCustomerPlanStatus(status, id);
     }
 
-    public List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(int customerId, int status) {
-        return customerPlanMapper.getCustomerPlansByCustomerIdAndStatus(customerId, status);
+    public List<CustomerPlan> getCustomerPlansByStatus(int status, int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<CustomerPlan> allItems = customerPlanMapper.getCustomerPlansByStatus(status);
+        int countNums = customerPlanMapper.countCustomerPlansByStatus(status);            //总记录数
+        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, countNums);
+        pageData.setItems(allItems);
+        return pageData.getItems();
     }
 
-    public List<CustomerPlan> getCustomerPlansByStatus(int status) {
-        return customerPlanMapper.getCustomerPlansByStatus(status);
+    public List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(int customerId, int status, int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<CustomerPlan> allItems = customerPlanMapper.getCustomerPlansByCustomerIdAndStatus(customerId, status);
+        int countNums = customerPlanMapper.countCustomerPlansByCustomerIdAndStatus(customerId,status);
+        PageBean<CustomerPlan> pageData = new PageBean<>(pageNum, pageSize, countNums);
+        pageData.setItems(allItems);
+        return pageData.getItems();
     }
+
 
     //customrPlan event
     public List<CustomerPlanEvent> getCustomerPlanEventByCustomerPlanId( int customerPlanId) {
