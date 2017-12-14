@@ -207,18 +207,35 @@ function detailFormatter (index, row, element)
             {
                 console.log(data);
                 var str = "";
+                str += "<table class='table table-bordered table-hover' style='border: 2px; color=black; border-style: solid'>";
+                str += [
+                    "<tr>",
+                    "<th>计划编号</th>",
+                    "<th>事件名称</th>",
+                    "<th>起始时间</th>",
+                    "<th>终止时间</th>",
+                    "</tr>",
+                ].join('');
                 for (var x in data)
                 {
-                    str += "计划编号: " + data[x]["customerPlanId"];
-                    // str += " 事件编号: " + data[x]["eventId"];
-                    str += " 事件名称：" + data[x]["eventName"];
-                    str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
-                    str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
-                    str += "<br></br>";
+                    // str += "计划编号: " + data[x]["customerPlanId"];
+                    // // str += " 事件编号: " + data[x]["eventId"];
+                    // str += " 事件名称：" + data[x]["eventName"];
+                    // str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
+                    // str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
+                    // str += "<br></br>";
+                    str += [
+                        "<tr>",
+                        "<th>" + data[x]["customerPlanId"] + "</th>",
+                        "<th>" + data[x]["eventName"] + "</th>",
+                        "<th>" + moment(data[x]["startTime"]).format("YYYY-MM-DD") + "</th>",
+                        "<th>" + moment(data[x]["endTime"]).format("YYYY-MM-DD") + "</th>",
+                        "</tr>"
+                    ].join('');
                 }
-                // console.log(str.length);
-                // console.log(str);
-                if (str.length == 0) str = "None";
+                str += "</table>";
+                console.log(str);
+                if (data.length == 0) str = "无具体信息！";
                 element[0].innerHTML = str;   
             }
         }
