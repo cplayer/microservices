@@ -46,11 +46,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 map.put("text","确认客户计划");
                 map.put("picClass", "fa fa-check-square-o");
                 URLs.add(map);
-                map = new HashMap();
-                map.put("url", "/service-customerplan/customerPlan");
-                map.put("text", "添加客户计划");
-                map.put("picClass", "fa fa-pencil-square");
-                URLs.add(map);
+                // map = new HashMap();
+                // map.put("url", "/service-customerplan/customerPlan");
+                // map.put("text", "添加客户计划");
+                // map.put("picClass", "fa fa-pencil-square");
+                // URLs.add(map);
                 return URLs;
             } else {
                 map = new HashMap();
