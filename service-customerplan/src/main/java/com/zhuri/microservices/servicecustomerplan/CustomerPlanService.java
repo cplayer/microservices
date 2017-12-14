@@ -72,6 +72,14 @@ public class CustomerPlanService {
         return customerPlanMapper.setCustomerPlanStatus(status, id);
     }
 
+    public int countCustomerPlansByStatus(int status) {
+        return customerPlanMapper.countCustomerPlansByStatus(status);
+    }
+
+    public int countCustomerPlansByCustomerIdAndStatus(int customerId, int status) {
+        return customerPlanMapper.countCustomerPlansByCustomerIdAndStatus(customerId,status);
+    }
+
     public List<CustomerPlan> getCustomerPlansByStatus(int status, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<CustomerPlan> allItems = customerPlanMapper.getCustomerPlansByStatus(status);
