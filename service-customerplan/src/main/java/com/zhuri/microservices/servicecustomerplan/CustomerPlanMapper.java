@@ -18,18 +18,24 @@ public interface CustomerPlanMapper {
             " WHERE id = #{id}")
     void updateCustomerPlan(CustomerPlan customerPlan);
 
-    @Select("SELECT * from customerplan WHERE customerId = #{customerId}")
-    List<CustomerPlan> getCustomerPlansByCustomerId(int customerId);
+    /*@Select("SELECT * from customerplan WHERE customerId = #{customerId}")
+    List<CustomerPlan> getCustomerPlansByCustomerId(int customerId);*/
 
     //status = 1 提交审核 2 已审核
     @Update("UPDATE customerplan SET status=#{status} WHERE id=#{id}")
     int setCustomerPlanStatus(@Param("status")int status, @Param("id")int id);
 
-    @Select("SELECT * from customerplan WHERE customerId = #{customerId} AND status = #{status}")
+    @Select("SELECT * FROM customerplan WHERE status = #{status}")
+    List<CustomerPlan> getCustomerPlansByStatus(int status);
+
+    @Select("SELECT COUNT(*) FROM customerplan WHERE status = #{status}")
+    int countCustomerPlansByStatus(int status);
+
+    @Select("SELECT * FROM customerplan WHERE customerId = #{customerId} AND status = #{status}")
     List<CustomerPlan> getCustomerPlansByCustomerIdAndStatus(@Param("customerId")int customerId, @Param("status")int status);
 
-    @Select("SELECT * from customerplan WHERE status = #{status}")
-    List<CustomerPlan> getCustomerPlansByStatus(int status);
+    @Select("SELECT COUNT(*) FROM customerplan WHERE customerId = #{customerId} AND status = #{status}")
+    int countCustomerPlansByCustomerIdAndStatus(@Param("customerId")int customerId, @Param("status")int status);
 
     //customerPlan event
     @Insert("INSERT INTO customerplan_event(customerPlanId, eventId, startTime, endTime, sort) " +
