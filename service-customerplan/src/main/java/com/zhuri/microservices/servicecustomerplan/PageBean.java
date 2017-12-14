@@ -4,11 +4,11 @@ import java.util.List;
 
 public class PageBean<T> {
     // 当前页
-    private Integer currentPage = 1;
+    private Integer pageNumber = 1;
     // 每页显示的总条数
     private Integer pageSize = 10;
     // 总条数
-    private Integer totalNum;
+    private Integer total;
     // 是否有下一页
     private Integer isMore;
     // 总页数
@@ -16,28 +16,28 @@ public class PageBean<T> {
     // 开始索引
     private Integer startIndex;
     // 分页结果
-    private List<T> items;
+    private List<T> rows;
 
     public PageBean() {
         super();
     }
 
-    public PageBean(Integer currentPage, Integer pageSize, Integer totalNum) {
+    public PageBean(Integer pageNumber, Integer pageSize, Integer total) {
         super();
-        this.currentPage = currentPage;
+        this.pageNumber = pageNumber;
         this.pageSize = pageSize;
-        this.totalNum = totalNum;
-        this.totalPage = (this.totalNum+this.pageSize-1)/this.pageSize;
-        this.startIndex = (this.currentPage-1)*this.pageSize;
-        this.isMore = this.currentPage >= this.totalPage?0:1;
+        this.total = total;
+        this.totalPage = (this.total+this.pageSize-1)/this.pageSize;
+        this.startIndex = (this.pageNumber-1)*this.pageSize;
+        this.isMore = this.pageNumber >= this.totalPage?0:1;
     }
 
-    public Integer getCurrentPage() {
-        return currentPage;
+    public Integer getPageNumber() {
+        return pageNumber;
      }
 
-    public void setCurrentPage(Integer currentPage) {
-        this.currentPage = currentPage;
+    public void setPageNumber(Integer pageNumber) {
+        this.pageNumber = pageNumber;
     }
 
     public Integer getPageSize() {
@@ -48,12 +48,12 @@ public class PageBean<T> {
         this.pageSize = pageSize;
     }
 
-    public Integer getTotalNum() {
-        return totalNum;
+    public Integer getTotal() {
+        return total;
      }
 
-    public void setTotalNum(Integer totalNum) {
-        this.totalNum = totalNum;
+    public void setTotal(Integer total) {
+        this.total = total;
     }
 
     public Integer getIsMore() {
@@ -80,11 +80,11 @@ public class PageBean<T> {
          this.startIndex = startIndex;
      }
 
-     public List<T> getItems() {
-         return items;
+     public List<T> getRows() {
+         return rows;
     }
 
-     public void setItems(List<T> items) {
-         this.items = items;
+     public void setRows(List<T> rows) {
+         this.rows = rows;
      }
 }
