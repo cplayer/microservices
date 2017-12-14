@@ -6,7 +6,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @RestController
@@ -14,13 +13,13 @@ public class CustomerPlanController {
     @Autowired
     CustomerPlanService customerPlanService;
 
-    @RequestMapping("/test")
+    /*@RequestMapping("/test")
     public void user(@RequestHeader(value="user-id") String id, @RequestHeader(value="user-username") String username) {
 
         //System.out.println(httpServletRequest.getHeader("user-id"));
         //System.out.println(httpServletRequest.getHeader("user-username"));
         System.out.println(id + " " + username);
-    }
+    }*/
     //customerPlan
 
     @RequestMapping(value = "/addCustomerPlan", method = RequestMethod.POST)
@@ -44,10 +43,10 @@ public class CustomerPlanController {
         }
     }
 
-    @RequestMapping(value="/getAllCustomerPlansByCustomerId", method=RequestMethod.GET)
+    /*@RequestMapping(value="/getAllCustomerPlansByCustomerId", method=RequestMethod.GET)
     public List<CustomerPlan> getAllCustomerPlansByCustomerId(@RequestParam int customerId) {
         return customerPlanService.getCustomerPlansByCustomerId(customerId);
-    }
+    }*/
 
     //status = 1 提交审核 2 已审核
     @RequestMapping(value="/setCustomerPlanStatus", method=RequestMethod.GET)
