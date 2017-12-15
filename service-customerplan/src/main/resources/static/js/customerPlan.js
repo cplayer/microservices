@@ -26,6 +26,20 @@ function set_sidebar_menu ()
             }
         }
     );
+    $.ajax
+    (
+        {
+            type: "GET",
+            url: "/getUserInfo",
+            success: function (data)
+            {
+                // console.log(data);
+                $(".user-panel > .info > p").html(data["username"]);
+                $(".user-menu > a > span").html(data["username"]);
+                $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
+            }
+        }
+    );
 }
 
 var totalTableNum;
@@ -245,7 +259,7 @@ $(document).ready(function ()
                 $("#Name").val(msg.name);
                 // $("#Customer").val(msg.customerId);
                 $("#Brand").val(msg.brandId);
-                $("#dtp-time").val(msg.saleDate);
+                $("#dtp-time").val(moment(msg.saleDate).format("YYYY-MM-DD"));
                 $.ajax
                     (
                         {

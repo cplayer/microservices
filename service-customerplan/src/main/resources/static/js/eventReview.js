@@ -1,14 +1,3 @@
-function formatDate (index, data)
-{
-    for (var element in data)
-    {
-        if (data[element][index] != null)
-        {
-            data[element][index] = moment(data[element][index]).format("YYYY-MM-DD");
-        }
-    }
-}
-
 function set_sidebar_menu ()
 {
     $.ajax
@@ -34,6 +23,20 @@ function set_sidebar_menu ()
             }
         }
     );
+    $.ajax
+    (
+        {
+            type: "GET",
+            url: "/getUserInfo",
+            success: function (data)
+            {
+                // console.log(data);
+                $(".user-panel > .info > p").html(data["username"]);
+                $(".user-menu > a > span").html(data["username"]);
+                $(".user-header > p").html(data["username"] + " - Developer<small>Member since Nov. 2012</small>");
+            }
+        }
+    );
 }
 
 $(document).ready(function ()
@@ -41,7 +44,34 @@ $(document).ready(function ()
     function tableInit ()
     {
         $("#reviewTable").bootstrapTable({
-            paginationDetailHAlign: "right",
+            // paginationDetailHAlign: "right",
+            pagination: true,
+            sidePagination: "server",
+            method: "get",
+            url: "/service-customerplan/getCustomerPlansByStatus",
+            cache: false,
+            queryParams: function (params)
+            {
+                params.sortOrder = undefined;
+                params["status"] = 1;
+                return params;
+            },
+            queryParamsType: "",
+            pageNumber: 1,
+            pageSize: 10,
+            pageList: [10, 20, 25, 50, 'All'],
+            // responseHandler: function (response)
+            // {
+            //     // console.log(response);
+            //     // $("#number3").html(response.total);
+            //     // for (var element in response[rows])
+            //     // {
+            //     //     delete response[rows][element]["eventList"];
+            //     //     delete response[rows][element]["status"];
+            //     //     response[rows][element]["operate"] = '';
+            //     // }
+            //     // return response;
+            // },
             columns: [{
                 field: 'state',
                 checkbox: 'true'
@@ -59,32 +89,34 @@ $(document).ready(function ()
                 title: "时间名称"
             }, {
                 field: "createDate",
-                title: "创建时间"
+                title: "创建时间",
+                formatter: dateFormatter
             }, {
                 field: "saleDate",
-                title: "销售时间"
+                title: "销售时间",
+                formatter: dateFormatter
             }]
             // }, {
             //     field: "eventList",
             //     title: "事件列表"
             // }]
         });
-        $.ajax(
-            {
-                type: "GET",
-                dataType: "json",
-                url: "/service-customerplan/getCustomerPlansByStatus",
-                data: { "status": 1 },
-                success: function (data)
-                {
-                    console.log(data);
-                    data_1 = data;
-                    formatDate("saleDate", data_1);
-                    formatDate("createDate", data_1);
-                    $("#reviewTable").bootstrapTable("load", data_1);
-                }
-            }
-        );
+        // $.ajax(
+        //     {
+        //         type: "GET",
+        //         dataType: "json",
+        //         url: "/service-customerplan/getCustomerPlansByStatus",
+        //         data: { "status": 1 },
+        //         success: function (data)
+        //         {
+        //             console.log(data);
+        //             data_1 = data;
+        //             formatDate("saleDate", data_1);
+        //             formatDate("createDate", data_1);
+        //             $("#reviewTable").bootstrapTable("load", data_1);
+        //         }
+        //     }
+        // );
     }
     // progressInit();
     tableInit();
@@ -97,39 +129,6 @@ $(document).ready(function ()
 //     stepProgressDiv.css("width", $(document.body).width() * 0.7);
 //     stepProgressBar.refreshLayout();
 // });
-
-function detailFormatter (index, row, element)
-{
-    var html = "loading..";
-    var id = row.id;
-    $.ajax(
-        {
-            type: "GET",
-            dataType: "json",
-            url: "/service-customerplan/getCustomerPlanEventByCustomerPlanId",
-            data: { "customerPlanId": id },
-            success: function (data)
-            {
-                console.log(data);
-                var str = "";
-                for (var x in data)
-                {
-                    str += "计划编号: " + data[x]["customerPlanId"];
-                    // str += " 事件编号: " + data[x]["eventId"];
-                    str += " 事件名称：" + data[x]["eventName"];
-                    str += " 起始时间: " + moment(data[x]["startTime"]).format("YYYY-MM-DD");
-                    str += " 终止时间: " + moment(data[x]["endTime"]).format("YYYY-MM-DD");
-                    str += "<br></br>";
-                }
-                // console.log(str.length);
-                // console.log(str);
-                if (str.length == 0) str = "None";
-                element[0].innerHTML = str;
-            }
-        }
-    );
-    return html;
-}
 
 $("#btn-review").click(function ()
 {
