@@ -1,4 +1,4 @@
-package com.zhuri.microservices.serviceauthorization;
+package com.zhuri.microservices.serviceauthorization.authorization;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

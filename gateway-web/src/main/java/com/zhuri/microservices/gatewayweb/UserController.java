@@ -25,7 +25,8 @@ public class UserController {
 
     @RequestMapping("/")
     public String welcome() {
-        return "redirect:/service-customerplan/dashboard";
+        //return "redirect:/service-customerplan/dashboard";
+        return "redirect:/getUserInfo";
     }
 
     @RequestMapping("/byebye")
