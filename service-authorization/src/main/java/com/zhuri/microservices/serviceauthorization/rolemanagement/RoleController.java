@@ -3,6 +3,7 @@ package com.zhuri.microservices.serviceauthorization.rolemanagement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -26,5 +27,10 @@ public class RoleController {
     @RequestMapping(value="/admin/updateRole", method = RequestMethod.POST)
     public int updateRole(Role role) {
         return  roleService.updateRole(role);
+    }
+
+    @RequestMapping(value="/admin/getRolesByIUserId", method = RequestMethod.GET)
+    public  List<Role> getRolesByIUserId(@RequestParam  int iUserId) {
+        return roleService.getRolesByIUserId(iUserId);
     }
 }

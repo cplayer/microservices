@@ -15,38 +15,55 @@ public interface UserMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     int addInternalUser(User user);
 
-    @Insert("INSERT INTO iuser_role(iuserId, roleId) " +
-            " VALUES(#{iuserId}, #{roleId})")
-    int addIuserRole(@Param("iuserId")int iUserId, @Param("roleId")int roleId);
+    @Insert("INSERT INTO iuser_role(iUserId, roleId) " +
+            " VALUES(#{iUserId}, #{roleId})")
+    int addIUserRole(@Param("iUserId")int iUserId, @Param("roleId")int roleId);
 
-    @Insert("INSERT INTO iuser_group(iuserId, groupId) " +
-            " VALUES(#{iuserId}, #{groupId})")
-    int addIuserGroup(@Param("iuserId")int iUserId, @Param("groupId")int groupId);
+    @Insert("INSERT INTO iuser_group(iUserId, groupId) " +
+            " VALUES(#{iUserId}, #{groupId})")
+    int addIUserGroup(@Param("iUserId")int iUserId, @Param("groupId")int groupId);
 
-    @Update("UPDATE iuser_role SET " +
-            " roleId = #{roleId}")
-    int updateIuserRole(@Param("id") int id, @Param("roleId") int roleId);
-
-    @Delete("DELETE FROM iuser_role WHERE id =#{id}")
-    void deleteIuserRole(int id);
-
-    @Select("SELECT internal_user.id,username,enabled" +
-            " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iuserId" +
-            " WHERE iuser_role.roleId = #{id}")
-    List<User> getIUsersByRoleId(int id);
-
-    @Select("SELECT COUNT(*)" +
-            " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iuserId" +
-            " WHERE iuser_role.roleId = #{id}")
-    int countIUsersByRoleId(int id);
+    @Update("UPDATE internal_user" +
+            " SET password=#{password}" +
+            " WHERE id=#{id}")
+    int updateIUserPassword(@Param("id")int id, @Param("password")String password);
 
     @Select("SELECT id " +
             " FROM iuser_role " +
-            " WHERE iuserId=#{iuserId}")
-    int[] getIdsByIuserId(int iuserId);
+            " WHERE iUserId=#{iUserId}")
+    int[] getIdsByIUserId(int iUserId);
+
+    @Update("UPDATE iuser_role SET " +
+            " roleId = #{roleId}" +
+            " WHERE id = #{id}")
+    int updateIUserRole(@Param("id") int id, @Param("roleId") int roleId);
+
+    @Delete("DELETE FROM iuser_role WHERE id =#{id}")
+    void deleteIUserRole(int id);
+
+    @Update("UPDATE iuser_group SET " +
+            " groupId = #{groupId}" +
+            " WHERE iUserId = #{iUserId}")
+    int updateIUserGroup(@Param("iUserId") int id, @Param("groupId") int groupId);
+
 
     @Select("SELECT internal_user.id,username,enabled" +
-            " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iuserId" +
-            " WHERE iuser_role.roleId = #{id}")
-    List<User> getIUsersByGroupId(int id);
+            " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iUserId" +
+            " WHERE iuser_role.roleId = #{roleId}")
+    List<User> getIUsersByRoleId(int roleId);
+
+    @Select("SELECT COUNT(*)" +
+            " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iUserId" +
+            " WHERE iuser_role.roleId = #{roleId}")
+    int countIUsersByRoleId(int roleId);
+
+    @Select("SELECT internal_user.id,username,enabled" +
+            " FROM internal_user INNER JOIN iuser_group on internal_user.id = iuser_group.iUserId" +
+            " WHERE iuser_group.groupId = #{groupId}")
+    List<User> getIUsersByGroupId(int groupId);
+
+    @Select("SELECT COUNT(*)" +
+            " FROM internal_user INNER JOIN iuser_group on internal_user.id = iuser_group.iUserId" +
+            " WHERE iuser_group.groupId = #{groupId}")
+    int countIUsersByGroupId(int groupId);
 }

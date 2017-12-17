@@ -24,4 +24,8 @@ public class RoleService {
     public int updateRole(Role role) {
         return  roleMapper.updateRole(role);
     }
+
+    public  List<Role> getRolesByIUserId(int iUserId) {
+        return roleMapper.getRolesByIUserId(iUserId);
+    }
 }

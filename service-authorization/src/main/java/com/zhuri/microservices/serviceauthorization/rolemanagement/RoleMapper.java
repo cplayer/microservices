@@ -21,4 +21,10 @@ public interface RoleMapper {
             " WHERE id=#{id}")
     int updateRole(Role role);
 
+
+    @Select("SELECT role.id, chineseName, englishName, description " +
+            " FROM iuser_role INNER JOIN role ON iuser_role.roleId = role.id" +
+            " WHERE iuser_role.iUserId = #{iUserId} ")
+    List<Role> getRolesByIUserId(int iUserId);
+
 }

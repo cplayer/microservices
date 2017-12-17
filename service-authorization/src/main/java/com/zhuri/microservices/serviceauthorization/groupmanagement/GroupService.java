@@ -2,6 +2,7 @@ package com.zhuri.microservices.serviceauthorization.groupmanagement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,30 @@ public class GroupService {
 
     @Autowired
     GroupMapper groupMapper;
+
+    public int addGroup(Group group) {
+        return groupMapper.addGroup(group);
+    }
+
+    public int updateGroup(Group group) {
+        return groupMapper.updateGroup(group);
+    }
+
+    @Transactional
+    public int deleteGroupById(int id) {
+        int result = 0;
+        result = groupMapper.countGroupsByParentId(id);
+        if(result > 0) {
+            return 0;
+        }
+        result = groupMapper.countUsersByGroupId(id);
+        if(result > 0) {
+            return 0;
+        } else {
+            groupMapper.deleteGroupById(id);
+            return 1;
+        }
+    }
 
     public Group getGroupTree() {
         Group root = null;

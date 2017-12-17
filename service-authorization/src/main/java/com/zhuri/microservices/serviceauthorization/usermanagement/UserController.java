@@ -32,16 +32,31 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value="/admin/getUserByRoleId", method = RequestMethod.GET)
-    public PageBean<User> getUsersByRoleId(@RequestParam int id, @RequestParam int pageNumber, @RequestParam int pageSize) {
-        return userService.getIUsersByRoleId(id, pageNumber, pageSize);
+    @RequestMapping(value="/admin/getIUsersByRoleId", method = RequestMethod.GET)
+    public PageBean<User> getIUsersByRoleId(@RequestParam int roleId, @RequestParam int pageNumber, @RequestParam int pageSize) {
+        return userService.getIUsersByRoleId(roleId, pageNumber, pageSize);
     }
 
-    @RequestMapping(value="/admin/updateIuserRole", method = RequestMethod.POST)
-    public int updateIuserRole(@RequestParam int iUserId,@RequestBody int[] roleIds) {
+    @RequestMapping(value="/admin/getIUsersByGroupId", method = RequestMethod.GET)
+    public PageBean<User> getIUsersByGroupoId(@RequestParam int groupId, @RequestParam int pageNumber, @RequestParam int pageSize) {
+        return userService.getIUsersByGroupId(groupId, pageNumber, pageSize);
+    }
+
+    @RequestMapping(value="/admin/updateIUserPassword", method = RequestMethod.POST)
+    int updateIUserPassword(@RequestParam int id, @RequestParam String password) {
+        return userService.updateIUserPassword(id, password);
+    }
+
+    @RequestMapping(value="/admin/updateIUserRole", method = RequestMethod.POST)
+    public int updateIUserRole(@RequestParam int iUserId,@RequestParam(value = "roleIds[]") int[] roleIds) {
         if (roleIds == null) {
             return 0;
         }
-        return userService.updateIuserRole(iUserId, roleIds);
+        return userService.updateIUserRole(iUserId, roleIds);
+    }
+
+    @RequestMapping(value="/admin/updateIUserGroup", method = RequestMethod.POST)
+    public int updateIUserGroup(@RequestParam int iUserId,@RequestParam int groupId) {
+        return userService.updateIUserGroup(iUserId, groupId);
     }
 }

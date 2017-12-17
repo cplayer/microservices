@@ -5,8 +5,6 @@ public class User {
     private String username;
     private String password;
     private boolean enabled;
-    private String[] roles;
-    private String[] groups;
 
     public int getId() {
         return id;
@@ -40,19 +38,4 @@ public class User {
         this.enabled = enabled;
     }
 
-    public String[] getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String[] roles) {
-        this.roles = roles;
-    }
-
-    public String[] getGroups() {
-        return groups;
-    }
-
-    public void setGroups(String[] groups) {
-        this.groups = groups;
-    }
 }

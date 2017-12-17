@@ -24,9 +24,9 @@ public class UserService {
         user.setEnabled(true);
         userMapper.addInternalUser(user);
         //add ROLE_USER as default role
-        userMapper.addIuserRole(user.getId(), 2);
+        userMapper.addIUserRole(user.getId(), 2);
         //add to default group
-        userMapper.addIuserGroup(user.getId(), 0);
+        userMapper.addIUserGroup(user.getId(), 0);
         result = 1;
         return result;
     }
@@ -42,21 +42,39 @@ public class UserService {
     }
 
     @Transactional
-    public int updateIuserRole(int iUserId, int[] roleIds) {
+    public PageBean<User> getIUsersByGroupId(int groupId, int pageNumber, int pageSize) {
+        PageHelper.startPage(pageNumber, pageSize);
+        List<User> allRows = userMapper.getIUsersByGroupId(groupId);
+        int total = userMapper.countIUsersByGroupId(groupId);            //总记录数
+        PageBean<User> pageData = new PageBean<>(pageNumber, pageSize, total);
+        pageData.setRows(allRows);
+        return pageData;
+    }
+
+    int updateIUserPassword(int id, String password) {
+        return userMapper.updateIUserPassword(id, password);
+    }
+
+    @Transactional
+    public int updateIUserRole(int iUserId, int[] roleIds) {
         int i, result = 0;
-        int[] oldIds = userMapper.getIdsByIuserId(iUserId);
+        int[] oldIds = userMapper.getIdsByIUserId(iUserId);
         for(i=0; i<oldIds.length && i<roleIds.length; i++) {
-            userMapper.updateIuserRole(oldIds[i], roleIds[i]);
+            userMapper.updateIUserRole(oldIds[i], roleIds[i]);
         }
         while(i<oldIds.length) {
-            userMapper.deleteIuserRole(oldIds[i]);
+            userMapper.deleteIUserRole(oldIds[i]);
             i++;
         }
         while(i<roleIds.length) {
-            userMapper.addIuserRole(iUserId, roleIds[i]);
+            userMapper.addIUserRole(iUserId, roleIds[i]);
             i++;
         }
         result = 1;
         return result;
+    }
+
+    public int updateIUserGroup(int iUserId, int groupId) {
+        return userMapper.updateIUserGroup(iUserId, groupId);
     }
 }
