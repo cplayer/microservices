@@ -43,8 +43,8 @@ public class UserController {
     }
 
     @RequestMapping(value="/admin/updateIUserPassword", method = RequestMethod.POST)
-    int updateIUserPassword(@RequestParam int id, @RequestParam String password) {
-        return userService.updateIUserPassword(id, password);
+    int updateIUserPassword(@RequestParam int id, @RequestParam String newPassword) {
+        return userService.updateIUserPassword(id, newPassword);
     }
 
     @RequestMapping(value="/admin/updateIUserRole", method = RequestMethod.POST)

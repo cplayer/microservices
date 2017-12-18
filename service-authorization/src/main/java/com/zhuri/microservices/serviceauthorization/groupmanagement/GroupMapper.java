@@ -26,7 +26,7 @@ public interface GroupMapper {
     int countGroupsByParentId(int parentId);
 
     @Select("SELECT COUNT(*)" +
-            " FROM iuser_group" +
+            " FROM internal_user" +
             " WHERE groupId=#{groupId}")
     int countUsersByGroupId(int groupId);
 

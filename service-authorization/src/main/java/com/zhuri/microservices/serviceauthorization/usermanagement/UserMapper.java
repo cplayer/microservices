@@ -19,10 +19,6 @@ public interface UserMapper {
             " VALUES(#{iUserId}, #{roleId})")
     int addIUserRole(@Param("iUserId")int iUserId, @Param("roleId")int roleId);
 
-    @Insert("INSERT INTO iuser_group(iUserId, groupId) " +
-            " VALUES(#{iUserId}, #{groupId})")
-    int addIUserGroup(@Param("iUserId")int iUserId, @Param("groupId")int groupId);
-
     @Update("UPDATE internal_user" +
             " SET password=#{password}" +
             " WHERE id=#{id}")
@@ -41,13 +37,13 @@ public interface UserMapper {
     @Delete("DELETE FROM iuser_role WHERE id =#{id}")
     void deleteIUserRole(int id);
 
-    @Update("UPDATE iuser_group SET " +
+    @Update("UPDATE internal_user SET " +
             " groupId = #{groupId}" +
-            " WHERE iUserId = #{iUserId}")
-    int updateIUserGroup(@Param("iUserId") int id, @Param("groupId") int groupId);
+            " WHERE id = #{id}")
+    int updateIUserGroup(@Param("id") int id, @Param("groupId") int groupId);
 
 
-    @Select("SELECT internal_user.id,username,enabled" +
+    @Select("SELECT internal_user.id, username, enabled, realName, mobilePhone, officePhone, emailAddress, description" +
             " FROM internal_user INNER JOIN iuser_role on internal_user.id = iuser_role.iUserId" +
             " WHERE iuser_role.roleId = #{roleId}")
     List<User> getIUsersByRoleId(int roleId);
@@ -57,13 +53,9 @@ public interface UserMapper {
             " WHERE iuser_role.roleId = #{roleId}")
     int countIUsersByRoleId(int roleId);
 
-    @Select("SELECT internal_user.id,username,enabled" +
-            " FROM internal_user INNER JOIN iuser_group on internal_user.id = iuser_group.iUserId" +
-            " WHERE iuser_group.groupId = #{groupId}")
+    @Select("SELECT * FROM internal_user WHERE groupId = #{groupId}")
     List<User> getIUsersByGroupId(int groupId);
 
-    @Select("SELECT COUNT(*)" +
-            " FROM internal_user INNER JOIN iuser_group on internal_user.id = iuser_group.iUserId" +
-            " WHERE iuser_group.groupId = #{groupId}")
+    @Select("SELECT COUNT(*) FROM internal_user WHERE groupId = #{groupId}")
     int countIUsersByGroupId(int groupId);
 }

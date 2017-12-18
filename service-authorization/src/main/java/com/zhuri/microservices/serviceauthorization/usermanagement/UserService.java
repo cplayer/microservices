@@ -25,8 +25,6 @@ public class UserService {
         userMapper.addInternalUser(user);
         //add ROLE_USER as default role
         userMapper.addIUserRole(user.getId(), 2);
-        //add to default group
-        userMapper.addIUserGroup(user.getId(), 0);
         result = 1;
         return result;
     }
