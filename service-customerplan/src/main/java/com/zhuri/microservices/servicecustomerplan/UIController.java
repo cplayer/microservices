@@ -21,6 +21,6 @@ public class UIController {
         return "eventReview";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login () { return "login"; }
+    @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+    public String userInfo () { return "userInfo"; }
 }
