@@ -15,6 +15,9 @@ public class RoleService {
         return roleMapper.getAllRoles();
     }
 
+    public Role getRoleById(int id) {
+        return roleMapper.getRoleById(id);
+    }
 
     public int addRole(Role role) {
         return roleMapper.addRole(role);

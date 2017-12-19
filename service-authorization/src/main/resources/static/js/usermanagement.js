@@ -91,9 +91,6 @@ $(document).ready(function ()
             pagination: true,
             columns: [{
                 field: "id",
-                title: "ID"
-            }, {
-                field: "userId",
                 title: "用户编码"
             }, {
                 field: "username",
@@ -102,11 +99,11 @@ $(document).ready(function ()
                 field: "realName",
                 title: "真实姓名"
             }, {
-                field: "userTitle",
-                title: "职务头衔"
-            }, {
                 field: "mobilePhone",
                 title: "移动电话"
+            }, {
+                field: "officePhone",
+                title: "办公电话"
             }, {
                 field: "emailAddress",
                 title: "邮件地址"
@@ -118,28 +115,25 @@ $(document).ready(function ()
             data: [
                 {
                     "id": 1,
-                    "userId": 1,
-                    "userName": "zhangsan",
-                    "trueName": "张三",
-                    "userTitle": "职工",
-                    "phone": "10086",
+                    "username": "zhangsan",
+                    "realName": "张三",
+                    "mobilePhone": "10086",
+                    "officePhone": "10010",
                     "emailAddress": "zhangsan@company.com",
                     "operations": ""
                 },
                 {
                     "id": 2,
-                    "userId": 2,
-                    "userName": "lisi",
-                    "trueName": "李四",
-                    "userTitle": "职工",
-                    "phone": "10087",
+                    "username": "lisi",
+                    "realName": "李四",
+                    "mobilePhone": "10087",
+                    "officePhone": "10010",
                     "emailAddress": "lisi@company.com",
                     "operations": ""
                 },
                 {
                     "id": 3,
-                    "userId": 3,
-                    "userName": "wangwu",
+                    "username": "wangwu",
                     "trueName": "王五",
                     "userTitle": "职工",
                     "phone": "10088",
@@ -148,14 +142,13 @@ $(document).ready(function ()
                 },
                 {
                     "id": 4,
-                    "userId": 4,
-                    "userName": "zhaoliu",
-                    "trueName": "赵六",
-                    "userTitle": "管理员",
-                    "phone": "10089",
+                    "username": "zhaoliu",
+                    "realName": "赵六",
+                    "mobilePhone": "10089",
+                    "officePhone": "10010",
                     "emailAddress": "zhaoliu@company.com",
                     "operations": ""
-                },
+                }
             ]
         });
     }

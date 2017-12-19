@@ -22,6 +22,7 @@ public class UserService {
     public int addInternalUser(User user) {
         int result = 0;
         user.setEnabled(true);
+        user.setGroupId(0);
         userMapper.addInternalUser(user);
         //add ROLE_USER as default role
         userMapper.addIUserRole(user.getId(), 2);
@@ -44,6 +45,16 @@ public class UserService {
         PageHelper.startPage(pageNumber, pageSize);
         List<User> allRows = userMapper.getIUsersByGroupId(groupId);
         int total = userMapper.countIUsersByGroupId(groupId);            //总记录数
+        PageBean<User> pageData = new PageBean<>(pageNumber, pageSize, total);
+        pageData.setRows(allRows);
+        return pageData;
+    }
+
+    @Transactional
+    public PageBean<User> getIUsersByUserInfo(Integer id, String username, String realName, String mobilePhone, String officePhone, String emailAddress, int pageNumber, int pageSize) {
+        PageHelper.startPage(pageNumber, pageSize);
+        List<User> allRows = userMapper.getIUsersByUserInfo(id, username,realName,mobilePhone,officePhone,emailAddress);
+        int total = userMapper.countIUsersByUserInfo(id, username,realName,mobilePhone,officePhone,emailAddress);
         PageBean<User> pageData = new PageBean<>(pageNumber, pageSize, total);
         pageData.setRows(allRows);
         return pageData;
@@ -75,4 +86,9 @@ public class UserService {
     public int updateIUserGroup(int iUserId, int groupId) {
         return userMapper.updateIUserGroup(iUserId, groupId);
     }
+
+    public int updateIUserInfo(User user) {
+        return userMapper.updateIUserInfo(user);
+    }
+
 }

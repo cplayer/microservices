@@ -344,10 +344,6 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="userId">上级组织</label>
-															<label for="userId">暂无</label>
-														</div>
-														<div class="form-group">
 															<label for="userId">组织名称</label>
 															<input type="text" maxlength="45" placeholder="请输入组织名称" class="form-control" id="addGroupName" />
 														</div>
@@ -372,11 +368,7 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="userId">原组织名称</label>
-															<label for="userId">暂无</label>
-														</div>
-														<div class="form-group">
-															<label for="userId">新组织名称</label>
+															<label for="updateGroupName">新组织名称</label>
 															<input type="text" maxlength="45" placeholder="请输入新组织名称" class="form-control" id="updateGroupName" />
 														</div>
 													</div>
@@ -421,9 +413,17 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="userId">角色名称</label>
-															<input type="text" maxlength="45" placeholder="请输入角色名称" class="form-control" id="addRoleName" />
+															<label for="addChineseName">角色名称</label>
+															<input type="text" maxlength="45" placeholder="请输入角色名称" class="form-control" id="addChineseName" />
 														</div>
+                                                        <div class="form-group">
+                                                            <label for="addEnglishName">英文标识（建议大写）</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="addEnglishName" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="addDescription">备注</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入备注" class="form-control" id="addDescription" />
+                                                        </div>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
@@ -445,13 +445,17 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="userId">原角色名称</label>
-															<label for="userId">暂无</label>
-														</div>
-														<div class="form-group">
-															<label for="userId">新角色名称</label>
+															<label for="updateRoleName">新角色名称</label>
 															<input type="text" maxlength="45" placeholder="请输入新角色名称" class="form-control" id="updateRoleName" />
 														</div>
+                                                        <div class="form-group">
+                                                            <label for="addEnglishName">英文标识（建议大写）</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="updateEnglishName" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="addDescription">备注</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入备注" class="form-control" id="updateDescription" />
+                                                        </div>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
@@ -514,8 +518,8 @@
 												<input type="email" placeholder="请输入用户编码" class="form-control" id="emailAddress" />
 											</div>
 										</div>
-										<div class="col-xs-8">
-											<button type="button" class="btn btn-default" id="btnSearch">查询</button>
+										<div class="col-xs-12">
+											<button type="button" class="btn btn-default pull-right" id="btnSearch">查询</button>
 										</div>
 									</div>
 								</div>

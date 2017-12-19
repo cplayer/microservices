@@ -1,10 +1,7 @@
 package com.zhuri.microservices.serviceauthorization.groupmanagement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +20,22 @@ public class GroupController {
     }
 
     @RequestMapping(value="/admin/addGroup", method = RequestMethod.POST)
-    public int addGroup(Group group) {
+    public int addGroup(@RequestBody Group group) {
         return groupService.addGroup(group);
     }
 
     @RequestMapping(value="/admin/updateGroup", method = RequestMethod.POST)
-    public int updateGrouop(Group group) {
+    public int updateGroup(@RequestBody Group group) {
         return groupService.updateGroup(group);
     }
 
     @RequestMapping(value="/admin/deleteGroupById", method = RequestMethod.POST)
     public int deleteGroupById(@RequestParam int id) {
         return  groupService.deleteGroupById(id);
+    }
+
+    @RequestMapping(value="/admin/getGroupByIUserId", method = RequestMethod.GET)
+    public  Group getGroupByIUserId(@RequestParam  int iUserId) {
+        return groupService.getGroupByIUserId(iUserId);
     }
 }

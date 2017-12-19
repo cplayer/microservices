@@ -32,4 +32,10 @@ public interface GroupMapper {
 
     @Delete("DELETE FROM authorization.group WHERE id=#{id}")
     void deleteGroupById(int id);
+
+    @Select("SELECT G.id,G.name,G.parentId " +
+            " FROM internal_user INNER JOIN authorization.group as G" +
+            " ON internal_user.groupId=G.id" +
+            " WHERE internal_user.id= #{iUserId}")
+    Group getGroupByIUserId(int iUserId);
 }

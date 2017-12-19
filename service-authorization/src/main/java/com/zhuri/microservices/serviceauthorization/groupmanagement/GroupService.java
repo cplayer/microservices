@@ -37,6 +37,10 @@ public class GroupService {
         }
     }
 
+    public  Group getGroupByIUserId(int iUserId) {
+        return groupMapper.getGroupByIUserId(iUserId);
+    }
+
     public Group getGroupTree() {
         Group root = null;
         List<Group> groupList = groupMapper.getAllGroups();

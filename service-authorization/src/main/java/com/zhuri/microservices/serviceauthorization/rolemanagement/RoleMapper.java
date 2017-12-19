@@ -12,6 +12,9 @@ public interface RoleMapper {
     @Select("SELECT * FROM role")
     List<Role> getAllRoles();
 
+    @Select("SELECT * FROM role WHERE id=#{id}")
+    Role getRoleById(int id);
+
     @Insert("INSERT INTO role(chineseName, englishName, description)" +
             " VALUES(#{chineseName}, #{englishName}, #{description})")
     int addRole(Role role);

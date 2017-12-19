@@ -430,6 +430,9 @@
 												<input type="email" placeholder="请输入备注信息" class="form-control" id="description" />
 											</div>
 										</div>
+										<div class="col-xs-12">
+											<button type="button" class="btn btn-default pull-right" id="btnAddUser">确认添加</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -441,7 +444,12 @@
 								</div>
 								<div class="box-body">
 									<div class="row">
-										<div id="tree-list_group" class="ztree"></div>
+										<div class="col-xs-12">
+											<div id="tree-list_group" class="ztree"></div>
+										</div>
+										<div class="col-xs-12">
+											<button type="button" class="btn btn-default pull-right" id="btnAddGroup">确认分配</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -457,13 +465,19 @@
 											<div id="tree-list_role" class="ztree"></div>
 										</div>
 										<div class="col-xs-2">
-											<button type="button" class="btn btn-default" aria-label="添加" id="btnAddRole">
+											<button type="button" class="btn btn-default" aria-label="添加" id="btnChooseRole">
 												<span class="glyphicon glyphicon-plus"></span>
 											</button>
 										</div>
 										<div class="col-xs-5">
-											<table id="table" data-reorderable-rows="true" data-use-row-attr-func="true">
+											<table id="table_role" data-reorderable-rows="true" data-use-row-attr-func="true">
+												<tr>
+													<td>普通用户</td>
+												</tr>
 											</table>
+										</div>
+										<div class="col-xs-12">
+											<button type="button" class="btn btn-default pull-right" id="btnAddRole">确认分配</button>
 										</div>
 									</div>
 								</div>

@@ -1,10 +1,7 @@
 package com.zhuri.microservices.serviceauthorization.rolemanagement;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,13 +16,18 @@ public class RoleController {
         return roleService.getAllRoles();
     }
 
+    @RequestMapping(value="/admin/getRoleById", method = RequestMethod.GET)
+    public Role getRoleById(@RequestParam int id) {
+        return roleService.getRoleById(id);
+    }
+
     @RequestMapping(value="/admin/addRole", method = RequestMethod.POST)
-    public int addRole(Role role) {
+    public int addRole(@RequestBody Role role) {
         return roleService.addRole(role);
     }
 
     @RequestMapping(value="/admin/updateRole", method = RequestMethod.POST)
-    public int updateRole(Role role) {
+    public int updateRole(@RequestBody Role role) {
         return  roleService.updateRole(role);
     }
 
