@@ -10,7 +10,6 @@ public class Group {
     private List<Group> children;
 
     public Group() {
-        children = new ArrayList<>();
     }
 
     public Group(int id, String name, int parentId, List<Group> children) {

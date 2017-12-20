@@ -15,7 +15,7 @@ public interface GroupMapper {
     int addGroup(Group group);
 
     @Update(" UPDATE authorization.group " +
-            " SET name=#{name}, parentId=#{parentId}" +
+            " SET name=#{name}" +
             " WHERE id=#{id}")
     int updateGroup(Group group);
 
