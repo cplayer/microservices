@@ -214,6 +214,8 @@ $("#rePassword").blur(function ()
     }
 });
 
+var id;//新的用户id，由url返回
+
 $("#btn-Add-User").click(function () {
     if(checkUsernameFlag>0) {
         Messenger().post({
@@ -257,6 +259,7 @@ $("#btn-Add-User").click(function () {
                         showCloseButton: true,
                         type: "success"
                     });
+                    id = data;
                     $("#div-add-user").hide();
                     $("#div-add-group").show();
                 } else {
