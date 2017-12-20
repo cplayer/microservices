@@ -312,13 +312,13 @@
 										<div class="tab-pane active" id="tab1">
 											<div id="tree-list_group" class="ztree"></div>
 											<div id="manage_group">
-												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#add-group">
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#add-group" id="btn-add-group">
 													<i class="fa fa-plus">&nbsp;添加&nbsp;</i>
 												</button>
-												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#update-group">
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#update-group" id="btn-update-group">
 													<i class="fa fa-wrench">&nbsp;修改&nbsp;</i>
 												</button>
-												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#delete-group">
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#delete-group" id="btn-delete-group" >
 													<i class="fa fa-minus">&nbsp;删除&nbsp;</i>
 												</button>
 											</div>
@@ -329,7 +329,7 @@
 												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#add-role">
 													<i class="fa fa-plus">&nbsp;添加&nbsp;</i>
 												</button>
-												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#update-role">
+												<button type="button" class="btn btn-default" data-toggle="modal" data-target="#update-role" id="btn-update-role">
 													<i class="fa fa-wrench">&nbsp;修改&nbsp;</i>
 												</button>
 											</div>
@@ -344,7 +344,7 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="userId">组织名称</label>
+															<label for="addGroup_Name">组织名称</label>
 															<input type="text" maxlength="45" placeholder="请输入组织名称" class="form-control" id="addGroup_Name" />
 														</div>
 													</div>
@@ -368,7 +368,7 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="updateGroupName">新组织名称</label>
+															<label for="updateGroup_Name">新组织名称</label>
 															<input type="text" maxlength="45" placeholder="请输入新组织名称" class="form-control" id="updateGroup_Name" />
 														</div>
 													</div>
@@ -413,21 +413,21 @@
 													</div>
 													<div class="modal-body">
 														<div class="form-group">
-															<label for="addChineseName">角色名称</label>
-															<input type="text" maxlength="45" placeholder="请输入角色名称" class="form-control" id="addChineseName" />
+															<label for="addRole_ChineseName">角色名称</label>
+															<input type="text" maxlength="45" placeholder="请输入角色名称" class="form-control" id="addRole_ChineseName" />
 														</div>
                                                         <div class="form-group">
-                                                            <label for="addEnglishName">英文标识（建议大写）</label>
-                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="addEnglishName" />
+                                                            <label for="addRole_EnglishName">英文标识（建议大写）</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="addRole_EnglishName" />
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="addDescription">备注</label>
-                                                            <input type="text" maxlength="45" placeholder="请输入备注" class="form-control" id="addDescription" />
+                                                            <label for="addRole_Description">备注</label>
+                                                            <textarea maxlength="100" placeholder="请输入备注" class="form-control" id="addRole_Description" />
                                                         </div>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-														<button type="button" class="btn btn-primary">保存</button>
+														<button type="button" class="btn btn-primary" id="btn-add-role-submit">保存</button>
 													</div>
 												</div>
 												<!-- /.modal-content -->
@@ -444,22 +444,25 @@
 														<h4 class="modal-title">修改角色</h4>
 													</div>
 													<div class="modal-body">
+														<div class="form-group" hidden="hidden">
+															<input type="number" class="form-control" id="updateRole_Id" />
+														</div>
 														<div class="form-group">
-															<label for="updateRoleName">新角色名称</label>
-															<input type="text" maxlength="45" placeholder="请输入新角色名称" class="form-control" id="updateRoleName" />
+															<label for="updateRole_ChineseName">新角色名称</label>
+															<input type="text" maxlength="45" placeholder="请输入新角色名称" class="form-control" id="updateRole_ChineseName" />
 														</div>
                                                         <div class="form-group">
-                                                            <label for="addEnglishName">英文标识（建议大写）</label>
-                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="updateEnglishName" />
+                                                            <label for="updateRole_EnglishName">英文标识（建议大写）</label>
+                                                            <input type="text" maxlength="45" placeholder="请输入英文标识" class="form-control" id="updateRole_EnglishName" />
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="addDescription">备注</label>
-                                                            <input type="text" maxlength="45" placeholder="请输入备注" class="form-control" id="updateDescription" />
+                                                            <label for="updateRole_Description">备注</label>
+                                                            <textarea maxlength="100" placeholder="请输入备注" class="form-control" id="updateRole_Description" />
                                                         </div>
 													</div>
 													<div class="modal-footer">
 														<button type="button" class="btn btn-default pull-left" data-dismiss="modal">关闭</button>
-														<button type="button" class="btn btn-primary">保存</button>
+														<button type="button" class="btn btn-primary" id="btn-update-role-submit">保存</button>
 													</div>
 												</div>
 												<!-- /.modal-content -->
@@ -490,32 +493,32 @@
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
-												<label for="userName">用户名</label>
-												<input type="text" placeholder="请输入用户名" class="form-control" id="userName" />
+												<label for="username">用户名</label>
+												<input type="text" placeholder="请输入用户名" class="form-control" id="username" />
 											</div>
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
 												<label for="realName">真实姓名</label>
-												<input type="text" placeholder="请输入用户编码" class="form-control" id="realName" />
+												<input type="text" placeholder="请输入真实姓名" class="form-control" id="realName" />
 											</div>
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
 												<label for="mobilePhone">移动电话</label>
-												<input type="number" placeholder="请输入用户编码" class="form-control" id="mobilePhone" />
+												<input type="number" placeholder="请输入移动电话" class="form-control" id="mobilePhone" />
 											</div>
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
 												<label for="officePhone">办公电话</label>
-												<input type="number" placeholder="请输入用户编码" class="form-control" id="officePhone" />
+												<input type="number" placeholder="请输入办公电话" class="form-control" id="officePhone" />
 											</div>
 										</div>
 										<div class="col-xs-4">
 											<div class="form-group">
 												<label for="emailAddress">邮件地址</label>
-												<input type="email" placeholder="请输入用户编码" class="form-control" id="emailAddress" />
+												<input type="email" placeholder="请输入邮件地址" class="form-control" id="emailAddress" />
 											</div>
 										</div>
 										<div class="col-xs-12">

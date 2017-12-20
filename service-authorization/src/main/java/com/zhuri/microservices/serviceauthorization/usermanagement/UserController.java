@@ -46,7 +46,6 @@ public class UserController {
                                   @RequestParam(required = false)String realName, @RequestParam(required = false)String mobilePhone,
                                   @RequestParam(required = false)String officePhone, @RequestParam(required = false)String emailAddress
                                     ,@RequestParam int pageNumber,@RequestParam int pageSize) {
-        System.out.println(realName);
         return userService.getIUsersByUserInfo(id,username,realName,mobilePhone,officePhone,emailAddress,pageNumber,pageSize);
     }
 

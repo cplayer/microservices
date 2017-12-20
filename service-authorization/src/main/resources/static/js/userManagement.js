@@ -250,7 +250,77 @@ function groupListClick (event, treeId, treeNode, clickFlag)
 function roleListClick (event, treeId, treeNode, clickFlag)
 {
     roleSelectId = treeNode.id;
+    $.ajax
+    (
+        {
+            type: "GET",
+            url: "getIUsersByRoleId",
+            data: {"roleId": roleSelectId, "pageNumber": 1, "pageSize": 20},
+            success: function (data)
+            {
+                console.log(data);
+                $("#tableResult").bootstrapTable('load', data.rows);
+            }
+        }
+    )
 }
+
+$("#btn-add-group").click(function () {
+    if (typeof(groupSelectId) == "undefined") {
+        Messenger().post({
+            message: "请选择上级组织！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#add-group").modal("toggle");
+    }
+    if(groupSelectId == 0) {
+        Messenger().post({
+            message: "无法对未分组用户进行操作！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#add-group").modal("toggle");
+    }
+})
+
+$("#btn-update-group").click(function () {
+    if (typeof(groupSelectId) == "undefined") {
+        Messenger().post({
+            message: "请选择一个组织！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#update-group").modal("toggle");
+    }
+    if(groupSelectId == 0) {
+        Messenger().post({
+            message: "无法对未分组用户进行操作！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#update-group").modal("toggle");
+    }
+})
+
+$("#btn-delete-group").click(function () {
+    if (typeof(groupSelectId) == "undefined") {
+        Messenger().post({
+            message: "请选择一个组织！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#delete-group").modal("toggle");
+    }
+    if(groupSelectId == 0) {
+        Messenger().post({
+            message: "无法对未分组用户进行操作！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#delete-group").modal("toggle");
+    }
+})
 
 $("#btn-add-group-submit").click(function ()
 {
@@ -358,6 +428,113 @@ $("#btn-delete-group-submit").click(function ()
     )
 });
 
+$("#btn-add-role-submit").click(function ()
+{
+    var roleChineseName = $("#addRole_ChineseName").val();
+    var roleEnglishName = $("#addRole_EnglishName").val();
+    var roleDescription = $("#addRole_Description").val();
+    $.ajax
+    (
+        {
+            type: "POST",
+            url: "addRole",
+            contentType: "application/json",
+            data: JSON.stringify({"chineseName": roleChineseName, "englishName": roleEnglishName, "description":roleDescription}),
+            success: function (data)
+            {
+                console.log(data);
+                console.log("add-role-finished!");
+                if (data > 0)
+                {
+                    Messenger().post({
+                        message: "添加成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                }
+                else
+                {
+                    Messenger().post({
+                        message: "添加失败！错误代码：" + data,
+                        showCloseButton: true,
+                        type: "error"
+                    });
+                }
+                $("#add-role").modal("toggle");
+            }
+        }
+    )
+});
+
+$("#btn-update-role").click(function () {
+    if (typeof(roleSelectId) == "undefined") {
+        Messenger().post({
+            message: "请选择一个角色！",
+            showCloseButton: true,
+            type: "error"
+        });
+        $("#update-role").modal("toggle");
+        return;
+    }
+    $.ajax
+    (
+        {
+            type: "GET",
+            url: "getRoleById",
+            contentType: "application/json",
+            data: {"id": roleSelectId},
+            success: function (data)
+            {
+                console.log(data);
+                console.log("get-role-finished!");
+                $("#updateRole_Id").val(data["id"])
+                $("#updateRole_ChineseName").val(data["chineseName"])
+                $("#updateRole_EnglishName").val(data["englishName"])
+                $("#updateRole_Description").val(data["description"])
+            }
+        }
+    )
+})
+
+$("#btn-update-role-submit").click(function ()
+{
+    var roleId =  $("#updateRole_Id").val();
+    var roleChineseName = $("#updateRole_ChineseName").val();
+    var roleEnglishName = $("#updateRole_EnglishName").val();
+    var roleDescription = $("#updateRole_Description").val();
+    $.ajax
+    (
+        {
+            type: "POST",
+            url: "updateRole",
+            contentType: "application/json",
+            data: JSON.stringify({"id":roleId, "chineseName": roleChineseName, "englishName": roleEnglishName, "description":roleDescription}),
+            success: function (data)
+            {
+                console.log(data);
+                console.log("update-role-finished!");
+                if (data > 0)
+                {
+                    Messenger().post({
+                        message: "修改成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                }
+                else
+                {
+                    Messenger().post({
+                        message: "修改失败！错误代码：" + data,
+                        showCloseButton: true,
+                        type: "error"
+                    });
+                }
+                $("#update-role").modal("toggle");
+            }
+        }
+    )
+});
+
 $("#btnSearch").click(function ()
 {
     function replace (source, data, field)
@@ -368,14 +545,14 @@ $("#btnSearch").click(function ()
         }
     }
     var id = $("#id").val();
-    var userName = $("#userName").val();
+    var username = $("#username").val();
     var realName = $("#realName").val();
     var mobilePhone = $("#mobilePhone").val();
     var officePhone = $("#officePhone").val();
     var emailAddress = $("#emailAddress").val();
     var _data = {};
     replace(_data, id, 'id');
-    replace(_data, userName, 'userName');
+    replace(_data, username, 'username');
     replace(_data, realName, 'realName');
     replace(_data, mobilePhone, 'mobilePhone');
     replace(_data, officePhone, 'officePhone');
