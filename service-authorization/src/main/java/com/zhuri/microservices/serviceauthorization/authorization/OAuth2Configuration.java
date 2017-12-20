@@ -1,4 +1,4 @@
-package com.zhuri.microservices.serviceauthorization;
+package com.zhuri.microservices.serviceauthorization.authorization;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +36,6 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
                 final Map<String, Object> additionalInformation = new HashMap<>();
                 additionalInformation.put("id", user.getId());
                 additionalInformation.put("username", user.getUsername());
-                additionalInformation.put("roles", user.getAuthorities());
                 ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInformation);
                 OAuth2AccessToken enhancedToken = super.enhance(accessToken, authentication);
                 return enhancedToken;

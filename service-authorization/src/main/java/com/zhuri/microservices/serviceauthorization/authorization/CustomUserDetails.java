@@ -1,4 +1,4 @@
-package com.zhuri.microservices.serviceauthorization;
+package com.zhuri.microservices.serviceauthorization.authorization;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
