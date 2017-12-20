@@ -74,6 +74,9 @@ public class GroupService {
         List<Group> childGroupList = this.getChildGroupsById(rootId, groupList);
         for (Group item : childGroupList) {
             Group node = this.generateGroupTree(item.getId(), groupList);
+            if(root.getChildren()==null) {
+                root.setChildren(new ArrayList<>());
+            }
             root.getChildren().add(node);
         }
         return root;
