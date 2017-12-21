@@ -282,15 +282,15 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				<h1>
-					用戶添加
-					<small>添加新用戶</small>
+					用户添加
+					<small>添加新用户</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li>
 						<a href="#">
 							<i class="fa fa-dashboard"></i> 主系统</a>
 					</li>
-					<li class="active">用戶添加</li>
+					<li class="active">用户添加</li>
 				</ol>
 			</section>
 
@@ -381,23 +381,11 @@
 									<h3 class="box-title">创建新的用户</h3>
 								</div>
 								<div class="box-body">
-									<div class="row">
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="username"><span style="color: red">*</span>用户名</label>
-												<input type="text" maxlength="45" placeholder="请输入用户名" class="form-control" id="username" />
-											</div>
-										</div>
+									<!-- <div class="row">
 										<div class="col-xs-6">
 											<div class="form-group">
 												<label for="checkUsername">&nbsp;</label>
 												<input type="text" maxlength="45" class="form-control" id="checkUsername" disabled="disabled"/>
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="password"><span style="color: red">*</span>密码</label>
-												<input type="password" maxlength="45" placeholder="请输入密码" class="form-control" id="password" />
 											</div>
 										</div>
 										<div class="col-xs-6">
@@ -408,52 +396,70 @@
 										</div>
 										<div class="col-xs-6">
 											<div class="form-group">
-												<label for="rePassword"><span style="color: red">*</span>再次输入密码</label>
-												<input type="password" maxlength="45" placeholder="请再次输入密码" class="form-control" id="rePassword" />
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="form-group">
 												<label for="checkRePassword">&nbsp;</label>
 												<input type="text" class="form-control" id="checkRePassword" disabled="disabled"/>
 											</div>
 										</div>
+									</div> -->
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="col-xs-6" style="padding-left: 0px">
+													<div class="form-group">
+														<label for="username" id="labelusername"><span style="color: red">*</span>用户名</label>
+														<input type="text" maxlength="45" placeholder="请输入用户名" class="form-control" id="username" />
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="password" id="labelpassword"><span style="color: red" >*</span>密码</label>
+													<input type="password" maxlength="45" placeholder="请输入密码" class="form-control" id="password" />
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="rePassword"><span style="color: red">*</span>再次输入密码</label>
+													<input type="password" maxlength="45" placeholder="请再次输入密码" class="form-control" id="rePassword" />
+												</div>
+											</div>
+											<hr width="95%" color="#987cb9" size="5"></hr>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="realName">真实姓名</label>
+													<input type="text" placeholder="请输入您的姓名" class="form-control" id="realName" />
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="mobilePhone">移动电话</label>
+													<input type="number" placeholder="请输入移动电话" class="form-control" id="mobilePhone" />
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="officePhone">办公电话</label>
+													<input type="number" placeholder="请输入办公电话" class="form-control" id="officePhone" />
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label for="emailAddress">邮件地址</label>
+													<input type="email" placeholder="请输入邮件地址" class="form-control" id="emailAddress" />
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<div class="form-group">
+													<label for="description">备注</label>
+													<textarea maxlength="100" placeholder="请输入备注信息" class="form-control" id="description" />
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<button type="button" class="btn btn-default pull-right" id="btn-Add-User">确认添加</button>
+											</div>
+										</div>	
 									</div>
-									<div class="row">
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="realName">真实姓名</label>
-												<input type="text" placeholder="请输入您的姓名" class="form-control" id="realName" />
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="mobilePhone">移动电话</label>
-												<input type="number" placeholder="请输入移动电话" class="form-control" id="mobilePhone" />
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="officePhone">办公电话</label>
-												<input type="number" placeholder="请输入办公电话" class="form-control" id="officePhone" />
-											</div>
-										</div>
-										<div class="col-xs-6">
-											<div class="form-group">
-												<label for="emailAddress">邮件地址</label>
-												<input type="email" placeholder="请输入邮件地址" class="form-control" id="emailAddress" />
-											</div>
-										</div>
-										<div class="col-xs-12">
-											<div class="form-group">
-												<label for="description">备注</label>
-												<textarea maxlength="100" placeholder="请输入备注信息" class="form-control" id="description" />
-											</div>
-										</div>
-										<div class="col-xs-12">
-											<button type="button" class="btn btn-default pull-right" id="btn-Add-User">确认添加</button>
-										</div>
-									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -485,27 +491,43 @@
 											<div id="tree-list_role" class="ztree"></div>
 										</div>
 										<div class="col-xs-2">
-											<button type="button" class="btn btn-default" aria-label="添加" id="btnChooseRole">
-												<span class="glyphicon glyphicon-plus"></span>
-											</button>
+											<!-- <button type="button" class="btn btn-default" aria-label="添加" id="btnChooseRole">
+												<span class="glyphicon glyphicon-chevron-right"></span>
+											</button> -->
+											<div class="col-xs-12">
+												<button type="button" class="btn btn-default" aria-label="添加" id="btnChooseRole">
+													<span class="glyphicon glyphicon-chevron-right"></span>
+												</button>
+											</div>
+											<div class="col-xs-12" style="margin-top: 10px">
+												<button type="button" class="btn btn-default" aria-label="移除" id="btnRemoveRole">
+													<span class="glyphicon glyphicon-chevron-left"></span>
+												</button>
+											</div>
 										</div>
 										<div class="col-xs-5">
-											<table id="table_role" data-reorderable-rows="true" data-use-row-attr-func="true">
+											<!-- <table id="table_role" data-reorderable-rows="true" data-use-row-attr-func="true">
 												<tr>
 													<td>普通用户</td>
 												</tr>
-											</table>
+											</table> -->
+											<div class="form-group">
+												<label>已选择用户</label>
+												<select multiple="multiple" class="form-control" id="list_role">
+													<option>普通用户</option>
+												</select>
+											</div>
 										</div>
 										<div class="col-xs-12">
 											<button type="button" class="btn btn-default pull-right" id="btnAddRole">确认分配</button>
 										</div>
 									</div>
 								</div>
-								<div class="box-body">
+								<!-- <div class="box-body">
 									<div class="row">
 
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>

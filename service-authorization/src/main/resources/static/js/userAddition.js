@@ -58,7 +58,8 @@ var testTreeData =
         }
     ];
 var treeList_group, treeList_role;
-var userGroupData, userRoleData;
+var userGroupData = {}, userRoleData = {};
+var groupSelectId, roleSelectId, roleSelectName;
 $(document).ready(function ()
 {
     function treeList_Init ()
@@ -86,7 +87,7 @@ $(document).ready(function ()
                     success: function (data)
                     {
                         console.log(data);
-                        $.extend(userGroupData, data);
+                        $.extend(true, userGroupData, data);
                         treeList_group = $.fn.zTree.init($("#tree-list_group"), group_setting, data);
                     }
                 }
@@ -97,11 +98,11 @@ $(document).ready(function ()
         {
             var role_setting =
                 {
-                    check: {
-                        enable: true,
-                        chkStyle: "radio",
-                        radioType: "level"
-                    },
+                    // check: {
+                    //     enable: true,
+                    //     chkStyle: "radio",
+                    //     radioType: "level"
+                    // },
                     data: {
                         simpleData: {
                             enable: true,
@@ -111,7 +112,8 @@ $(document).ready(function ()
                         }
                     },
                     callback: {
-                        onClick: roleListClick
+                        onClick: roleListClick,
+                        onDblClick: roleListDblClick
                     }
                 };
             $.ajax
@@ -123,7 +125,7 @@ $(document).ready(function ()
                     success: function (data)
                     {
                         console.log(data);
-                        $.extend(userRoleData, data);
+                        $.extend(true, userRoleData, data);
                         for (var element in data)
                         {
                             delete data[element]["englishName"];
@@ -142,18 +144,27 @@ $(document).ready(function ()
         treeList_role_Init();
     }
     treeList_Init();
+    // $("#div-add-user").show();
+    // $("#div-add-group").show();
+    // $("#div-add-role").show();
 });
 
 function groupListClick (event, treeId, treeNode, clickFlag)
 {
     groupSelectId = treeNode.id;
+}
 
+function roleListDblClick (event, treeId, treeNode, clickFlag)
+{
+    roleSelectId = treeNode.id;
+    roleSelectName = treeNode.name;
+    $("#btnChooseRole").click();
 }
 
 function roleListClick (event, treeId, treeNode, clickFlag)
 {
     roleSelectId = treeNode.id;
-
+    roleSelectName = treeNode.name;
 }
 
 var checkUsernameFlag = 1, checkPasswordFlag = 0;
@@ -161,8 +172,9 @@ var checkUsernameFlag = 1, checkPasswordFlag = 0;
 $("#username").blur(function ()
 {
     var username = $("#username").val();
-    if(username==""){
-        $("#checkUsername").val("请输入用户名！")
+    $("#labelusername").html("<span style='color: red'>*</span>用户名");
+    if (username == ""){
+        $("#labelusername").html("<span style='color: red'>*</span>用户名 <span class='text-red' style='font-size: 10px'>请输入用户名！</span>");
         return;
     }
     $.ajax
@@ -176,10 +188,10 @@ $("#username").blur(function ()
                 console.log(data);
                 console.log("check-user-finished!");
                 checkUsernameFlag = data;
-                if(checkUsernameFlag>0) {
-                    $("#checkUsername").val("该用户名已存在，不可用！")
+                if(checkUsernameFlag > 0) {
+                    $("#labelusername").html("<span style='color: red'>*</span>用户名 <span class='text-red' style='font-size: 10px'>该用户名已存在，不可用！</span>");
                 } else {
-                    $("#checkUsername").val("该用户名可以使用！")
+                    $("#labelusername").html("<span style='color: red'>*</span>用户名 <span class='text-green' style='font-size: 10px'>该用户名可以使用！</span>");
                 }
             }
         }
@@ -190,12 +202,13 @@ $("#password").blur(function ()
 {
     var password = $("#password").val();
     var rePassword = $("#rePassword").val();
-
-    if(password!=rePassword){
-        $("#checkRePassword").val("两次密码输入不一致，请重新输入！")
+    $("#labelpassword").html("<span style='color: red'>*</span>密码");
+    if (password == "" || rePassword == "") return;
+    if(password != rePassword) {
+        $("#labelpassword").html("<span style='color: red'>*</span>密码 <span class='text-red' style='font-size: 10px'>两次密码输入不一致，请重新输入！</span>");
         checkPasswordFlag = 0;
     } else {
-        $("#checkRePassword").val("两次密码输入一致，可以使用！")
+        $("#labelpassword").html("<span style='color: red'>*</span>密码 <span class='text-green' style='font-size: 10px'>两次密码输入一致，可以使用！</span>");
         checkPasswordFlag = 1;
     }
 });
@@ -205,19 +218,23 @@ $("#rePassword").blur(function ()
     var password = $("#password").val();
     var rePassword = $("#rePassword").val();
 
-    if(password!=rePassword){
-        $("#checkRePassword").val("两次密码输入不一致，请重新输入！")
+    $("#labelpassword").html("<span style='color: red'>*</span>密码");
+    if (password == "" || rePassword == "") return;
+    if (password != rePassword)
+    {
+        $("#labelpassword").html("<span style='color: red'>*</span>密码 <span class='text-red' style='font-size: 10px'>两次密码输入不一致，请重新输入！</span>");
         checkPasswordFlag = 0;
-    } else {
-        $("#checkRePassword").val("两次密码输入一致，可以使用！")
+    } else
+    {
+        $("#labelpassword").html("<span style='color: red'>*</span>密码 <span class='text-green' style='font-size: 10px'>两次密码输入一致，可以使用！</span>");
         checkPasswordFlag = 1;
     }
 });
 
-var id;//新的用户id，由url返回
+var id;             // 新的用户id，由url返回
 
 $("#btn-Add-User").click(function () {
-    if(checkUsernameFlag>0) {
+    if(checkUsernameFlag > 0) {
         Messenger().post({
             message: "添加失败！用户名已被使用",
             showCloseButton: true,
@@ -227,7 +244,7 @@ $("#btn-Add-User").click(function () {
     }
     if(checkPasswordFlag = 0) {
         Messenger().post({
-            message: "添加失败！两次密码输入一致",
+            message: "添加失败！两次密码输入不一致",
             showCloseButton: true,
             type: "error"
         });
@@ -253,7 +270,7 @@ $("#btn-Add-User").click(function () {
             {
                 console.log(data);
                 console.log("check-user-finished!");
-                if(data>0) {
+                if (data > 0) {
                     Messenger().post({
                         message: "添加成功！",
                         showCloseButton: true,
@@ -272,4 +289,150 @@ $("#btn-Add-User").click(function () {
             }
         }
     )
-})
+});
+
+$("#btnAddGroup").click(function ()
+{
+    $.ajax
+    (
+        {
+            type: "POST",
+            url: "updateIUserGroup",
+            data: {"iUserId": id, "groupId": groupSelectId},
+            success: function (code)
+            {
+                if (code > 0)
+                {
+                    Messenger().post({
+                        message: "分配成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                    $("#div-add-group").hide();
+                    $("#div-add-role").show();
+                }
+                else
+                {
+                    Messenger().post({
+                        message: "分配失败！错误代码：" + code,
+                        showCloseButton: true,
+                        type: "error"
+                    });
+                }
+            }
+        }
+    )
+});
+
+function get_select_options (_select)
+{
+    var result = [];
+    for (var i = 0; i < _select[0].length; ++i)
+    {
+        // console.log(_select[0][i]);
+        result.push(_select[0][i]["value"]);
+    }
+    // for (var element in _select[0]["children"])
+    // {
+    //     console.log(_select[0]["children"][element]);
+    //     result.push(_select[0]["children"][element]["value"]);
+    // }
+    return result;
+}
+
+$("#btnChooseRole").click(function ()
+{
+    var name = roleSelectName;
+    // console.log($("#list_role"));
+    var option_list = get_select_options($("#list_role"));
+    for (var element in option_list)
+    {
+        if (option_list[element] == name)
+        {
+            Messenger().post({
+                message: "请勿添加重复的角色！",
+                showCloseButton: true,
+                type: "error"
+            });
+            return;
+        }
+    }
+    $("#list_role").append("<option>" + name + "</option>");
+    // console.log(option_list);
+});
+
+$("#btnRemoveRole").click(function ()
+{
+    var selected = $("#list_role")[0]["selectedOptions"];
+    var children = $("#list_role").children();
+    var newhtml = "";
+    for (var i = 0; i < children.length; ++i)
+    {
+        var flag = 0;
+        for (var j = 0; j < selected.length; ++j)
+        {
+            if (children[i]["value"] == selected[j]["value"])
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+        {
+            newhtml += "<option>" + children[i]["value"] + "</option>";
+        }
+    }
+    $("#list_role").html(newhtml);
+});
+
+$("#btnAddRole").click(function ()
+{
+    var option_list = get_select_options($("#list_role"));
+    var id_array = [];
+    console.log(userRoleData);
+    console.log(option_list);
+    for (var element in option_list)
+    {
+        for (var _element in userRoleData)
+        {
+            if (userRoleData[_element]["chineseName"] == option_list[element])
+            {
+                id_array.push(userRoleData[_element]["id"]);
+                break;
+            }
+        }
+    }
+    console.log(id_array);
+    var send_data = {};
+    send_data["iUserId"] = id;
+    send_data["roleIds"] = id_array;
+    console.log(send_data);
+    $.ajax
+    (
+        {
+            type: "POST",
+            url: "updateIUserRole",
+            data: send_data,
+            success: function (code)
+            {
+                if (code > 0)
+                {
+                    Messenger().post({
+                        message: "分配成功！",
+                        showCloseButton: true,
+                        type: "success"
+                    });
+                    window.setTimeout('window.location.href = "userManagement";', 1500);
+                }
+                else
+                {
+                    Messenger().post({
+                        message: "分配失败！错误代码：" + code,
+                        showCloseButton: true,
+                        type: "error"
+                    });
+                }
+            }
+        }
+    );
+});
