@@ -59,7 +59,7 @@ var testTreeData =
 ];
 
 var treeList_group, treeList_role;
-var userGroupData, userRoleData;
+var userGroupData = {}, userRoleData = {};
 var groupSelectId, roleSelectId;
 
 $(document).ready(function ()
@@ -89,7 +89,7 @@ $(document).ready(function ()
                     success: function (data)
                     {
                         console.log(data);
-                        $.extend(userGroupData, data);
+                        $.extend(true, userGroupData, data);
                         treeList_group = $.fn.zTree.init($("#tree-list_group"), group_setting, data);
                     }
                 }
@@ -100,11 +100,11 @@ $(document).ready(function ()
         {
             var role_setting = 
             {
-                check: {
-                    enable: true,
-                    chkStyle: "radio",
-                    radioType: "level"
-                },
+                // check: {
+                //     enable: true,
+                //     chkStyle: "radio",
+                //     radioType: "level"
+                // },
                 data: {
                     simpleData: {
                         enable: true,
@@ -126,7 +126,7 @@ $(document).ready(function ()
                     success: function (data)
                     {
                         console.log(data);
-                        $.extend(userRoleData, data);
+                        $.extend(true, userRoleData, data);
                         for (var element in data)
                         {
                             delete data[element]["englishName"];
@@ -170,48 +170,16 @@ $(document).ready(function ()
                 field: "emailAddress",
                 title: "邮件地址"
             }, {
+                field: "description",
+                title: "备注",
+                formatter: descriptionFormatter
+            }, {
                 field: "operations",
                 title: "操作",
-                formatter: operationFormatter
+                formatter: operationFormatter,
+                events: operateEvents
             }],
-            data: [
-                {
-                    "id": 1,
-                    "username": "zhangsan",
-                    "realName": "张三",
-                    "mobilePhone": "10086",
-                    "officePhone": "10010",
-                    "emailAddress": "zhangsan@company.com",
-                    "operations": ""
-                },
-                {
-                    "id": 2,
-                    "username": "lisi",
-                    "realName": "李四",
-                    "mobilePhone": "10087",
-                    "officePhone": "10010",
-                    "emailAddress": "lisi@company.com",
-                    "operations": ""
-                },
-                {
-                    "id": 3,
-                    "username": "wangwu",
-                    "trueName": "王五",
-                    "userTitle": "职工",
-                    "phone": "10088",
-                    "emailAddress": "wangwu@company.com",
-                    "operations": ""
-                },
-                {
-                    "id": 4,
-                    "username": "zhaoliu",
-                    "realName": "赵六",
-                    "mobilePhone": "10089",
-                    "officePhone": "10010",
-                    "emailAddress": "zhaoliu@company.com",
-                    "operations": ""
-                }
-            ]
+            data: []
         });
     }
     treeList_Init();
@@ -222,12 +190,64 @@ $(document).ready(function ()
 function operationFormatter (value, row, index)
 {
     return [
-        '<a class="edit" href="javascript:void(0)" title="edit">',
-        '<i class="glyphicon glyphicon-search"></i>',
-        '<i class="glyphicon glyphicon-wrench"></i>',
-        '</a>'
+        '<a class="info" href="javascript:void(0)" title="info">',
+        '<i class="glyphicon glyphicon-user"></i>',
+        '</a>',
+        '<a class="pwd" href="javascript:void(0)" title="pwd">',
+        '<i class="glyphicon glyphicon-lock"></i>',
+        '</a>',
     ].join('');
 }
+
+function descriptionFormatter (value, row, index)
+{
+    if (value == null)
+    {
+        return "无";
+    }
+    else if (value.length > 10)
+    {
+        return value.substring(10) + '...';
+    }
+    else
+    {
+        return value;
+    }
+}
+
+window.operateEvents = {
+    'click .info': function (e, value, row, index)
+    {
+        console.log(row);
+        var msg =
+            {
+                id: row.id,
+                username: row.username,
+                realName: row.realName,
+                mobilePhone: row.mobilePhone,
+                officePhone: row.officePhone,
+                emailAddress: row.emailAddress,
+                description: row.description
+            };
+        console.log(msg);
+        document.cookie = "editflag=1";
+        document.cookie = "msg=" + JSON.stringify(msg);
+        window.location.href = "updateUserInfo";
+    },
+    'click .pwd': function (e, value, row, index)
+    {
+        console.log(row);
+        var msg =
+            {
+                id: row.id,
+                username: row.username,
+            };
+        console.log(msg);
+        document.cookie = "editflag=1";
+        document.cookie = "msg=" + JSON.stringify(msg);
+        window.location.href = "updatePassword";
+    }
+};
 
 function groupListClick (event, treeId, treeNode, clickFlag)
 {
@@ -282,7 +302,7 @@ $("#btn-add-group").click(function () {
         });
         $("#add-group").modal("toggle");
     }
-})
+});
 
 $("#btn-update-group").click(function () {
     if (typeof(groupSelectId) == "undefined") {
@@ -301,7 +321,7 @@ $("#btn-update-group").click(function () {
         });
         $("#update-group").modal("toggle");
     }
-})
+});
 
 $("#btn-delete-group").click(function () {
     if (typeof(groupSelectId) == "undefined") {
@@ -320,7 +340,7 @@ $("#btn-delete-group").click(function () {
         });
         $("#delete-group").modal("toggle");
     }
-})
+});
 
 $("#btn-add-group-submit").click(function ()
 {
@@ -487,14 +507,14 @@ $("#btn-update-role").click(function () {
             {
                 console.log(data);
                 console.log("get-role-finished!");
-                $("#updateRole_Id").val(data["id"])
-                $("#updateRole_ChineseName").val(data["chineseName"])
-                $("#updateRole_EnglishName").val(data["englishName"])
+                $("#updateRole_Id").val(data["id"]);
+                $("#updateRole_ChineseName").val(data["chineseName"]);
+                $("#updateRole_EnglishName").val(data["englishName"]);
                 $("#updateRole_Description").val(data["description"])
             }
         }
     )
-})
+});
 
 $("#btn-update-role-submit").click(function ()
 {
