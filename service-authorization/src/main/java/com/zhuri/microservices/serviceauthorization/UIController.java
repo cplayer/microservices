@@ -18,6 +18,7 @@ public class UIController
         return model;
     }
 
+    //admin
     @RequestMapping(value="/admin/userManagement", method = RequestMethod.GET)
     public String userManagement(){
         return "/admin/userManagement";
@@ -36,5 +37,16 @@ public class UIController
     @RequestMapping(value="/admin/updateUserInfo", method = RequestMethod.GET)
     public String updateUserInfo(){
         return "/admin/updateUserInfo";
+    }
+
+    //user
+    @RequestMapping(value="/user/updateMyPassword", method = RequestMethod.GET)
+    public String updateMyPassword(){
+        return "/user/updatePassword";
+    }
+
+    @RequestMapping(value="/user/updateMyInfo", method = RequestMethod.GET)
+    public String updateMyInfo(){
+        return "/user/updateMyInfo";
     }
 }

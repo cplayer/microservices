@@ -1,6 +1,8 @@
 package com.zhuri.microservices.gatewayweb;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.stereotype.Controller;
@@ -24,9 +26,13 @@ public class UserController {
     }
 
     @RequestMapping("/")
-    public String welcome() {
+    public String welcome(Authentication authentication) {
         //return "redirect:/service-customerplan/dashboard";
-        return "redirect:/getUserInfo";
+        if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){
+            return "redirect:http://localhost:9000/uaa/admin/userManagement";
+        } else {
+            return "redirect:/service-customerplan/dashboard";
+        }
     }
 
     @RequestMapping("/byebye")

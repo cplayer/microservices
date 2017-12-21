@@ -7,8 +7,11 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Select("SELECT COUNT(*) FROM internal_user where username=#{username}")
+    @Select("SELECT COUNT(*) FROM internal_user WHERE username=#{username}")
     int checkInternalUserUsername(String username);
+
+    @Select("SELECT COUNT(*) FROM internal_user WHERE id=#{id} AND password=#{password}")
+    int checkInternalUserPassword(@Param("id")int id, @Param("password")String password);
 
     @Insert("INSERT INTO internal_user(username, password, enabled, realName, mobilePhone, officePhone, emailAddress, description) " +
             " VALUES(#{username}, #{password}, #{enabled}, #{realName}, #{mobilePhone}, #{officePhone}, #{emailAddress}, #{description})")
@@ -58,6 +61,12 @@ public interface UserMapper {
 
     @Select("SELECT COUNT(*) FROM internal_user WHERE groupId = #{groupId}")
     int countIUsersByGroupId(int groupId);
+
+
+    @Select("SELECT id, username, enabled, realName, mobilePhone, officePhone, emailAddress, description " +
+            " FROM internal_user" +
+            " WHERE id=#{id}")
+    User getIUserById(int id);
 
     @Select("<script> " +
             "SELECT id, username, enabled, realName, mobilePhone, officePhone, emailAddress, description " +

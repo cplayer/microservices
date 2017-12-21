@@ -18,6 +18,10 @@ public class UserService {
         return userMapper.checkInternalUserUsername(username);
     }
 
+    public int checkInternalUserPassword(int id, String password) {
+        return userMapper.checkInternalUserPassword(id,password);
+    }
+
     @Transactional
     public int addInternalUser(User user) {
         int result = 0;
@@ -58,6 +62,10 @@ public class UserService {
         PageBean<User> pageData = new PageBean<>(pageNumber, pageSize, total);
         pageData.setRows(allRows);
         return pageData;
+    }
+
+    public User getIUserById(int id) {
+        return userMapper.getIUserById(id);
     }
 
     int updateIUserPassword(int id, String password) {
