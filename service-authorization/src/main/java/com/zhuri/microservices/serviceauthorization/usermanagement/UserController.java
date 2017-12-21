@@ -1,8 +1,9 @@
 package com.zhuri.microservices.serviceauthorization.usermanagement;
 
 import com.zhuri.microservices.serviceauthorization.PageBean;
+import com.zhuri.microservices.serviceauthorization.authorization.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,10 +12,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    /*@RequestMapping(value="/admin/test", method = RequestMethod.GET)
-    public String test() {
-        return "test";
-    }*/
+    //admin
 
     @RequestMapping(value="/admin/checkInternalUserUsername", method = RequestMethod.GET)
     public int checkInternalUserUsername(@RequestParam  String username) {
@@ -72,4 +70,28 @@ public class UserController {
         return userService.updateIUserInfo(user);
     }
 
+    //user
+    @RequestMapping(value="/user/getMyInfo", method = RequestMethod.GET)
+    public User getMyInfo(Authentication authentication) {
+        CustomUserDetails cUser = (CustomUserDetails) authentication.getPrincipal();;
+        return userService.getIUserById(cUser.getId());
+    }
+
+    @RequestMapping(value="/user/updateMyPassword", method = RequestMethod.POST)
+    public int updateMyPassword(@RequestParam String oldPassword, @RequestParam String newPassword,
+                         Authentication authentication) {
+        CustomUserDetails cUser = (CustomUserDetails) authentication.getPrincipal();;
+        if(userService.checkInternalUserPassword(cUser.getId(),oldPassword) > 0) {
+            return userService.updateIUserPassword(cUser.getId(), newPassword);
+        } else {
+            return -1;
+        }
+    }
+
+    @RequestMapping(value="/user/updateMyInfo", method = RequestMethod.POST)
+    public int updateMyInfo(@RequestBody User user, Authentication authentication){
+        CustomUserDetails cUser = (CustomUserDetails) authentication.getPrincipal();;
+        user.setId(cUser.getId());
+        return userService.updateIUserInfo(user);
+    }
 }
