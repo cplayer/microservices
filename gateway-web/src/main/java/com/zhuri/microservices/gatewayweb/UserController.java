@@ -29,7 +29,7 @@ public class UserController {
     public String welcome(Authentication authentication) {
         //return "redirect:/service-customerplan/dashboard";
         if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){
-            return "redirect:http://localhost:9000/uaa/admin/userManagement";
+            return "redirect:http://localhost:8022/uaa/admin/userManagement";
         } else {
             return "redirect:/service-customerplan/dashboard";
         }

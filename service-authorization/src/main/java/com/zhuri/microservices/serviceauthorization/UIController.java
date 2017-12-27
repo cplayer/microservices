@@ -21,32 +21,32 @@ public class UIController
     //admin
     @RequestMapping(value="/admin/userManagement", method = RequestMethod.GET)
     public String userManagement(){
-        return "/admin/userManagement";
+        return "admin/userManagement";
     }
 
     @RequestMapping(value="/admin/userAddition", method = RequestMethod.GET)
     public String userAddition(){
-        return "/admin/userAddition";
+        return "admin/userAddition";
     }
 
     @RequestMapping(value="/admin/updatePassword", method = RequestMethod.GET)
     public String updatePassword(){
-        return "/admin/updatePassword";
+        return "admin/updatePassword";
     }
 
     @RequestMapping(value="/admin/updateUserInfo", method = RequestMethod.GET)
     public String updateUserInfo(){
-        return "/admin/updateUserInfo";
+        return "admin/updateUserInfo";
     }
 
     //user
     @RequestMapping(value="/user/updateMyPassword", method = RequestMethod.GET)
     public String updateMyPassword(){
-        return "/user/updatePassword";
+        return "user/updatePassword";
     }
 
     @RequestMapping(value="/user/updateMyInfo", method = RequestMethod.GET)
     public String updateMyInfo(){
-        return "/user/updateMyInfo";
+        return "user/updateMyInfo";
     }
 }
