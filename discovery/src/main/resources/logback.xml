@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="LOGSTASH" class="com.cwbase.logback.RedisAppender">
+        <source>microservice</source>
+        <type>discovery</type>
+        <tags>dev</tags>
+        <host>localhost</host>
+        <port>6379</port>
+        <key>logstash</key>
+        <mdc>true</mdc>
+        <location>true</location>
+        <callerStackIndex>0</callerStackIndex>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="LOGSTASH" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>

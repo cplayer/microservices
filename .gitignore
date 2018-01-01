@@ -31,4 +31,4 @@ nbdist/
 logs/*.log
 out
 gen
-/service-customerplan/src/main/resources/application.properties
+/**/application-prod.properties
