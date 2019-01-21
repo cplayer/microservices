@@ -39,6 +39,7 @@ public class TokenPassFilter extends ZuulFilter {
         ctx.addZuulRequestHeader("user-id", id+"");
         ctx.addZuulRequestHeader("user-username", username);
         //System.out.println(oauth2ClientContext.getAccessToken().getAdditionalInformation());
+        System.out.println("seft-info: " + RequestContext.getCurrentContext().getRequest().getPathInfo());
         return null;
     }
 }

@@ -19,6 +19,9 @@ public class UserController {
     @Autowired
     OAuth2ClientContext oauth2ClientContext;
 
+    @Autowired
+    MyConfig myConfig;
+
     @RequestMapping("/getUserInfo")
     @ResponseBody
     public Map getUserInfo(Principal principal) {
@@ -29,9 +32,9 @@ public class UserController {
     public String welcome(Authentication authentication) {
         //return "redirect:/service-customerplan/dashboard";
         if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))){
-            return "redirect:http://localhost:8022/uaa/admin/userManagement";
+            return myConfig.getRedirectAdmin();
         } else {
-            return "redirect:/service-customerplan/dashboard";
+            return myConfig.getRedirectUser();
         }
     }
 
@@ -41,10 +44,4 @@ public class UserController {
         return "byebye!";
     }
 
-    /*
-    @RequestMapping("/login")
-    @ResponseBody
-    public Map loginDetails() {
-        return oauth2ClientContext.getAccessToken().getAdditionalInformation();
-    }*/
 }
